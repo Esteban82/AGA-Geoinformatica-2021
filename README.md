@@ -1,6 +1,6 @@
 # Geoinformática aplicada a la cartografía multitemática
 
-Clases virtuales del Curso brindado por la Asociación Geológica Argentina (AGA) en septiembre a diciembre de 2021.
+Clases virtuales del curso brindado por la Asociación Geológica Argentina (AGA) en septiembre a diciembre de 2021.
 
 Dictado por Federico D. Esteban, Jorge Lozano y José Isola.
 
@@ -22,8 +22,8 @@ Contenido del curso
 • Crear gráficos cartesianos (lineales y logarítmicos). Histogramas y diagramas de rosa. Ejemplos de diagramas Harker, de clasificación de rocas y de tierras raras, y análisis de lineamientos.
 
 Destinatarios
-Alumnos/as avanzados/as, de posgrado, profesores de geología, geofísica, oceanografía y disciplinas afines dentro de las Ciencias de la Tierra.
+Alumnos/as avanzados/as, de posgrado, profesores/as de geología, geofísica, oceanografía y disciplinas afines dentro de las Ciencias de la Tierra.
 
 Conocimientos previos
-Para el curso no se requieren conocimientos previos de informática. Los ejercicios (y scripts) están explicados para Windows.
+Para el curso no se requieren conocimientos previos de informática.
 
