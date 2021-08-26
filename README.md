@@ -28,3 +28,11 @@ Alumnos/as avanzados/as, de posgrado, profesores/as de geología, geofísica, oc
 ## Conocimientos previos
 Para el curso no se requieren conocimientos previos de informática.
 
+## Licencia
+
+[![CC BY 4.0][cc-by-image]][cc-by]
+
+El contenido de este repositorio se encuentra disponible bajo la licencia [Creative Commons Attribution 4.0 International License][cc-by].
+
+[cc-by]: http://creativecommons.org/licenses/by/4.0/
+[cc-by-image]: https://i.creativecommons.org/l/by/4.0/88x31.png
