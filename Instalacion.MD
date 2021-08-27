@@ -10,7 +10,7 @@ Windows
 
 Necesitarás tres programas (fundamentales):
 
-* Git-for-Windows: última versión en su [sitio web oficial](https://gitforwindows.org/). Programa para poder ejecutar los script bash en Windows.
+* Git-for-Windows: versión Git-2.33.0.2-64-bit.exe en su [sitio web oficial](https://gitforwindows.org/). Programa para poder ejecutar los script bash en Windows.
 
 * GMT para Windows: version gmt-6.2.0-win64.exe en https://www.generic-mapping-tools.org/download/. Incluye los programas GDAL, ghostscript y ffmpeg.
 
