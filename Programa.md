@@ -48,3 +48,26 @@ Se espera que el alumno al finalizar el curso pueda:
 • Perfiles topográficos a partir de grillas y de tablas. Perfiles apilados y superpuestos.
 
 • Crear gráficos cartesianos (lineales y logarítmicos). Histogramas y diagramas de rosa. Ejemplos de diagramas Harker, de clasificación de rocas y de tierras raras, y análisis de lineamientos.
+
+## Bibliografía
+
+Sitio Web del curso: 
+
+• http://mapasgeologicos.blogspot.com.ar/. Contiene los ejercicios prácticos (en sintáxis clásica y en archivos batch).
+
+Bibliografía Oficial:
+
+• Wessel P., Smith W.H.F., Scharroo R., Luis J., and Wobbe F. The Generic Mapping Tool. GMT Documentation. Versión 6.2. Junio 2021. Disponible en https://docs.generic-mapping-tools.org/latest/.
+
+• Sitio oficial de GMT: https://www.generic-mapping-tools.org/.
+
+• Wessel, P., Luis, J. F., Uieda, L., Scharroo, R., Wobbe, F., Smith, W. H. F., & Tian, D. (2019). The Generic Mapping Tools version 6. Geochemistry, Geophysics, Geosystems, 20, 5556–5564. https://doi.org/10.1029/2019GC008515
+
+## Licencia
+
+[![CC BY 4.0][cc-by-image]][cc-by]
+
+El contenido de este repositorio se encuentra disponible bajo la licencia [Creative Commons Attribution 4.0 International License][cc-by].
+
+[cc-by]: http://creativecommons.org/licenses/by/4.0/
+[cc-by-image]: https://i.creativecommons.org/l/by/4.0/88x31.png
