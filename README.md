@@ -6,13 +6,10 @@ Dictado por Federico D. Esteban, Jorge Lozano y José Isola.
 
 
 ## Destinatarios
-Alumnos/as avanzados/as, de posgrado, profesores/as de geología, geofísica, oceanografía y disciplinas afines dentro de las Ciencias de la Tierra.
+Alumnos/as avanzados/as de grado y de posgrado, profesores/as y profesionales de geología, geofísica, oceanografía y disciplinas afines dentro de las Ciencias de la Tierra.
 
 ## Conocimientos previos
 Para el curso no se requieren conocimientos previos de informática.
-## Destinatarios
-
-El curso esta destinado a alumnos avanzados, de posgrado, profesores de geología, geofísica, oceanografía y disciplinas afines dentro de las Ciencias de la Tierra. Para el curso no se requieren conocimientos previos de informática.
 
 
 ## Calendario de Actividades
