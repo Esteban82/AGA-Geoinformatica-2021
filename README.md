@@ -18,7 +18,7 @@ Para el curso no se requieren conocimientos previos de informática.
 
 • Horario de clases: Jueves de 9 a 11 hs. 
 
-• Fecha de realización: 30 de septiembre al 2 de septiembre de 2021.
+• Fecha de realización: 30 de septiembre al 2 de diciembre de 2021.
 
 
 ## Sistema de Evaluación
