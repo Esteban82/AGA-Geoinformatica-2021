@@ -4,6 +4,9 @@ Clases virtuales del curso brindado por la [Asociación Geológica Argentina](ht
 
 Dictado por Federico D. Esteban, Jorge Lozano y José Isola.
 
+Los profesores son integrantes del grupo de [Prospección Geológica y Geofísica Lacustre y Marina](https://www.geoflama.ar/) (GeofLaMa) es parte del I[nstituto de Geociencias Básicas, Aplicadas y ambientales de Buenos Aires](http://igeba.gl.fcen.uba.ar/) (IGEBA). Éste es un instituto de doble dependencia entre la Universidad de Buenos Aires y el CONICET.
+
+
 
 ## Destinatarios
 Alumnos/as avanzados/as de grado y de posgrado, profesores/as y profesionales de geología, geofísica, oceanografía y disciplinas afines dentro de las Ciencias de la Tierra.
