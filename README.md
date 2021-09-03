@@ -7,14 +7,6 @@ Dictado por Federico D. Esteban, Jorge Lozano y José Isola.
 Los profesores son integrantes del grupo de [Prospección Geológica y Geofísica Lacustre y Marina](https://www.geoflama.ar/) (GeofLaMa) el cual es parte del [Instituto de Geociencias Básicas, Aplicadas y ambientales de Buenos Aires](http://igeba.gl.fcen.uba.ar/) (IGEBA). Éste es un instituto de doble dependencia entre la Universidad de Buenos Aires y el [CONICET](https://www.conicet.gov.ar/).
 
 
-
-## Destinatarios
-Alumnos/as avanzados/as de grado y de posgrado, profesores/as y profesionales de geología, geofísica, oceanografía y disciplinas afines dentro de las Ciencias de la Tierra.
-
-## Conocimientos previos
-Para el curso no se requieren conocimientos previos de informática.
-
-
 ## Calendario de Actividades
 
 • Carga horaria: 45 horas. 10 clases de 2 horas cada una, 20 horas de ejercicios. 5 horas de examen final (opcional).
@@ -24,9 +16,12 @@ Para el curso no se requieren conocimientos previos de informática.
 • Fecha de realización: 30 de septiembre al 2 de diciembre de 2021.
 
 
-## Sistema de Evaluación
+## Instalación
 
-Los alumnos serán evaluados mediante un trabajo práctico final que consistirá en elaborar figuras mediante el uso de scripts que le sean de su propio interés y que contengan los contenidos del curso. Para la aprobación se exigirá una asistencia mínima del 80% de las clases y una nota mínima de 6 (seis) en la trabajo práctico final. Será opcional.
+## Programa
+
+Ver [aquí](https://github.com/Esteban82/AGA-Geoinformatica-2021/blob/main/Programa.md) para detalles del programa, objetivo, sistema de evaluación, bibliografía.
+
 
 
 
