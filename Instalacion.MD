@@ -3,7 +3,10 @@
 Por favor, sigue estas instrucciones para instalar GMT 6.2.0 y el resto del software que se utilizará. Aquí tienes un resumen de lo que necesitarás:
 
 La instalación depende del sistema operativo que uses:
-Windows
+
+*Windows
+*Linux
+*macOS
 
 
 ## Windows
