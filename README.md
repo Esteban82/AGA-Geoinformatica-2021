@@ -20,7 +20,7 @@ Los profesores son integrantes del grupo de [Prospección Geológica y Geofísic
 
 ## Programa
 
-Ver [aquí](https://github.com/Esteban82/AGA-Geoinformatica-2021/blob/main/Programa.md) para detalles del programa, objetivo, sistema de evaluación, bibliografía.
+Ver [aquí](https://github.com/Esteban82/AGA-Geoinformatica-2021/blob/main/Programa.md) para detalles del programa, objetivos, sistema de evaluación, bibliografía.
 
 
 
