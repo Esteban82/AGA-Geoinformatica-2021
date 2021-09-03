@@ -6,23 +6,17 @@
 Sigue los siguientes pasos para ejecutar algunos scripts de GMT y comprobar
 que obtienes la salida correcta.
 
-**If you have any questions/problems**:
-
-* Open an *Issue* on this repository by
-  [clicking here](https://github.com/GenericMappingTools/2021-unavco-course/issues/new/choose).
-  You'll need a GitHub account to do this.
-* Alternatively, post to the [GMT Community Forum](https://forum.generic-mapping-tools.org/)
 
 ## Tarea
 
 1. Sigue las [instrucciones de instalación](../INSTALL.md).
 2. Abre una terminal (Mac: abre el app "Terminal"; Windows: abre "Git Bash").
    Los siguientes pasos deben hacerse en la terminal.
-   To run a command, type it out and press *Enter*.
-3. Run this command to download the workshop material using [git](https://en.wikipedia.org/wiki/Git):
+   Para correr un comando, escirbile y luego presiona *Enter*.
+3. Corre este comando para descargar el material del curso usando [git](https://en.wikipedia.org/wiki/Git):
 
    ```
-   git clone https://github.com/GenericMappingTools/2021-unavco-course.git
+   git clone https://github.com/Esteban82/AGA-Geoinformatica-2021.git
    ```
 
    Esto creará una carpeta llamada `AGA-Geoinformatica-2021` en su computadora.
