@@ -57,5 +57,4 @@ que obtiene el mapa y la animación correctos.
 
    ![`AGA-Geoinformatica-2021/0_Instalacion/salida/contar.mp4`](salida/contar.gif)
 
-7. Tell us if you were able to complete homework 1 (and give us some feedback so we can better prepare for the course) by filling out
-   the following short [survey](https://forms.gle/FnEeTK9CLgYHBMzD9) by end of Saturday.
+7. Si tuvo algún problema para obtener los archivos, por favor avisenos a traves de slack?
