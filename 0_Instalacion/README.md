@@ -2,6 +2,8 @@
 
 **Objetivo**: Instalar GMT y comprobar que todo está correctamente configurado en su PC.
 
+Mira el siguiente video con las indicaciones para la instalación de los programas necesarios
+y la comprobación de su correcta instalación.
 
 Sigue los siguientes pasos para ejecutar algunos scripts de GMT y comprobar
 que obtienes la salida correcta.
@@ -37,7 +39,7 @@ que obtienes la salida correcta.
 
    Al finalilzar, una ventana con el siguiente mapa de sudamérica debería abrirse (en Mac puede verse mas suave):
 
-   ![`2021-unavco-course/hw1/output/test1.pdf`](salida/prueba1.png)
+   ![`AGA-Geoinformatica-2021/0_Instalacion/salida/prueba1.png`](salida/prueba1.png)
 
 6. Ejecute el script [`prueba_2.sh`](prueba_2.sh):
 
@@ -46,16 +48,15 @@ que obtienes la salida correcta.
    ```
 
    Esto debe producir una archivo llamado `contar.mp4` en la carpeta
-   `2021-unavco-course/hw1` folder. To open the mp4 movie (replace with `.webm`
-   if the mp4 doesn't work on your system):
+   `AGA-Geoinformatica-2021/0_Instalacion`. Para abrir el archivo mp4:
 
-   * Mac: run `open count.mp4`
-   * Linux: run `xdg-open count.mp4`
-   * Windows: run `explorer count.mp4`
+   * macOS: ejecute `open contar.mp4`
+   * Linux: ejecute `xdg-open contar.mp4`
+   * Windows: ejecute `explorer contar.mp4`
 
-   The result should be an animation with numbers counting from 0 to 24 that looks like
-   this:
+   El resultado es una animación con números contando de 0 a 24 que luce como:
 
-   ![`2021-unavco-course/hw1/output/count.mp4`](salida/contar.gif)
+   ![`AGA-Geoinformatica-2021/0_Instalacion/salida/contar.mp4`](salida/contar.gif)
+
 7. Tell us if you were able to complete homework 1 (and give us some feedback so we can better prepare for the course) by filling out
    the following short [survey](https://forms.gle/FnEeTK9CLgYHBMzD9) by end of Saturday.
