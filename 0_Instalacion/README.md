@@ -25,27 +25,27 @@ que obtienes la salida correcta.
    out where it is placed on your computer (each line is a command):
 
    ```
-   cd 2021-unavco-course/hw1
-   pwd
+   cd AGA-Geoinformatica-2021/0_Instalacion
+   
    ```
 
-5. Run the [`test_1.sh`](test_1.sh) script:
+5. Ejecuta el script [`prueba_1.sh`](prueba_1.sh):
 
    ```
-   ./test_1.sh
+   bash prueba_1.sh
    ```
 
-   A window should pop up with a colored relief map of northern Africa. It should look
-   like this (on a Mac, Preview may make it look a bit smoother):
+   Al finalilzar, una ventana con el siguiente mapa de sudamérica debería abrirse (en Mac puede verse mas suave):
 
    ![`2021-unavco-course/hw1/output/test1.pdf`](salida/prueba1.png)
-6. Run the [`test_2.sh`](test_2.sh) script:
+
+6. Ejecute el script [`prueba_2.sh`](prueba_2.sh):
 
    ```
-   ./test_2.sh
+   bash prueba_2.sh
    ```
 
-   This should produce 2 files called `count.mp4` and `count.webm` in the
+   Esto debe producir una archivo llamado `contar.mp4` en la carpeta
    `2021-unavco-course/hw1` folder. To open the mp4 movie (replace with `.webm`
    if the mp4 doesn't work on your system):
 
