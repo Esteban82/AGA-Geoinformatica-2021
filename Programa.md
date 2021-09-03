@@ -31,6 +31,13 @@ Se espera que el alumno al finalizar el curso pueda:
 • tener un dominio fundamental de los programas utilizados lo que le permita desarrollar de forma autodidacta figuras, procesamientos y animaciones más complejos según sus propias necesidades.
 
 
+## Destinatarios
+Alumnos/as avanzados/as de grado y de posgrado, profesores/as y profesionales de geología, geofísica, oceanografía y disciplinas afines dentro de las Ciencias de la Tierra.
+
+## Conocimientos previos
+Para el curso no se requieren conocimientos previos de informática.
+
+
 ## Contenido del curso
 
 • Trabajo con Scripts y archivos de procesamiento por lotes [bash](https://es.wikipedia.org/wiki/Bash). Comandos básicos de shell. Variables.
@@ -48,6 +55,11 @@ Se espera que el alumno al finalizar el curso pueda:
 • Perfiles topográficos a partir de grillas y de tablas. Perfiles apilados y superpuestos.
 
 • Crear gráficos cartesianos (lineales y logarítmicos). Histogramas y diagramas de rosa. Ejemplos de diagramas Harker, de clasificación de rocas y de tierras raras, y análisis de lineamientos.
+
+## Sistema de Evaluación
+
+Los alumnos serán evaluados mediante un trabajo práctico final que consistirá en elaborar figuras mediante el uso de scripts que le sean de su propio interés y que contengan los contenidos del curso. Para la aprobación se exigirá una asistencia mínima del 80% de las clases y una nota mínima de 6 (seis) en la trabajo práctico final. Será opcional.
+
 
 ## Bibliografía
 
