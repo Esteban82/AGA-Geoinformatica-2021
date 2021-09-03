@@ -4,9 +4,9 @@ Por favor, sigue estas instrucciones para instalar GMT 6.2.0 y el resto del soft
 
 La instalación depende del sistema operativo que uses:
 
-*Windows
-*Linux
-*macOS
+* Windows
+* Linux
+* macOS
 
 
 ## Windows
@@ -21,6 +21,13 @@ Necesitarás tres programas (fundamentales):
 
 ## Linux
 
+* GMT para linux: 
+* Editos de texto: ver instrucciones mas abajo.
+
+## macOS
+
+* GMT para macOS: 
+* Editos de texto: ver instrucciones mas abajo.
 
 # Editor de Texto:
 Es necesario para escribir/edirtar los scripts de GMT. Cualquier editor es válido y puedes utilizar el que prefieras. Sin embargo, te recomendamos encarecidamente que instales la versión "estable" de Visual Studio Code en Linux, macOS o Windows. Los instaladores y las instrucciones están disponibles en su sitio web. Algunas buenas razones para usar VSC:
