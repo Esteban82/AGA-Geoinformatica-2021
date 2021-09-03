@@ -3,19 +3,19 @@
 **Objetivo**: Instalar GMT y comprobar que todo está correctamente configurado en su PC.
 
 Mira el siguiente video con las indicaciones para la instalación de los programas necesarios
-y la comprobación de su correcta instalación.
+y la comprobación de su correcto funcionamiento.
 
-Sigue los siguientes pasos para ejecutar algunos scripts de GMT y comprobar
-que obtienes la salida correcta.
+Siga los siguientes pasos para ejecutar algunos scripts de GMT y comprobar
+que obtiene el mapa y la animación correctos.
 
 
 ## Tarea
 
-1. Sigue las [instrucciones de instalación](../INSTALL.md).
-2. Abre una terminal (Mac: abre el app "Terminal"; Windows: abre "Git Bash").
+1. Siga las [instrucciones de instalación](../INSTALL.md).
+2. Abra una terminal (Mac: abre el app "Terminal"; Windows: abre "Git Bash").
    Los siguientes pasos deben hacerse en la terminal.
    Para correr un comando, escribelo y luego presiona *Enter*.
-3. Corre este comando para descargar el material del curso usando [git](https://en.wikipedia.org/wiki/Git):
+3. Corra este comando para descargar el material del curso usando [git](https://en.wikipedia.org/wiki/Git):
 
    ```
    git clone https://github.com/Esteban82/AGA-Geoinformatica-2021.git
@@ -23,14 +23,14 @@ que obtienes la salida correcta.
 
    Esto creará una carpeta llamada `AGA-Geoinformatica-2021` en su computadora.
 
-4. Corre el siguiente comando para ingresar a la carpeta con los scripts:
+4. Corra el siguiente comando para ingresar a la carpeta con los scripts:
 
    ```
    cd AGA-Geoinformatica-2021/0_Instalacion
    
    ```
 
-5. Ejecuta el script [`prueba_1.sh`](prueba_1.sh):
+5. Ejecute el script [`prueba_1.sh`](prueba_1.sh):
 
    ```
    bash prueba_1.sh
@@ -46,7 +46,7 @@ que obtienes la salida correcta.
    bash prueba_2.sh
    ```
 
-   Esto debe producir una archivo llamado `contar.mp4` en la carpeta
+   Esto debe producir un archivo llamado `contar.mp4` en la carpeta
    `AGA-Geoinformatica-2021/0_Instalacion`. Para abrirlo ejecute:
 
    * macOS: `open contar.mp4`
