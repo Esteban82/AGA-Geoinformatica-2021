@@ -12,7 +12,7 @@ que obtienes la salida correcta.
 1. Sigue las [instrucciones de instalación](../INSTALL.md).
 2. Abre una terminal (Mac: abre el app "Terminal"; Windows: abre "Git Bash").
    Los siguientes pasos deben hacerse en la terminal.
-   Para correr un comando, escirbile y luego presiona *Enter*.
+   Para correr un comando, escribelo y luego presiona *Enter*.
 3. Corre este comando para descargar el material del curso usando [git](https://en.wikipedia.org/wiki/Git):
 
    ```
@@ -20,7 +20,8 @@ que obtienes la salida correcta.
    ```
 
    Esto creará una carpeta llamada `AGA-Geoinformatica-2021` en su computadora.
-4. Run this command to navigate to the `hw1` folder in `2021-unavco-course` and figure
+
+4. Corre el script tIngresa en la carpeta Run this command to navigate to the `hw1` folder in `2021-unavco-course` and figure
    out where it is placed on your computer (each line is a command):
 
    ```
