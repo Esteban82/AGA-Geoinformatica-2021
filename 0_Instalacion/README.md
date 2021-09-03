@@ -3,11 +3,8 @@
 **Objetivo**: Instalar GMT y comprobar que todo está correctamente configurado en su PC.
 
 
-Sigue los siguientes pasos y compruebe que todo funciona. Ejecutar algunos scripts de GMT y comprobarás
+Sigue los siguientes pasos para ejecutar algunos scripts de GMT y comprobar
 que obtienes la salida correcta.
-Follow these steps to setup your computer with GMT and other software needed for the
-workshop and check that everything is working. You'll run some GMT scripts and check
-that you get the correct output.
 
 **If you have any questions/problems**:
 
@@ -16,11 +13,11 @@ that you get the correct output.
   You'll need a GitHub account to do this.
 * Alternatively, post to the [GMT Community Forum](https://forum.generic-mapping-tools.org/)
 
-## Task
+## Tarea
 
-1. Follow the [install instructions](../INSTALL.md) to setup your computer.
-2. Open a terminal (Mac: open the "Terminal" app; Windows: open "Git Bash").
-   The following steps should be done in the terminal.
+1. Sigue las [instrucciones de instalación](../INSTALL.md).
+2. Abre una terminal (Mac: abre el app "Terminal"; Windows: abre "Git Bash").
+   Los siguientes pasos deben hacerse en la terminal.
    To run a command, type it out and press *Enter*.
 3. Run this command to download the workshop material using [git](https://en.wikipedia.org/wiki/Git):
 
@@ -28,7 +25,7 @@ that you get the correct output.
    git clone https://github.com/GenericMappingTools/2021-unavco-course.git
    ```
 
-   This will create a folder called `2021-unavco-course` in your computer.
+   Esto creará una carpeta llamada `AGA-Geoinformatica-2021` en su computadora.
 4. Run this command to navigate to the `hw1` folder in `2021-unavco-course` and figure
    out where it is placed on your computer (each line is a command):
 
