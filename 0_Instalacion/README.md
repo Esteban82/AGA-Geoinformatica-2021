@@ -37,7 +37,7 @@ que obtienes la salida correcta.
    A window should pop up with a colored relief map of northern Africa. It should look
    like this (on a Mac, Preview may make it look a bit smoother):
 
-   ![`2021-unavco-course/hw1/output/test1.pdf`](output/test1.png)
+   ![`2021-unavco-course/hw1/output/test1.pdf`](salida/prueba1.png)
 6. Run the [`test_2.sh`](test_2.sh) script:
 
    ```
@@ -55,6 +55,6 @@ que obtienes la salida correcta.
    The result should be an animation with numbers counting from 0 to 24 that looks like
    this:
 
-   ![`2021-unavco-course/hw1/output/count.mp4`](output/count.gif)
+   ![`2021-unavco-course/hw1/output/count.mp4`](salida/contar.gif)
 7. Tell us if you were able to complete homework 1 (and give us some feedback so we can better prepare for the course) by filling out
    the following short [survey](https://forms.gle/FnEeTK9CLgYHBMzD9) by end of Saturday.
