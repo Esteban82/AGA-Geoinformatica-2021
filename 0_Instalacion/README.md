@@ -23,8 +23,7 @@ que obtienes la salida correcta.
 
    Esto creará una carpeta llamada `AGA-Geoinformatica-2021` en su computadora.
 
-4. Corre el script tIngresa en la carpeta Run this command to navigate to the `hw1` folder in `2021-unavco-course` and figure
-   out where it is placed on your computer (each line is a command):
+4. Corre el siguiente comando para ingresar a la carpeta con los scripts:
 
    ```
    cd AGA-Geoinformatica-2021/0_Instalacion
@@ -48,11 +47,11 @@ que obtienes la salida correcta.
    ```
 
    Esto debe producir una archivo llamado `contar.mp4` en la carpeta
-   `AGA-Geoinformatica-2021/0_Instalacion`. Para abrir el archivo mp4:
+   `AGA-Geoinformatica-2021/0_Instalacion`. Para abrirlo ejecute:
 
-   * macOS: ejecute `open contar.mp4`
-   * Linux: ejecute `xdg-open contar.mp4`
-   * Windows: ejecute `explorer contar.mp4`
+   * macOS: `open contar.mp4`
+   * Linux: `xdg-open contar.mp4`
+   * Windows: `explorer contar.mp4`
 
    El resultado es una animación con números contando de 0 a 24 que luce como:
 
