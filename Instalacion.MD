@@ -33,7 +33,7 @@ En [este video](https://www.youtube.com/watch?v=1bPMIN7noTI&feature=youtu.be) se
 * Editos de texto: ver instrucciones mas abajo.
 
 # Editor de Texto:
-Los [editores de texto](https://es.wikipedia.org/wiki/Editor_de_texto) sirven para escribir/editar los scripts de GMT. Cualquier editor es válido y puedes utilizar el que prefieras. Sin embargo, recomendamos instalar la versión "estable" de Visual Studio Code (VSC). Los instaladores y las instrucciones están disponibles en su sitio web. Algunas buenas razones para usar VSC:
+Los [editores de texto](https://es.wikipedia.org/wiki/Editor_de_texto) sirven para escribir/editar archivos de texto plano (sin formato) como los scripts de GMT. Cualquier editor es válido y puedes utilizar el que prefieras. Sin embargo, recomendamos instalar la versión "estable" de Visual Studio Code (VSC). Los instaladores y las instrucciones están disponibles en su sitio web. Algunas buenas razones para usar VSC:
 
 * Puedes abrir una ventana de terminal en VSC y ejecutar tus scripts directamente en ella.
 * Puedes instalar la extensión Code Runner, que añade un botón en el que haces clic para ejecutar el script activo en el terminal.
