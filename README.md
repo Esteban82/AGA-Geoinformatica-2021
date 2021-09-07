@@ -24,6 +24,24 @@ Para el curso es necesario la instalación de algunos programas. Por favor siga 
 
 Ver [aquí](https://github.com/Esteban82/AGA-Geoinformatica-2021/blob/main/Programa.md) para detalles del programa, objetivos, sistema de evaluación, bibliografía.
 
+## Calendario
+
+| **Clase** | **Tema** | **UTC Time** |
+|-----------|--------------|--------------|
+| 30-09  | 10 min | 17:00-17:10  |
+| 07-10    | 25 min | 17:10-17:35  |
+| 14-10         | 15 min | 17:35-17:50  |
+| 21-10    | 80 min |  17:50-19:10  |
+| 28-10      | 45 min | 19:10-19:55  |
+| 04-11      | 50 min | 19:55-20:45 |
+| 11-11         | 15 min |  20:45-21:00  |
+| 18-11      | 50 min |  21:00-21:50  |
+| 25-11      | 10 min |  21:50-22:00  |
+| 02-12      | 10 min |  21:50-22:00  |
+
+## Communicación durante el curso
+
+Usaremos un grupo de trabajo en el Slack. El chat de Zoom estará desactivado.
 
 
 
