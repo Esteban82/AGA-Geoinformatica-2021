@@ -43,5 +43,10 @@ Ver [aquí](https://github.com/Esteban82/AGA-Geoinformatica-2021/blob/main/Progr
 
 Usaremos un grupo de trabajo en el Slack. El chat de Zoom estará desactivado.
 
+## Referencias
+
+Este tutorial fue adaptado de https://github.com/GenericMappingTools/2021-unavco-course, el cual esta bajo licencia de Creative Commons Attribution 4.0 license.
+
+
 
 
