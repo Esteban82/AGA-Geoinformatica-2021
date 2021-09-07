@@ -28,7 +28,7 @@ Ver [aquí](https://github.com/Esteban82/AGA-Geoinformatica-2021/blob/main/Progr
 
 | **Clase** | **Tema** | **UTC Time** |
 |-----------|--------------|--------------|
-| 30-09  | 10 min | 17:00-17:10  |
+| 30-09  | Mapas politicos 01 y 02 | 17:00-17:10  |
 | 07-10    | 25 min | 17:10-17:35  |
 | 14-10         | 15 min | 17:35-17:50  |
 | 21-10    | 80 min |  17:50-19:10  |
