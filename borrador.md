@@ -10,6 +10,8 @@
 | 14-10         | Satelital | 06_Satelital_BlueMarble  || F |
 | 14-10         | Satelital | 07_Satelital_Malvinas  | Valores por defecto | ? |
 | 21-10    | Animacion_01 |  17:50-19:10  || F |
+| 21-10    | Grillas_01 |  08_Topografico_01  || P? |
+| 21-10    | Grillas_02 |  17:50-19:10  || F |
 | 28-10      | 45 min | 19:10-19:55  |||
 | 04-11      | 50 min | 19:55-20:45 |||
 | 11-11         | 15 min |  20:45-21:00  |||
