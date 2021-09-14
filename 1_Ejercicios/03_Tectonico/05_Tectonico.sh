@@ -58,13 +58,18 @@ gmt begin $title png
 	gmt makecpt -Crainbow -T0/700
 	gmt colorbar -DjBL+o0.2c+w-3c/0.5c
 
-#	Dibujar Sismos del USGS segun magnitud (-Scp), y color segun profundidad (-Ccpt). 
+#	Dibujar Sismos del USGS segun magnitud (-Scp), y color segun profundidad (-C). 
 #	-Scp: El tamaño del circulo corresponde a la magnitud medida en puntos tipograficos. 
-#	gmt plot "Sismos_Input\USGS.txt"  -W.1 -C -Sc0.50 
-#	gmt plot "Sismos_Input\USGS.txt"  -W.1 -C -Scp 
+#	gmt plot "Sismos\USGS.txt"  -W0.1 -Gred -Sc0.1c		# Tamaño y color fijo 
+#	gmt plot "Sismos\USGS.txt"  -W0.1 -C    -Sc0.1c    	# Color variable (3 columna) y tamaño fijo
+	gmt plot "Sismos\USGS.txt"  -W0.1 -C 	-Scp		# Color (3a col) y tamaño (4a col) variable 
+
+#	Convertir tabla de datos 	
+#	gmt convert query.csv -h1 -i2,1,3,4 > Sismos.txt
 
 #	Plotear datos originales (ver -h y -i)
-	gmt plot "Sismos_Input\query.csv" -W.1 -C -Scp -h1 -i2,1,3,4     
+#	gmt plot "Sismos\query.csv" -W.1 -C -Scp -h1 -i2,1,3,4     
+ 
 
 #	Dibujar Mecanismos Focales
 #	-----------------------------------------------------------------------------------------------------------
