@@ -48,7 +48,6 @@ clear
 #	gmt colorbar -DjRM -I -Baf -By+l"km" -W0.001 -F+gwhite+p+i+s
 	gmt colorbar -DjRM -I -Baf -By+l"km" -W0.001 -F+gwhite+p+i+s -GNaN/0
 
-
 #	-----------------------------------------------------------------------------------------------------------
 #	Dibujar frame
 	gmt basemap -Bxaf -Byaf
