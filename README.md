@@ -31,7 +31,7 @@ Usaremos un grupo de trabajo en el Slack. El chat de Zoom estará desactivado.
 
 ## Referencias
 
-Este tutorial fue adaptado de https://github.com/GenericMappingTools/2021-unavco-course, el cual esta bajo licencia de Creative Commons Attribution 4.0 license.
+Parte de este tutorial fue adaptado de https://github.com/GenericMappingTools/2021-unavco-course, el cual esta bajo licencia de Creative Commons Attribution 4.0 license.
 
 
 
