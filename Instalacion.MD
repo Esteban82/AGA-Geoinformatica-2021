@@ -22,9 +22,9 @@ Necesitarás tres programas (fundamentales):
 En [este video](https://www.youtube.com/watch?v=1bPMIN7noTI&feature=youtu.be) se muestra como instalarlos y comprobar su correcta configuración. 
 
 
-## Linux
+## Linux y macOS
 
-* GMT para linux: 
+* Siga las intrucciones del sitio oficial (en inglés).
 * Editos de texto: ver instrucciones mas abajo.
 
 ## macOS
@@ -33,9 +33,4 @@ En [este video](https://www.youtube.com/watch?v=1bPMIN7noTI&feature=youtu.be) se
 * Editos de texto: ver instrucciones mas abajo.
 
 # Editor de Texto:
-Los [editores de texto](https://es.wikipedia.org/wiki/Editor_de_texto) sirven para escribir/editar archivos de texto plano (sin formato) como los scripts de GMT. Cualquier editor es válido y puedes utilizar el que prefieras. Sin embargo, recomendamos instalar la versión "estable" de Visual Studio Code (VSC). Los instaladores y las instrucciones están disponibles en su sitio web. Algunas buenas razones para usar VSC:
-
-* Puedes abrir una ventana de terminal en VSC y ejecutar tus scripts directamente en ella.
-* Puedes instalar la extensión Code Runner, que añade un botón en el que haces clic para ejecutar el script activo en el terminal.
-* Puedes añadir un atajo de teclado para ejecutar una línea de script resaltada en la terminal.
-* Para los usuarios de Windows que utilizan Git Bash, se instala la versión de Windows pero se accede a ella desde la línea de comandos de Git bash utilizando "archivo de código". Tendrás que editar el shell utilizado por VSC para que sea también Git bash.
+Los [editores de texto](https://es.wikipedia.org/wiki/Editor_de_texto) sirven para escribir/editar archivos de texto plano (sin formato) como los scripts de GMT. Cualquier editor es válido y puedes utilizar el que prefieras. Sin embargo, recomendamos instalar la versión "estable" de Visual Studio Code (VSC) o [gedit](https://wiki.gnome.org/Apps/Gedit). Otros editores que se pueden usar son [Vim](https://www.vim.org/), [Atom](https://atom.io/), etc. 
