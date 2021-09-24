@@ -25,7 +25,7 @@ Para el curso es necesario la instalación de algunos programas. Por favor siga 
 Ver [aquí](https://github.com/Esteban82/AGA-Geoinformatica-2021/blob/main/Programa.md) para detalles del programa, objetivos, sistema de evaluación, bibliografía.
 
 
-## Communicación durante el curso
+## Comunicación durante el curso
 
 Usaremos un grupo de trabajo en el Slack. El chat de Zoom estará desactivado.
 
