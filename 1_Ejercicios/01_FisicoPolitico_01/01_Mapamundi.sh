@@ -2,8 +2,7 @@
 
 #	Definir variables del mapa
 #	-----------------------------------------------------------------------------------------------------------
-#	Titulo 
-del mapa
+#	Titulo del mapa
 	title=01_Mapamundi
 	echo $title
 
