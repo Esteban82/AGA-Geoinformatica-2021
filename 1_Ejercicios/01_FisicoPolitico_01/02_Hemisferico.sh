@@ -66,3 +66,11 @@ gmt end show
 
 #	Borrar archivos tempostales
 	rm gmt.*
+
+#	Ejercicios Sugeridos
+#    ***********************************************************************
+#	1. Cambiar el horizonte del mapa a 60º (horizon, linea 11).
+#	2. Centrar mapa en Moscú (Long0: 37.617778. Lat0: 55.755833) y en otra ciudad (buscar en internet sus coordenadas; linea 11 o 12).
+#	3. Cambiar la resolucion de la base de datos de GSHHG a (c)ruda, (l)ow, (m)edium, (h)igh, (f)ull (linea 30).
+#	4. Resaltar otros países y 2 continentes (=AF, =AN, =AS, =EU, =OC, =NA o =SA) con distintos colores. Buscar código ISO y definir color (linea 52).
+#	5. Resaltar 2 provincias Argentinas (linea 55).
