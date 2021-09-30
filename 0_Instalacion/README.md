@@ -57,4 +57,4 @@ que obtiene el mapa y la animación correctos.
 
    ![`AGA-Geoinformatica-2021/0_Instalacion/salida/contar.mp4`](salida/contar.gif)
 
-7. Si tuvo algún problema para obtener los archivos, por favor avisenos a traves de slack?
+7. Si tuvo algún problema para obtener los archivos, por favor avisenos a traves de slack.
