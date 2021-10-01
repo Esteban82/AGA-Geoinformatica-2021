@@ -3,7 +3,7 @@
 #	Definir variables del mapa
 #	-----------------------------------------------------------------------------------------------------------
 #	Titulo del mapa
-	title=2_Hemisferico
+	title=02_Hemisferico
 	echo $title
 
 #	Proyecciones acimutales requieren 3 parametros + 1 opcional (lon0/lat0[/horizon]/width

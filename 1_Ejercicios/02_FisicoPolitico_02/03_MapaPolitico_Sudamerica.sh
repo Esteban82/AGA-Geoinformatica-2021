@@ -9,7 +9,7 @@
 #	Region: Sudamérica
 	REGION=-85/-33/-58/15
 
-#	Proyeccion Conica. (lon0/lat0/lat1/lat2/width) Proyeccion Albers (B); Lambert (L): Equidistant (D).
+#	Proyeccion Conica (lon0/lat0/lat1/lat2/width). Proyeccion Albers (B); Lambert (L): Equidistant (D).
 #	PROJ=D-60/-30/-40/0/15c
 	PROJ=B-60/-30/-40/0/15c
 
