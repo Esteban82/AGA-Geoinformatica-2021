@@ -1,16 +1,25 @@
 #!/bin/bash
 
+#	Temas a ver:
+#	1. Definir regiones del mapa con xmin/ymin/xmax/ymax
+#	2. Definir regiones del mapa con codigos ISO 3166
+#	1. Ver uso practico de variable ($color)
+#	2. Definir las propiedades de las lineas en GMT (color, ancho, estilo).
+#	3. Definir regiones del mapa con WESN
+
+
 #	Definir variables del mapa
 #	-----------------------------------------------------------------------------------------------------------
 #	Titulo del mapa
 	title=04_MapaPolitico_Argentina
 	echo $title
 
-#	Region: Buenos Aires
-	REGION=-64/-42/-56/-33r
 #	Region: Argentina
-#	REGION=-78/-50/-56/-21
 	REGION=-81/-55/-53/-21r
+
+#	Region: codigos ISO
+#	REGION=AR
+	
 
 #	Proyecciones Cilindricas: 
 #	(C)assini, C(y)lindrical equal area: Lon0/lat0/Width
@@ -67,10 +76,10 @@ gmt begin $title png
 	gmt plot "IGN/linea_de_limite_070111.shp" -Wthinner,black,-.
 
 # 	Red vial y ferroviaria
-	gmt plot "IGN/RedVial_Autopista.gmt"        			-Wthinnest,black
-	gmt plot "IGN/RedVial_Ruta_Nacional.gmt"    			-Wthinnest,black
-	gmt plot "IGN/RedVial_Ruta_Provincial.gmt"  			-Wfaint,black
-	gmt plot "IGN/lineas_de_transporte_ferroviario_AN010.shp"     -Wthinnest,darkred
+	gmt plot "IGN/RedVial_Autopista.gmt"        		   -Wthinnest,black
+	gmt plot "IGN/RedVial_Ruta_Nacional.gmt"    		   -Wthinnest,black
+	gmt plot "IGN/RedVial_Ruta_Provincial.gmt"  		   -Wfaint,black
+	gmt plot "IGN/lineas_de_transporte_ferroviario_AN010.shp"  -Wthinnest,darkred
 
 #	Pueblos y Ejidos Urbanos. -SsimboloTamaño. Simbolos: A (star), C (Círculo), D (Diamante), G (octagono), H (hexagono), I (triangulo invertido), N (pentagono), S (cuadrado), T (triangulo).
 #	Tamaño: diámetro del círculo (Mayuscula: misma área que el circulo; Minúscula (diámetro del círculo que abarca a las símbolos)
@@ -84,7 +93,7 @@ gmt begin $title png
 #	Cerrar la sesion y mostrar archivo
 gmt end show
 
-	rm temp_* gmt.*
+	rm gmt.*
 
 #	Ejercicios Sugeridos:
 #	1. Modificar REGION para que abarque a Europa.

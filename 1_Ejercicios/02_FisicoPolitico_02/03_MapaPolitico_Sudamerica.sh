@@ -1,4 +1,10 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+#	Temas a ver:
+#	1. Ver uso practico de variable ($color)
+#	2. Definir las propiedades de las lineas en GMT (color, ancho, estilo).
+#	3. Definir regiones del mapa con WESN
+
 
 #	Definir variables del mapa
 #	-----------------------------------------------------------------------------------------------------------
@@ -6,7 +12,7 @@
 	title=03_MapaPolitico_Sudamerica
 	echo $title
 
-#	Region: Sudamérica
+#	Region: Sudamérica (limites W/E/S/N)
 	REGION=-85/-33/-58/15
 
 #	Proyeccion Conica (lon0/lat0/lat1/lat2/width). Proyeccion Albers (B); Lambert (L): Equidistant (D).
@@ -16,7 +22,7 @@
 #	Parametros por Defecto
 #	-----------------------------------------------------------------------------------------------------------
 #	Sub-seccion GMT
-	gmtset GMT_VERBOSE w
+	gmt set GMT_VERBOSE w
 
 #	-----------------------------------------------------------------------------------------------------------
 #	Iniciar sesion y tipo de figura
@@ -58,9 +64,8 @@ gmt begin $title png
 #	Cerrar la sesion y mostrar archivo
 gmt end show
 
-	rm temp_*
+	rm gmt.*
 
 #	Ejercicios Sugeridos:
-#	1. Modificar REGION para que abarque a Europa.
-#	2. Modificar el color de los rios (variable $color).
-#	3. Modificar las lineas de os rios (ancho, estilo de linea).
+#	1. Modificar el color de los rios (variable $color).
+#	2. Modificar las lineas de los rios (ancho, estilo de linea).
