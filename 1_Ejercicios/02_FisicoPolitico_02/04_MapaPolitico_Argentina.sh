@@ -1,11 +1,9 @@
 #!/bin/bash
 
 #	Temas a ver:
-#	1. Definir regiones del mapa con xmin/ymin/xmax/ymax
-#	2. Definir regiones del mapa con codigos ISO 3166
-#	1. Ver uso practico de variable ($color)
-#	2. Definir las propiedades de las lineas en GMT (color, ancho, estilo).
-#	3. Definir regiones del mapa con WESN
+#	1. Definir regiones del mapa con codigos ISO 3166
+#	2. Proyecciones cilìndricas (UTM, Mercator)
+#	3. Simbolos, lineas y poligonos en GMT (color, ancho, estilo).
 
 
 #	Definir variables del mapa
@@ -15,12 +13,9 @@
 	echo $title
 
 #	Region: Argentina
-	REGION=-81/-55/-53/-21r
-
 #	Region: codigos ISO
-#	REGION=AR
+	REGION=AR
 	
-
 #	Proyecciones Cilindricas: 
 #	(C)assini, C(y)lindrical equal area: Lon0/lat0/Width
 #	Miller cylindrical (J): Lon0/Width
@@ -96,6 +91,5 @@ gmt end show
 	rm gmt.*
 
 #	Ejercicios Sugeridos:
-#	1. Modificar REGION para que abarque a Europa.
-#	2. Modificar el color de los rios (variable $color).
-#	3. Modificar las lineas de los rios (ancho, estilo de linea).
+#	1. Ejercicio de combinación de argumentos -S -G -W para dibujar símbolos, líneas y áreas (lineas 77 a 83).
+#	2. Dibujar los pueblos con distintos símbolos (estrella, cuadrado, círculo).
