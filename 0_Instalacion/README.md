@@ -9,9 +9,14 @@ Siga los siguientes pasos para ejecutar algunos scripts de GMT y comprobar
 que obtiene el mapa y la animación correctos.
 
 
-## Tarea
+## Instalar los programas
 
 1. Siga las [instrucciones de instalación](../INSTALL.md).
+
+
+## Descargar repositorio
+
+1. Seleccione la carpeta de su computadora donde quiere descargar el material de este repositorio. 
 2. Abra una terminal (Mac: abre el app "Terminal"; Windows: abre "Git Bash").
    Los siguientes pasos deben hacerse en la terminal.
    Para correr un comando, escribelo y luego presiona *Enter*.
@@ -59,7 +64,7 @@ que obtiene el mapa y la animación correctos.
 
 7. Si tuvo algún problema para obtener los archivos, por favor avisenos a traves de slack.
 
-## Actualizar ejercicios
+## Actualizar repositorio
 
 El material del curso (todo lo includio en este repositorio) se actualizará con el paso de las clases. 
 
