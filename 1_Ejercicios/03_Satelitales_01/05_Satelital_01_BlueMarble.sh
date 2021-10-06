@@ -3,7 +3,6 @@ clear
 
 #	Definir variables del mapa
 #	-----------------------------------------------------------------------------------------------------------
-
 	RES=05m
 
 #	Mosaicos de la NASA: BlackMarble (night) o BlueMarble (day)
@@ -32,9 +31,6 @@ clear
 #	REGION=-100/30/-90/20	
 	REGION=-110/30/-90/20
 
-#	Resolucion Datos de GSHHS: (c)ruda, (l)ow, (i)ntermdiate, (h)igh, (f)ull o (a)uto
-	D=a
-
 #	Parametros por Defecto
 #	-----------------------------------------------------------------------------------------------------------
 #	Sub-seccion GMT
@@ -55,7 +51,7 @@ gmt begin $title png
 	gmt coast -N1/0.2,- 
 
 #	Dibujar Linea de Costa
-	gmt coast -D$D -W1/ 
+	gmt coast -W1/ 
 
 #	Dibujar marco del mapa 
 	gmt basemap -B0
@@ -64,4 +60,7 @@ gmt begin $title png
 #	Cerrar la sesion y mostrar archivo
 gmt end show
 
-# Probar cambiar la resolución de la imagen satelital, cambiar a la imagen de noche (black marble) y cambiar la region geografica. 
+#	Ejercicios Sugeridos:
+# 	1. Probar cambiar la resolución de la imagen satelital
+#	2. Cambiar a la imagen de noche (black marble)
+#	3. Cambiar la region geografica.

@@ -17,11 +17,10 @@
 	REGION=AR
 	
 #	Proyecciones Cilindricas: 
-#	(C)assini, C(y)lindrical equal area: Lon0/lat0/Width
+#	C(y)lindrical equal area: Lon0/lat0/Width
 #	Miller cylindrical (J): Lon0/Width
 #	(M)ercartor, E(q)udistant cilindrical, (T)ransverse Mercator: (Lon0(/Lat0/))Width
 #	(U)TM: Zone/Width
-#	PROJ=C-65/-35/13c
 #	PROJ=J-65/13c
 	PROJ=T-60/-30/13c
 #	PROJ=M15c
@@ -93,3 +92,4 @@ gmt end show
 #	Ejercicios Sugeridos:
 #	1. Ejercicio de combinación de argumentos -S -G -W para dibujar símbolos, líneas y áreas (lineas 77 a 83).
 #	2. Dibujar los pueblos con distintos símbolos (estrella, cuadrado, círculo).
+#	3. Descargar otro shp del IGN (o de otro repositorio) y graficarlo. 
