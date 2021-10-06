@@ -9,9 +9,14 @@ Siga los siguientes pasos para ejecutar algunos scripts de GMT y comprobar
 que obtiene el mapa y la animación correctos.
 
 
-## Tarea
+## Instalar los programas
 
 1. Siga las [instrucciones de instalación](../INSTALL.md).
+
+
+## Descargar repositorio
+
+1. Seleccione la carpeta de su computadora donde quiere descargar el material de este repositorio. 
 2. Abra una terminal (Mac: abre el app "Terminal"; Windows: abre "Git Bash").
    Los siguientes pasos deben hacerse en la terminal.
    Para correr un comando, escribelo y luego presiona *Enter*.
@@ -58,3 +63,23 @@ que obtiene el mapa y la animación correctos.
    ![`AGA-Geoinformatica-2021/0_Instalacion/salida/contar.mp4`](salida/contar.gif)
 
 7. Si tuvo algún problema para obtener los archivos, por favor avisenos a traves de slack.
+
+## Actualizar repositorio
+
+El material del curso (todo lo includio en este repositorio) se actualizará con el paso de las clases. 
+
+Para actualizarlo en tu pc sigue los siguientes pasos:
+
+
+1. Ve a la carperta `AGA-Geoinformatica-2021` previamente descargada en su computadora.
+
+2. Abre una terminal (Mac: abre el app "Terminal"; Windows: abre "Git Bash").
+   Los siguientes pasos deben hacerse en la terminal.
+   Para correr un comando, escribelo y luego presiona *Enter*.
+
+3. Finalmente corra el siguiente comando para actualizar su carpeta (repositorio local). Esto puede sobrescribir los scripts originales si los modificó. Se sugiere trabajar en otra carpeta fuera de la carpeta original.
+
+   ```
+   git pull
+   
+   ```
