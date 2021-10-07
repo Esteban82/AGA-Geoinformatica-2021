@@ -3,7 +3,7 @@ clear
 
 #	Temas a ver: 
 #	1. Vista en perspectiva.
-#	2. Usar otros CPT.
+#	2. Usar otros paletas de colores (CPT).
 #	3. Crear grilla para sombreado
 #	4. Curvas de nivel.
 
