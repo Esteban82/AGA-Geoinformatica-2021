@@ -1,11 +1,14 @@
 #!/usr/bin/env bash
 clear
 
-#   1. Hacer mapas a partir de DEM. Agregar curvas de nivel.
+#	Temas a ver
+#   1. Hacer mapas a partir de DEM. 
+#	2. Agregar efecto de sombreado (-I)
+#	3. Dibujar y personalizar barra de color.
 
 #	Definir variables del mapa
 #	-----------------------------------------------------------------------------------------------------------
-#	Titulo rm mapa
+#	Titulo del mapa
 	title=08_Topografico
 	echo $title
 
@@ -58,3 +61,8 @@ clear
 #	-----------------------------------------------------------------------------------------------------------
 #	Cerrar el archivo
 gmt end
+
+#	Ejercicios Sugeridos
+#	1. Modificar region del mapa y la resolucion del mapa
+#	2. Modificar azimuth de la fuente de iluminuacion
+#	3. Probar las distintas opciones para la escala de color (lineas 43 a 52).
