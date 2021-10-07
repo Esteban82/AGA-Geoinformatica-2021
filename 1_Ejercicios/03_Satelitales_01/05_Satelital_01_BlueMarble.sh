@@ -3,6 +3,8 @@ clear
 
 #	Definir variables del mapa
 #	-----------------------------------------------------------------------------------------------------------
+	#RES=05m
+	#RES=01d
 	RES=05m
 
 #	Mosaicos de la NASA: BlackMarble (night) o BlueMarble (day)
@@ -25,16 +27,18 @@ clear
 #	PROJ=G-65/-30/90/15c
 #	PROJ=S-65/-30/90/15c
 #	PROJ=G-65/30/90/15c
+#	PROJ=M15c
 
 #	Region geografica del mapa (W/E/S/N) d=-180/180/-90/90 g=0/360/-90/90
-	REGION=d
+	#REGION=d
 #	REGION=-100/30/-90/20	
-	REGION=-110/30/-90/20
+	REGION=-110/30/-50/20
+	#REGION=AR
 
 #	Parametros por Defecto
 #	-----------------------------------------------------------------------------------------------------------
 #	Sub-seccion GMT
-	gmtset GMT_VERBOSE w
+	gmt set GMT_VERBOSE w
 
 #	Dibujar mapa
 #	-----------------------------------------------------------------------------------------------------------
@@ -61,6 +65,6 @@ gmt begin $title png
 gmt end show
 
 #	Ejercicios Sugeridos:
-# 	1. Probar cambiar la resolución de la imagen satelital
-#	2. Cambiar a la imagen de noche (black marble)
+# 	1. Probar cambiar la resolución de la imagen satelital.
+#	2. Cambiar a la imagen de noche (black marble).
 #	3. Cambiar la region geografica.
