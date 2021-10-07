@@ -64,7 +64,7 @@ gmt begin $title png
 
 #	Cursos y Cuerpos de Agua
 	gmt plot "IGN/areas_de_aguas_continentales_perenne.shp" -G$color
-#	gmt plot "IGN/lineas_de_aguas_continentales_perenne.shp" -Wfaint,blue  # Descargar archivo desde el IGN
+	gmt plot "IGN/lineas_de_aguas_continentales_perenne.shp" -Wfaint,blue  # Descargar archivo desde el IGN
 
 #	Limites Interprovincial
 	gmt plot "IGN/linea_de_limite_070111.shp" -Wthinner,black,-.
