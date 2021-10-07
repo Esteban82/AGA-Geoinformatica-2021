@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 clear
 
-#	Temas: vista en perspectiva. Usar otros CPT. Curvas de nivel.
+#	Temas a ver: 
+#	1. Vista en perspectiva.
+#	2. Usar otros CPT.
+#	3. Crear grilla para sombreado
+#	4. Curvas de nivel.
 
 #	Definir variables del mapa
 #	-----------------------------------------------------------------------------------------------------------
@@ -26,6 +30,7 @@ clear
 	CUT=tmp_$title.nc
 	SHADOW=tmp_$title-shadow.nc
 
+#	Grilla
 	GRD=@earth_relief_05m
 
 	gmt set GMT_VERBOSE w
@@ -33,7 +38,7 @@ clear
 #	Dibujar mapa
 #	-----------------------------------------------------------------------------------------------------------
 #	Iniciar sesion y tipo de figura
-	gmt begin $title png
+gmt begin $title png
 	
 #	Setear la region y proyeccion
 	gmt basemap -R$REGION -J$PROJ -B+n -p$p
