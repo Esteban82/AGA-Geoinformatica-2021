@@ -1,12 +1,13 @@
 #!/bin/bash
 
-#	Dibujar lineas y simbolos (nivel intermedio) y patrones.
-
+#	Temas a ver
+#	1. Dibujar lineas y simbolos (nivel intermedio) y patrones.
+#	2. Dibujar sismos y mecanismos focales
 
 #	Definir variables del mapa
 #	-----------------------------------------------------------------------------------------------------------
 #	Titulo del mapa
-	title=05_Tectonico
+	title=07_Tectonico
 	echo $title
 
 #	Region Geografica
@@ -69,7 +70,6 @@ gmt begin $title png
 
 #	Plotear datos originales (ver -h y -i)
 #	gmt plot "Sismos\query.csv" -W.1 -C -Scp -h1 -i2,1,3,4     
- 
 
 #	Dibujar Mecanismos Focales
 #	-----------------------------------------------------------------------------------------------------------
@@ -85,7 +85,7 @@ gmt begin $title png
 	gmt basemap -Lf-68/-62/-54/500k+l
 
 #	Dibujar frame (-B): Anotaciones (a), frame (f), grilla (g)
-	gmt basemap -Bxa8f4 -Bya4f2
+	gmt basemap -Bxaf -Byaf
 
 #	-----------------------------------------------------------------------------------------------------------
 #	Cerrar la sesion y mostrar archivo

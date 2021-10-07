@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 clear
 
+#	Temas a ver:
+#	1. Definir region del mapa a partir de una grilla/raster.
+#	2. Dibujar y personalizar norte geografico.
+#	3. Dibujar y personalizar escala.
+#	4. Dibujar y personalizar norte marco de la figura.
+
 #	Definir variables del mapa
 #	-----------------------------------------------------------------------------------------------------------
 #	Titulo del mapa
@@ -79,9 +85,9 @@ gmt begin $title png
 
 #	Dibujar frame (-B): Anotaciones (a), frame (f), grilla (g). Opcionalmete agregar valores.
 #	Ejes a dibujar. Mayuscula: eje y unidades. Minuscula: eje. Sin letra: no dibuja el eje (para graficos XY).
-	gmt basemap -BWesN -Baf  
-#	gmt basemap -BWesN -Bafg 
-#	gmt basemap -BWesN -Byaf  
+	gmt basemap -BWesN -Baf
+#	gmt basemap -BWesN -Bafg
+#	gmt basemap -BWesN -Byaf
 #	gmt basemap -BWesN -Bxafg -Byaf  
 #	gmt basemap -BWesN -Bxa1f0.5g0.25 -Byaf
 

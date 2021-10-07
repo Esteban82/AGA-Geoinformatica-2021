@@ -4,8 +4,8 @@
 title=TierraGirando
 
 #	Archivo con lista de Valores que se usaran para el script principal 
-	gmt math -T0/359/1 -o1 T = "tmp_time.txt"		# Rotación Inversa
-#	gmt math -T0/359/1 -o1 T -I = "tmp_time.txt"		# Rotación Normal
+	gmt math -T0/359/1 -o1 T = "tmp_time.txt"				# Rotación Inversa
+#	gmt math -T0/359/1 -o1 T -I = "tmp_time.txt"			# Rotación Normal
 #	gmt math -T0/359/1 -o1 T -65 ADD -I = "tmp_time.txt"	# Rotación Normal empezando en meridiano -65
 	
 #	Movie: Crear figuras y animacion
@@ -18,7 +18,7 @@ title=TierraGirando
 #	Apagar (-s) o Hibernar (/h) PC
 #	Linux
 #	shutdown -h # apagar
-#systemctl suspend  #suspender
+#	systemctl suspend  #suspender
 
 ##  Windows 
 #	shutdown -h # Hibernar

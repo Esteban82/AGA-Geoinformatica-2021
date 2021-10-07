@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 clear
 
-#   	Hacer mapas a partir de DEM. Agregar curvas de nivel.
+#   1. Hacer mapas a partir de DEM. Agregar curvas de nivel.
 
 #	Definir variables del mapa
 #	-----------------------------------------------------------------------------------------------------------
@@ -44,7 +44,7 @@ clear
 #	gmt colorbar -DJRM+o0.3c/0+w11/0.618c -I -Ba2000f500
 #	gmt colorbar -DJRM+o0.3c/0+w11/0.618c -I -Ba2000f500 -Bx+l"Elevaciones (m)"
 #	gmt colorbar -DJRM+o0.3c/0+w11/0.618c -I -Ba2000f500 -By+l"m"
-#    	gmt colorbar -DJRM+o0.3c/0+w11/0.618c -I -Baf -By+l"km" -W0.001
+# 	gmt colorbar -DJRM+o0.3c/0+w11/0.618c -I -Baf -By+l"km" -W0.001
 #	gmt colorbar -DjRM -I -Baf -By+l"km" -W0.001 -F+gwhite+p+i+s
 	gmt colorbar -DjRM -I -Baf -By+l"km" -W0.001 -F+gwhite+p+i+s -GNaN/0
 
