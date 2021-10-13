@@ -9,7 +9,7 @@ clear
 #	Definir variables del mapa
 #	-----------------------------------------------------------------------------------------------------------
 #	Titulo del mapa
-	title=08_Topografico
+	title=07_Topografico
 	echo $title
 
 #	Region: Argentina
