@@ -20,8 +20,11 @@ clear
 #	Proyeccion Mercator (M)
 	PROJ=M15c
 
+#	Resoluciones grillas: 01d, 30m, 20m, 15m, 10m, 06m, 05m, 04m, 03m, 02m, 01m, 30s, 15s, 03s, 01s.
+	RES=05m
+
 #	Fuente a utilizar
-	GRD=@earth_relief_03m
+	GRD=@earth_relief_$RES
 
 #	Dibujar mapa
 #	-----------------------------------------------------------------------------------------------------------
@@ -64,5 +67,5 @@ gmt end
 
 #	Ejercicios Sugeridos
 #	1. Modificar region del mapa y la resolucion del mapa
-#	2. Modificar azimuth de la fuente de iluminuacion
-#	3. Probar las distintas opciones para la escala de color (lineas 43 a 52).
+#	2. Modificar azimuth de la fuente de iluminuacion (az en linea 43)
+#	3. Probar las distintas opciones para la escala de color (lineas 45 a 55).
