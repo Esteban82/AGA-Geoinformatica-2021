@@ -33,14 +33,14 @@ clear
 	gmt set	FONT_ANNOT_PRIMARY 8p,Helvetica,Black
 
 #	Sub-seccion FORMATO
-	gmt set FORMAT_GEO_MAP ddd.xxxG
-	gmt set FORMAT_GEO_MAP ddd.xxxF
-	gmt set FORMAT_GEO_MAP ddd:mm:ss
+#	gmt set FORMAT_GEO_MAP ddd.xxxG
+#	gmt set FORMAT_GEO_MAP ddd.xxxF
+#	gmt set FORMAT_GEO_MAP ddd:mm:ss
 	gmt set FORMAT_GEO_MAP ddd:mm:ssF
 
 #	Sub-seccion MAPA
-	gmt set MAP_FRAME_TYPE inside
-	gmt set MAP_FRAME_TYPE fancy+
+#	gmt set MAP_FRAME_TYPE inside
+#	gmt set MAP_FRAME_TYPE fancy+
 	gmt set MAP_FRAME_TYPE fancy
 
 #	Dibujar mapa
@@ -99,18 +99,18 @@ rm gmt.conf
 
 #	-----------------------------------------------------------------------------------------------------------
 #	Ejercicios Sugeridos:
-#	Especificar tipo de letra (lineas 24-26).
-#	1. Norte Geografico (linea 58).
-#	1.1. Ver los nortes geograficos que resultan de las distintans combinaciones de: +f(1,2,3), +l y +lO,E,S,N. (lineas 59 a 62).
-#	1.2. Las letras de las coordenas estan definidos por FONT_TITLE. Cambiar los parametros que definen el estilo de letra (tamaño, tipo de letra, color).
+#	1. Especificar tipo de letra (lineas 31-33).
+#
+#	2. Norte Geografico (lineas 65-72).
+#	2.1. Ver los nortes geograficos que resultan de las distintans combinaciones de: +f(1,2,3), +l y +lO,E,S,N. (lineas 66 a 68).
+#	2.2. Las letras de las coordenas estan definidos por FONT_TITLE. Cambiar los parametros que definen el estilo de letra (tamaño, tipo de letra, color).
 #	2.3. Agregar un fondo blanco (-Ft).
-#	1. Escala grafica (linea 67).
-#	1.1. Ver las escalas que resultan de la combinacion de +f, +l y +u (lineas 69 a 72).
-#	1.2. Ver como cambian los recuadros de la escala con -Fl (lineas 73 a 77).
+#
+#	3. Escala grafica (lineas 74-84).
+#	3.1. Ver las escalas que resultan de la combinacion de +f, +l y +u (lineas 76 a 79).
+#	3.2. Ver como cambian los recuadros de la escala con -Fl (lineas 80 a 84).
 
-#	3. Marco del Mapa (linea 79)
-#	3.1. Ver los marcos que resultan de las distintas combinaciones de: afg (lineas 80 a 84).
-#	3.2. Ver como cambian las coordenadas geograficas (del marco) segun FORMAT_GEO_MAP (lineas 29 a 32)
-#	3.3. Ver como cambian los ejes al editar MAP_FRAME_AXES (lineas 39 a 41).
-
-#	4. Crear mapa georefernciado (GEOTIFF). Agregar -W (linea 93) y gmt set MAP_FRAME_TYPE inside (35) 
+#	4. Marco del Mapa (lineas 86-92)
+#	4.1. Ver los marcos que resultan de las distintas combinaciones de: afg (lineas 88 a 92).
+#	4.2. Ver como cambian las coordenadas geograficas (del marco) segun FORMAT_GEO_MAP (lineas 36-39)
+#	4.3. Ver como cambian los ejes al editar MAP_FRAME_AXES (-BWesN; lineas 88 a 92).

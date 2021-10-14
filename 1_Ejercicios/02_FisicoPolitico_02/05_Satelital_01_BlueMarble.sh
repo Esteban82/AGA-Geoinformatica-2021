@@ -12,7 +12,7 @@ clear
 #	daytime=night
 
 #	Titulo del mapa
-	title=EJ2.4_Marble_${daytime}_$RES
+	title=05_Satelital_01_BlueMarble_${daytime}_$RES
 	echo $title
 
 #	Mapamundis. Mollweide (M), Robinson (N), Eckert VI (Ks)
@@ -63,6 +63,8 @@ gmt begin $title png
 #	-----------------------------------------------------------------------------------------------------------
 #	Cerrar la sesion y mostrar archivo
 gmt end show
+
+rm gmt.*
 
 #	Ejercicios Sugeridos:
 # 	1. Probar cambiar la resolución de la imagen satelital.
