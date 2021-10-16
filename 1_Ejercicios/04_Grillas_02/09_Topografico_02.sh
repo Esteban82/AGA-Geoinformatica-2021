@@ -4,7 +4,7 @@ clear
 #	Temas a ver: 
 #	1. Vista en perspectiva.
 #	2. Usar otros paletas de colores (CPT).
-#	3. Crear grilla para sombreado
+#	3. Crear grilla para sombreado.
 #	4. Curvas de nivel.
 
 #	Definir variables del mapa
@@ -47,12 +47,12 @@ gmt begin $title png
 #	gmt grdcut $GRD -G$CUT -R$REGION
 
 #	Extraer informacion de la grilla recortada para determinar rango de CPT
-	#gmt grdinfo $CUT
-	#gmt grdinfo $CUT -T50
+#	gmt grdinfo $CUT
+#	gmt grdinfo $CUT -T50
 
 #	Crear Paleta de Colores. Paleta Maestra (-C), Definir rango (-Tmin/max/intervalo), CPT continuo (-Z)
 #	gmt makecpt -Cdem4 -T0/7000/250
-	#gmt makecpt -Cdem4 -T0/7000
+#	gmt makecpt -Cdem4 -T0/7000
 #	gmt makecpt -Cdem4 -T0/7000 -Z -A50
 #	gmt makecpt -Cdem4
 
@@ -64,7 +64,7 @@ gmt begin $title png
 #	gmt grdimage -p $GRD -I -Cglobe
 #	gmt grdimage -p $GRD -I -Cetopo1
 #	gmt grdimage -p $GRD -I -Coleron
-	gmt grdimage -p $GRD -I -Crelief
+#	gmt grdimage -p $GRD -I -Crelief
 
 #	gmt grdimage -p $CUT -C -I$shadow
 #	gmt grdimage -p $GRD -C -I+a270+nt1
