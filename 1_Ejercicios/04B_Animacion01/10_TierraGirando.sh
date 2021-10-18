@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 
+#	Temas a ver: 
+#	1. Crear animaciones basicas.
+#	2. Crear listar de valores.
+
 #	Titulo de la animación
-title=TierraGirando
+title=10_TierraGirando
 
 #	Archivo con lista de Valores que se usaran para el script principal 
 	gmt math -T0/359/1 -o1 T = "tmp_time.txt"				# Rotación Inversa
@@ -22,3 +26,9 @@ title=TierraGirando
 
 ##  Windows 
 #	shutdown -h # Hibernar
+
+#	-----------------------------------------------------------------------------------------------------------
+#	Ejercicios Sugeridos:
+#	1. Cambiar la velocidad de la animación (-D24).
+#	2. Probar crear las animaciones con las distintas listas de archivos (lineas 11 a 13).
+#	3. Crear una nueva la lista de valores.
