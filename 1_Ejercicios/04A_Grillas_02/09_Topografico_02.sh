@@ -3,7 +3,7 @@ clear
 
 #	Temas a ver: 
 #	1. Vista en perspectiva.
-#	2. Usar otros paletas de colores (CPT).
+#	2. Usar otros paletas de colores maestras (CPT).
 #	3. Crear grilla para sombreado.
 #	4. Curvas de nivel.
 
@@ -43,31 +43,25 @@ gmt begin $title png
 #	Setear la region y proyeccion
 	gmt basemap -R$REGION -J$PROJ -B+n -p$p
 
-#	Recortar Grilla
-#	gmt grdcut $GRD -G$CUT -R$REGION
-
-#	Extraer informacion de la grilla recortada para determinar rango de CPT
-#	gmt grdinfo $CUT
-#	gmt grdinfo $CUT -T50
-
-#	Crear Paleta de Colores. Paleta Maestra (-C), Definir rango (-Tmin/max/intervalo), transparencia (-A).
-#	gmt makecpt -Cdem4 -T0/7000/250
-#	gmt makecpt -Cdem4 -T0/7000
-#	gmt makecpt -Cdem4 -T0/7000 -Z -A50
-#	gmt makecpt -Cdem4
-
-#	Crear Grilla de Pendientes para Sombreado (Hill-shaded). Definir azimuth rm sol (-A)
-#	gmt grdgradient $CUT -A270 -G$shadow -Nt0.8
-
-#	Crear Imagen a partir de grilla con sombreado y cpt
+#	Crear Imagen a partir de grilla con sombreado y diferentes cpt maestros
 	gmt grdimage -p $GRD
 #	gmt grdimage -p $GRD -I -Cglobe
 #	gmt grdimage -p $GRD -I -Cetopo1
 #	gmt grdimage -p $GRD -I -Coleron
 #	gmt grdimage -p $GRD -I -Crelief
 
-#	gmt grdimage -p $CUT -C -I$shadow
-#	gmt grdimage -p $GRD -C -I+a270+nt1
+#	Crear image a partir de grilla con sombreado personalizado
+#	----------------------------------------------------------
+#	Recortar Grilla
+#	gmt grdcut $GRD -G$CUT -R$REGION
+
+#	Crear Grilla de Pendientes para Sombreado (Hill-shaded). Definir azimuth rm sol (-A)
+#	gmt grdgradient $CUT -A270 -G$shadow -Nt0.8
+#	gmt grdgradient $CUT -A270/45 -G$shadow -Nt0.8
+
+#	gmt grdimage -p $GRD -I+a270+nt1
+#	gmt grdimage -p $CUT -I$shadow
+#	----------------------------------------------------------
 
 #	Agregar escala de colores a partir de CPT (-C). Posición (x,y) +wlargo/ancho. Anotaciones (-Ba). Leyenda (+l). 
 	gmt colorbar -DJRM+o0.3c/0+w11/0.618c -C -p -Ba1+l"Elevaciones (km)" -I -W0.001 #-Bx+l"m"
@@ -99,15 +93,8 @@ gmt begin $title png
 #	-----------------------------------------------------------------------------------------------------------
 #
 #	Ejercicios Sugeridos:
-#	Ejercicios con paleta de Colores (CPT, líneas 54-57).
-#	1A. Utilizar otros cpt maestro (probar lineas 64-67).
-#	1B. Utilizar otros rangos de valores (modificar minimo y maximo).
-#	1C. Probar con rangos discretos y continuos (agregar/quitar el intervalo de valores en las lineas 54-56)
-#
-#	Efecto Sombreado
-#	2. Modificar el acimut del sol y agregar otro (70-73).
-
-#	Curvas de nivel
-#	3. Probar los otros comandos (lineas 76-84).
-
-#	4. Hacer el mapa con la perspectiva de la línea 26. Probar con otras.
+#	1. Utilizar otros cpt maestros (probar lineas 64-67). Ver en documentacion otros.
+#	2. Modificar el acimut del sol para el efecto de sombreado y agregar otro (59-60).
+#	3. Probar los distintos comandos para crear curvas de nivel (lineas 70 a 78)	
+#	4. Definir curvas de nivel con un intervalo diferente (lineas 76-84).
+#	5. Hacer el mapa con la perspectiva de la línea 26. Probar con otras.
