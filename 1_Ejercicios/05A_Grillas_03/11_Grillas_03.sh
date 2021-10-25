@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 clear
 
+#	Temas a ver: 
+#	1. Definir resolucion de archivo de salida (DPI).
+#	2. Extraer informacion de grillas.
+#	3. Combinar CPT.
+
 #	Definir variables del mapa
 #	-----------------------------------------------------------------------------------------------------------
 #	Titulo del mapa
@@ -10,10 +15,8 @@ clear
 #	Grilla 
 	GRD=@earth_relief_03m
 
-#	Region: Argentina
+#	Region y proyeccion geografica
 	REGION=CO,AR,BR
-	
-#	Proyeccion Mercator (M)
 	PROJ=M15c
 
 # 	Archivos temporales
@@ -21,7 +24,6 @@ clear
 	SHADOW=temp_$title-shadow.nc
 	color=temp_$title.cpt
 
-	gmt set MAP_FRAME_AXES WesN
 	gmt set GMT_VERBOSE w
 
 #	Dibujar mapa
@@ -98,10 +100,14 @@ clear
 	gmt basemap -Bxaf -Byaf
 
 #	Dibujar Linea de Costa (W1)
-	gmt coast -Df -W1/faint
+	gmt coast -Da -W1/faint
 
 #	-----------------------------------------------------------------------------------------------------------
 #	Cerrar el archivo de salida (ps)
 gmt end
 
 	rm temp_* gmt.* $top
+
+#	Ejercicios Sugeridos
+#	1. Cambiar la resolución del mapa creado.
+#	2. 

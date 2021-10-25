@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 clear
 
+#	Temas a ver:
+#	1. Crear bloques 3D.
+
 #	Definir Variables del mapa
 #	-----------------------------------------------------------------------------------------------------------
 #	Titulo del mapa
@@ -16,11 +19,11 @@ clear
 #	Proyeccion Mercator (M)
 	PROJ=M14c
 	PROZ=4c
-	persp=160/30
+	p=160/30
 
 #	Grilla 
-	GRD=@earth_relief_30s
-#	GRD=@earth_relief_15s
+#	GRD=@earth_relief_30s
+	GRD=@earth_relief_15s
 #	GRD=@earth_relief_03s
 
 # 	Nombre archivo de salida y Variables Temporales
@@ -29,22 +32,11 @@ clear
 
 #	Parametros Generales
 #	-----------------------------------------------------------------------------------------------------------
-#	Sub-seccion FUENTE
-	gmt set FONT_ANNOT_PRIMARY 8,Helvetica,black
-	gmt set FONT_LABEL 8,Helvetica,black
-
 #	Sub-seccion FORMATO
 	gmt set FORMAT_GEO_MAP ddd:mm:ssF
 
 #	Sub-seccion GMT
 	gmt set GMT_VERBOSE w
-
-#	Sub-seccion MAPA
-	gmt set MAP_FRAME_TYPE fancy
-	gmt set MAP_FRAME_WIDTH 0.1
-	gmt set MAP_GRID_CROSS_SIZE_PRIMARY 0
-	gmt set MAP_SCALE_HEIGHT 0.1618
-	gmt set MAP_TICK_LENGTH_PRIMARY 0.1
 
 #	Dibujar mapa
 #	-----------------------------------------------------------------------------------------------------------
@@ -66,16 +58,14 @@ gmt begin $title png
 #	Dibujar Figura
 #	--------------------------------------------------------------------------------------------------------
 #	Bloque 3D. 
-#	gmt grdview $CUT -R$REGION3D -J$PROJ -JZ$PROZ -p$persp -I$SHADOW -C -Qi
-#	gmt grdview $CUT -R$REGION3D -J$PROJ -JZ$PROZ -p$persp -I$SHADOW -C -Qi -Wf0.5 -N$BASE
-#	gmt grdview $CUT -R$REGION3D -J$PROJ -JZ$PROZ -p$persp -I$SHADOW -C -Qi -Wf0.5 -N$BASE+glightgray
-	gmt grdview $CUT -R$REGION3D -J$PROJ -JZ$PROZ -p$persp -I$SHADOW -C -Qi -Wf0.5 -N$BASE+glightgray -BnSwEZ -Baf -Bzaf+l"Altura (m)"
+	gmt grdview $CUT -R$REGION3D -J$PROJ -JZ$PROZ -p$p -I$SHADOW -C -Qi300
+#	gmt grdview $CUT -R$REGION3D -J$PROJ -JZ$PROZ -p$p -I$SHADOW -C -Qi -Wf0.5 -N$BASE
+#	gmt grdview $CUT -R$REGION3D -J$PROJ -JZ$PROZ -p$p -I$SHADOW -C -Qi -Wf0.5 -N$BASE+glightgray
+#	gmt grdview $CUT -R$REGION3D -J$PROJ -JZ$PROZ -p$p -I$SHADOW -C -Qi -Wf0.5 -N$BASE+glightgray -BnSwEZ -Baf -Bzaf+l"Altura (m)"
 
 #	Pintar Oceanos (-S) y Lineas de Costa
-	gmt coast -p$persp/0 -Df -Sdodgerblue2 -A0/0/1 
-	gmt coast -p$persp/0 -Df -W1/0.3,black 
-
-	gmt basemap $CUT -R$REGION3D -J$PROJ -JZ$PROZ -p$persp -B+n -Vi
+	gmt coast -p$p/0 -Da -Sdodgerblue2 -A0/0/1 
+	gmt coast -p$p/0 -Da -W1/0.3,black 
 
 #	-----------------------------------------------------------------------------------------------------------
 #	Cerrar el archivo de salida (ps)
@@ -83,3 +73,7 @@ gmt end
 
 #	Borrar archivos temporales
 	rm tmp_* gmt*
+
+#	Ejercicios sugeridos
+
+
