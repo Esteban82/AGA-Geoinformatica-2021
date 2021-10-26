@@ -9,7 +9,7 @@ clear
 #	Definir variables del mapa
 #	-----------------------------------------------------------------------------------------------------------
 #	Titulo del mapa
-	title=09_Grillas_03
+	title=11_Grillas_03
 	echo $title
 
 #	Grilla 
@@ -28,8 +28,9 @@ clear
 
 #	Dibujar mapa
 #	-----------------------------------------------------------------------------------------------------------
-#	Iniciar sesion y tipo de figura
-	gmt begin $title png E300
+#	Iniciar sesion y tipo de figura.
+#	E: Resolucion mapa (en dpi)
+	gmt begin $title png E300 
 
 #	Setear la region y proyeccion
 	gmt basemap -R$REGION -J$PROJ -B+n
@@ -39,8 +40,8 @@ clear
 
 #	Extraer informacion de la grilla recortada para determinar rango de CPT
 	#gmt grdinfo $CUT
-	gmt grdinfo $CUT -Cn
 	gmt grdinfo $CUT -T50
+	gmt grdinfo $CUT -Cn
 	gmt grdinfo $CUT -Cn -T50 -o4
 	gmt grdinfo $CUT -Cn -o5
 
@@ -109,5 +110,5 @@ gmt end
 	rm temp_* gmt.* $top
 
 #	Ejercicios Sugeridos
-#	1. Cambiar la resolución del mapa creado.
+#	1. Cambiar la resolución de la imagen a 200 dpi (E200).
 #	2. 

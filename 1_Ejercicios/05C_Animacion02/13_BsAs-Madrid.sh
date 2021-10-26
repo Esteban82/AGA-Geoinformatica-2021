@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 #	Titulo de la animación
-	title=12_BsAs-Madrid
+	title=13_BsAs-Madrid
 
 #	Lista de Valores: Archivo con los valores que se usaran para el script principal 
 	gmt project -C-58.5258/-34.8553 -E-3.56083/40.47222 -Q -G50 > "tmp_time.txt"

@@ -45,8 +45,6 @@ gmt begin $title png
 #	Obterner Informacion de la grilla para crear paleta de colores (makecpt)
 	gmt grdinfo $CUT
 #	gmt grdinfo $CUT -T2
-#	min=`gmt grdinfo $CUT -Cn -o4`
-#	max=`gmt grdinfo $CUT -Cn -o5`
 #	gmt grdinfo $CUT -T 
 #	gmt grdinfo $CUT -T+a0.5
 #	gmt grdinfo $CUT -T+a5
@@ -55,8 +53,8 @@ gmt begin $title png
 #	echo $T
 
 #	Crear Paleta de Colores. Paleta Maestra (-C), Definir rango (-Tmin/max/intervalo).
-#	gmt makecpt -Crainbow -T0/30/2 -I -D
-	gmt makecpt -Crainbow $T -I
+#	gmt makecpt -Crainbow -I -T0/30/2 -D
+	gmt makecpt -Crainbow -I $T
 #	gmt makecpt -Crainbow -I -T0/$max
 #	gmt makecpt -Crainbow -I -D -T0/$max
 #	gmt makecpt -Crainbow -T6/30/2 -I
@@ -87,5 +85,4 @@ gmt end
 #	rm tmp_*
 
 #	Ejercicios sugeridos
-#	1. 
-#	2.
+#	1. Cambiar el valor máximo de la escala de colores  
