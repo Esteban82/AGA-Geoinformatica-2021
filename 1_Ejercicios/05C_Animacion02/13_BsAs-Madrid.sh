@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+#	Temas a ver
+#	1. Crear animaciones a partir de un unico script
+#	2. 
+
 #	Titulo de la animación
 	title=13_BsAs-Madrid
 
