@@ -88,63 +88,15 @@ gmt begin $title png
 #	Dibujar frame (-B): Anotaciones (a), frame (f), grilla (g)
 	gmt basemap -Bxaf -Byaf
 
-
 #	-----------------------------------------------------------------------------------------------------------
-#	Leyenda. H: Encabezado. D: Linea horizontal. N: # columnas verticales. V: Linea Vertical
-#
-	echo H 10 Times-Roman Leyenda del Mapa >> temp_legend
-
-	echo N 3 >> temp_legend
-	echo S 0.25c - 0.5c - 3.0p,red		0.75c Dorsal 				>> temp_legend
-	echo S 0.25c f+l+t 0.5c t 1.0p,green 	0.75c Subucci\363n 			>> temp_legend
-	echo S 0.25c f+l+s 0.5c s 1p,black  	0.75c L\355mite Transforme		>> temp_legend
-	echo G 0.075c >> temp_legend
-
-	echo S 0.25c c 0.25c red   0.40p 	0.5c Sismos someros (0-100 km)	 	>> temp_legend	
-	echo S 0.25c c 0.25c green 0.40p 	0.5c Sismos intermedios (100-300 km) 	>> temp_legend	
-	echo S 0.25c c 0.25c blue  0.40p 	0.5c Sismos profundos (300-700 km) 	>> temp_legend
-	echo G 0.075c >> temp_legend
-
-	echo N 4 >> temp_legend
-	echo S 0.25c r 0.5c p300/29  0.25p 	0.75c LIPS 		 >> temp_legend
-	echo S 0.25c r 0.5c purple4  0.25p 	0.75c Ofiolitas 	 >> temp_legend
-	echo S 0.25c - 0.5c - 1.0p,violet 	0.75c Zonas de Fracturas >> temp_legend
-	echo S 0.25c - 0.5c - 0.80p,orange	0.75c Dorsales Extintas  >> temp_legend	
-	echo G 0.075c >> temp_legend
-	
-	echo M -70 -57 500+u f 						 >> temp_legend
-	
- 	gmt pslegend -R -J -O -K "temp_legend" >> $OUT -Dx7.5/-0.2+w15/0+jTC -F+p+i+r 
-	
-#	Leyenda Auxiliar
-	echo H 10 Times-Roman  > "temp_legend"	
-	echo N 3 >> "temp_legend"
-	echo S 0.25c - 0.5c - 1.0p,white >> "temp_legend"
- 	gmt pslegend -R -J -O -K "temp_legend" >> $OUT  -Dx7.5/-0.2+w15/0+jTC
-
-#	-----------------------------------------------------------------------------------------------------------
-#	Mapa de Ubicacion (INSET)
-	gmt inset begin
-#	Recuadro debajo Mapa Inset
-	gmt psbasemap -R -J -O -K -DjTR+w3.81c+o0.381c/0.254c         -F+gwhite+p1p+c0.1c+s >> $OUT -V
-	pause
- 	
-#	Dibujar Mapa INSET
-	gmt pcoast -Rd -JG-49.5/-57.5/3.81c -O -K -W0.3p,black -B90 -Dc -Gblack -Swhite -X10.809c -Y1.98505c >> $OUT
-#	gmt pscoast -Rd -JG-49.5/-57.5/2.5c -O -K -W0.3p,black -B90 -Dc -Gblack -Swhite -X12.5c -Y5.0c >> $OUT
-
-
-#	Crear y Dibujar Recuadro de zona de estudio
-#		REGION=-79/-20/-63/-50
-	echo -79 -63 >> "temp_Recuadro"
-	echo -79 -50 >> "temp_Recuadro"
-	echo -20 -50 >> "temp_Recuadro"
-	echo -20 -63 >> "temp_Recuadro"
-
-	gmt psxy "temp_Recuadro" -R -J -Ap -W0.45p,red -O -L -K >> $OUT
+#	Mapa de Ubicacion (INSET) 
+	gmt inset begin -DjTL+w3.5c+o-0.08c # -F+gwhite
+		gmt coast -Rg -JG-68.025/-32.01/? -Gwhite -Sdodgerblue2 -C-
+		gmt coast -Bg -W1/faint -N1
+		gmt basemap -R$REGION -J$PROJ -A | gmt plot -Wthin,darkred 
 	gmt inset end
 
-#	-----------------------------------------------------------------------------------------------------------
+#   ----------------------------------------------------------------------------------
 #	Cerrar la sesion y mostrar archivo
 	gmt end
 
