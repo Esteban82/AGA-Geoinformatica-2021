@@ -3,7 +3,7 @@ clear
 
 #	Temas a ver: 
 #	1. Definir resolucion de archivo de salida (DPI).
-#	2. Extraer informacion de grillas.
+#	2. Extraer informacion de grillas y crear una variable.
 #	3. Combinar CPT.
 
 #	Definir variables del mapa
@@ -39,11 +39,11 @@ clear
 	gmt grdcut $GRD -G$CUT -R$REGION
 
 #	Extraer informacion de la grilla recortada para determinar rango de CPT
-	#gmt grdinfo $CUT
-	gmt grdinfo $CUT -T50
-	gmt grdinfo $CUT -Cn
-	gmt grdinfo $CUT -Cn -T50 -o4
-	gmt grdinfo $CUT -Cn -o5
+	gmt grdinfo $CUT
+	#gmt grdinfo $CUT -T50
+	#gmt grdinfo $CUT -Cn
+	#gmt grdinfo $CUT -Cn -T50 -o4
+	#gmt grdinfo $CUT -Cn -o5
 
 #	Crear variables con los valores minimo y maximo 
 	min=`gmt grdinfo $CUT -Cn -o4`
@@ -58,8 +58,8 @@ clear
 #	gmt makecpt -Cdem2  -T0/$max    -H >> $color
 
 #	Combinacion 2
-#	gmt makecpt -Cibcso      -T-8400/0/10 -Z -N >  $color
-#	gmt makecpt -Celevation  -T0/6050/50  -Z    >> $color
+#	gmt makecpt -Cibcso      -T-8400/0/10 -Z -N -H >  $color
+#	gmt makecpt -Celevation  -T0/6050/50  -Z    -H >> $color
 
 #	Combinacion 3
 #	gmt makecpt -Cbathy -T$min/0 -N -H >  $color

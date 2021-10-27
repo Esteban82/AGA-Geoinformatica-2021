@@ -50,6 +50,7 @@ gmt begin $title png
 #	gmt grdinfo $CUT -T+a5
 	
 	T=$(gmt grdinfo $CUT -T)
+	max=`gmt grdinfo $CUT -Cn -o5`
 #	echo $T
 
 #	Crear Paleta de Colores. Paleta Maestra (-C), Definir rango (-Tmin/max/intervalo).
@@ -85,4 +86,4 @@ gmt end
 #	rm tmp_*
 
 #	Ejercicios sugeridos
-#	1. Cambiar el valor máximo de la escala de colores  
+#	1. Cambiar el valor máximo de la escala de colores.
