@@ -2,7 +2,7 @@
 
 #	Temas a ver
 #	1. Procesar grillas (calcular mapa de pendientes)
-#	2.
+#	2. Obtener informacion de la grilla y crear variables.
 
 #	Definir variables del mapa
 #	-----------------------------------------------------------------------------------------------------------
@@ -44,10 +44,10 @@ gmt begin $title png
 
 #	Obterner Informacion de la grilla para crear paleta de colores (makecpt)
 	gmt grdinfo $CUT
-	gmt grdinfo $CUT -T2
-	gmt grdinfo $CUT -T 
-	gmt grdinfo $CUT -T+a0.5
-	gmt grdinfo $CUT -T+a5
+#	gmt grdinfo $CUT -T2
+#	gmt grdinfo $CUT -T 
+#	gmt grdinfo $CUT -T+a0.5
+#	gmt grdinfo $CUT -T+a5
 	
 #	Crear variables con los valores minimo y maximo 
 	T=$(gmt grdinfo $CUT -T)
@@ -62,8 +62,8 @@ gmt begin $title png
 #	gmt makecpt -Crainbow -T6/30/2 -I
 
 #	Crear Imagen a partir de grilla con sombreado
-#	gmt grdimage $CUT -C -I+a270+nt1
-	gmt grdimage $CUT -C
+#	gmt grdimage $CUT -I+a270+nt1
+	gmt grdimage $CUT 
 
 #	Agregar escala de color. Posición (x,y) +wlargo/ancho. Anotaciones (-Ba). Leyenda (+l). 
 	gmt colorbar -Dx15.5/0+w10.5/0.618c+ef -C -Ba+l"Inclinaci\363n pendiente (@.)"   # en grados
