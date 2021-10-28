@@ -40,10 +40,10 @@ clear
 
 #	Extraer informacion de la grilla recortada para determinar rango de CPT
 	gmt grdinfo $CUT
-	#gmt grdinfo $CUT -T50
-	#gmt grdinfo $CUT -Cn
-	#gmt grdinfo $CUT -Cn -T50 -o4
-	#gmt grdinfo $CUT -Cn -o5
+#	gmt grdinfo $CUT -T50
+#	gmt grdinfo $CUT -Cn
+#	gmt grdinfo $CUT -Cn -T50 -o4
+#	gmt grdinfo $CUT -Cn -o5
 
 #	Crear variables con los valores minimo y maximo 
 	min=`gmt grdinfo $CUT -Cn -o4`
@@ -58,8 +58,8 @@ clear
 #	gmt makecpt -Cdem2  -T0/$max    -H >> $color
 
 #	Combinacion 2
-#	gmt makecpt -Cibcso      -T-8400/0/10 -Z -N -H >  $color
-#	gmt makecpt -Celevation  -T0/6050/50  -Z    -H >> $color
+#	gmt makecpt -Cibcso      -T$min/0 -N -H >  $color
+#	gmt makecpt -Celevation  -T0/$max    -H >> $color
 
 #	Combinacion 3
 #	gmt makecpt -Cbathy -T$min/0 -N -H >  $color
@@ -81,7 +81,8 @@ clear
 #	Link para cpt de topografia: http://soliton.vm.bytemark.co.uk/pub/cpt-city/views/topo.html
 	URL="http://soliton.vm.bytemark.co.uk/pub/cpt-city/esri/hypsometry/eu/europe_3.cpt"
 #	URL="http://soliton.vm.bytemark.co.uk/pub/cpt-city/wkp/schwarzwald/wiki-schwarzwald-cont.cpt"
-#	gmt which -G $URL 		#Descarga el archivo y lo guarda con el nombre original
+#	URL="" # Agregar URL de otro CPT
+	gmt which -G $URL 		#Descarga el archivo y lo guarda con el nombre original
 	top=$(gmt which -G $URL)	#Idem y guarda el nombre en la variable %top  
 
 	gmt makecpt -Coslo -T$min/0 -N -H >  $color
@@ -111,4 +112,5 @@ gmt end
 
 #	Ejercicios Sugeridos
 #	1. Cambiar la resolución de la imagen a 200 dpi (E200).
-#	2. 
+#	2. Probar las distintas combinaciones de CPT (lineas 53 a 78)
+#	3. Probar usando otra CPT del sitio cpt-city (agregar URL en linea 84).

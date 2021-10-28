@@ -21,7 +21,7 @@ clear
 	PROZ=4c				# variable para escala vertical
 	p=160/30
 
-#	Grilla 
+#	Grilla
 #	GRD=@earth_relief_30s
 	GRD=@earth_relief_15s
 #	GRD=@earth_relief_03s
@@ -78,3 +78,4 @@ gmt end
 #	1. Modificar la perspectiva (variable %p)
 #	2. Modificar la escala vertical (PROZ en linea 21)
 #	3. Modificar los valores minimos y maximos del bloque 3D (variables BASE y TOP en lineas 15 y 16).
+#	4. Modificar la region geográfica del bloque 3D (variable REGION en linea 14).
