@@ -7,18 +7,18 @@ clear
 #	Definir Variables del mapa
 #	-----------------------------------------------------------------------------------------------------------
 #	Titulo del mapa
-	title=Bloque3D
+	title=13_Bloque3D
 	echo $title
 
 #	Region: Cuyo
 	REGION=-72/-64/-35/-30
-	BASE=-10000
-	TOP=10000	
+	BASE=-10000			# en metros
+	TOP=10000			# en metros
 	REGION3D=$REGION/$BASE/$TOP
 
 #	Proyeccion Mercator (M)
 	PROJ=M14c
-	PROZ=4c
+	PROZ=4c				# variable para escala vertical
 	p=160/30
 
 #	Grilla 
@@ -46,10 +46,10 @@ gmt begin $title png
 #	Recortar Grilla
 	gmt grdcut $GRD -G$CUT -R$REGION
 
-#	Crear variables con valores minimo y maximo
+#	Crear variables con valor de altura maximo
 	max=`gmt grdinfo $CUT -Cn -o5`
 
-#	Crear Paleta de Color
+#	Crear Paleta de Color solo para topografia
 	gmt makecpt -Cdem4 -T0/$max
 
 #	Crear Grilla de Pendientes para Sombreado (Hill-shaded). Definir azimuth del sol (-A)
@@ -58,14 +58,14 @@ gmt begin $title png
 #	Dibujar Figura
 #	--------------------------------------------------------------------------------------------------------
 #	Bloque 3D. 
-	gmt grdview $CUT -R$REGION3D -J$PROJ -JZ$PROZ -p$p -I$SHADOW -C -Qi300
-#	gmt grdview $CUT -R$REGION3D -J$PROJ -JZ$PROZ -p$p -I$SHADOW -C -Qi -Wf0.5 -N$BASE
-#	gmt grdview $CUT -R$REGION3D -J$PROJ -JZ$PROZ -p$p -I$SHADOW -C -Qi -Wf0.5 -N$BASE+glightgray
-#	gmt grdview $CUT -R$REGION3D -J$PROJ -JZ$PROZ -p$p -I$SHADOW -C -Qi -Wf0.5 -N$BASE+glightgray -BnSwEZ -Baf -Bzaf+l"Altura (m)"
+#	gmt grdview $CUT -R$REGION3D -J$PROJ -JZ$PROZ -p$p -I$SHADOW -C -Qi300
+#	gmt grdview $CUT -R$REGION3D -J$PROJ -JZ$PROZ -p$p -I$SHADOW -C -Qi300 -Wf0.5 -N$BASE
+#	gmt grdview $CUT -R$REGION3D -J$PROJ -JZ$PROZ -p$p -I$SHADOW -C -Qi300 -Wf0.5 -N$BASE+glightgray
+	gmt grdview $CUT -R$REGION3D -J$PROJ -JZ$PROZ -p$p -I$SHADOW -C -Qi300 -Wf0.5 -N$BASE+glightgray -BnSwEZ -Baf -Bzaf+l"Altura (m)"
 
 #	Pintar Oceanos (-S) y Lineas de Costa
-	gmt coast -p$p/0 -Da -Sdodgerblue2 -A0/0/1 
-	gmt coast -p$p/0 -Da -W1/0.3,black 
+	gmt coast -p$p/0 -Da -Sdodgerblue2 -A0/0/1
+	gmt coast -p$p/0 -Da -W1/0.3,black
 
 #	-----------------------------------------------------------------------------------------------------------
 #	Cerrar el archivo de salida (ps)
@@ -75,5 +75,6 @@ gmt end
 	rm tmp_* gmt*
 
 #	Ejercicios sugeridos
-
-
+#	1. Modificar la perspectiva (variable %p)
+#	2. Modificar la escala vertical (PROZ en linea 21)
+#	3. Modificar los valores minimos y maximos del bloque 3D (variables BASE y TOP en lineas 15 y 16).
