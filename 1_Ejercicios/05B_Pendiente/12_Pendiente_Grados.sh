@@ -16,10 +16,10 @@
 #	Proyeccion Mercator (M)
 	PROJ=M15c
 
-#	Grilla 
+#	Grilla de entrada
 	GRD=@earth_relief_30s
 
-# 	Nombre archivo de salida
+# 	Archivos temporales
 	CUT=tmp_$title.nc
 
 #	Dibujar mapa

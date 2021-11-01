@@ -7,11 +7,12 @@
 #	Definir variables del mapa
 #	-----------------------------------------------------------------------------------------------------------
 #	Titulo del mapa
-	title=08_Tectonico
+	title=16_Tectonico_Inset
 	echo $title
 
 #	Region Geografica
 	REGION=-79/-20/-63/-50
+#	REGION=IN	# India 
 
 #	Proyeccion Cilindrica: (M)ercator
 	PROJ=M15c
@@ -23,6 +24,7 @@
 	gmt set	FONT_LABEL 10p,19,Black
 	gmt set	FONT_ANNOT_PRIMARY 8p,Helvetica,Black
 	gmt set	MAP_FRAME_AXES WesN
+	gmt set MAP_FRAME_PEN 0.3
 
 #	Dibujar mapa
 #	-----------------------------------------------------------------------------------------------------------
@@ -56,8 +58,9 @@ gmt begin $title png
 #	-----------------------------------------------------------------------------------------------------------
 #	Crear cpt para sismos someros (<100 km), intermedios (100 - 300 km) y profundos (> 300 km)
 #	gmt makecpt -Cred,green,blue,black -T0,100,300,600,1000
-	gmt makecpt -Crainbow -T0/700
-	gmt colorbar -DjBL+o0.2c+w-3c/0.5c
+	gmt makecpt -Cred,green,blue -T0,100,300,700
+#	gmt makecpt -Crainbow -T0/700
+#	gmt colorbar -DjBL+o0.2c+w-3c/0.5c
 
 #	Dibujar Sismos del USGS segun magnitud (-Scp), y color segun profundidad (-C). 
 #	-Scp: El tamaño del circulo corresponde a la magnitud medida en puntos tipograficos. 
@@ -82,25 +85,78 @@ gmt begin $title png
 	
 #	-----------------------------------------------------------------------------------------------------------
 #	Dibujar Escala en el mapa centrado en -Lg Lon0/Lat0, calculado en meridiano (+c), ancho (+w), elegante(+f), unidad arriba de escala (+l), unidad con los valores (+u)
-	#gmt basemap -Lf-68/-62/-54/500k+l
 	gmt basemap -Lg-68/-62+c-54+w500k+f+l
 
 #	Dibujar frame (-B): Anotaciones (a), frame (f), grilla (g)
 	gmt basemap -Bxaf -Byaf
 
+#	Dibujar leyenda
 #	-----------------------------------------------------------------------------------------------------------
-#	Mapa de Ubicacion (INSET) 
-	gmt inset begin -DjTL+w3.5c+o-0.08c # -F+gwhite
-		gmt coast -Rg -JG-68.025/-32.01/? -Gwhite -Sdodgerblue2 -C-
-		gmt coast -Bg -W1/faint -N1
-		gmt basemap -R$REGION -J$PROJ -A | gmt plot -Wthin,darkred 
+#	Crear archivo para hacer la leyenda
+#	Leyenda. H: Encabezado. D: Linea horizontal. N: # columnas verticales. V: Linea Vertical. S: Símbolo. M: Escala
+	cat > tmp_leyenda <<- END
+	H 10 Times-Roman Leyenda del Mapa
+	N 3
+	S 0.25c -     0.5c -     3.0p,red       0.75c Dorsal
+	S 0.25c f+l+t 0.5c green 1.0p,green     0.75c Subucci\363n
+	S 0.25c f+l+s 0.5c -     1p,black       0.75c L\355mite Transforme
+	G 0.075c
+	S 0.25c c 0.25c red   0.40p     0.5c Sismos someros (0-100 km)
+	S 0.25c c 0.25c green 0.40p     0.5c Sismos intermedios (100-300 km)
+	S 0.25c c 0.25c blue  0.40p     0.5c Sismos profundos (300-700 km)
+	G 0.075c
+	N 4
+	S 0.25c r 0.5c p300/29:BivoryFred3  0.25p    0.75c LIPS
+	S 0.25c r 0.5c purple4  0.25p    0.75c Ofiolitas
+	S 0.25c - 0.5c - 1.0p,violet     0.75c Zonas de Fracturas
+	S 0.25c - 0.5c - 0.80p,orange    0.75c Dorsales Extintas
+	G 0.075c
+	M -70 -57 500+u f
+	END
+
+#	Graficar leyenda
+	gmt legend tmp_leyenda -DJBC+o0/0.2c+w15c/0c    -F+p+i+r
+
+#	-----------------------------------------------------------------------------------------------------------
+#   Leyenda Auxiliar
+	cat > tmp_leyenda <<- END
+	H 10 Times-Roman 
+	N 3
+	S 0.25c - 0.5c - 1.0p,white 0.75c
+	END
+	#gmt legend tmp_leyenda -Dx7.5/-0.2+w15/0+jTC
+	gmt legend tmp_leyenda -DJBC+o0/0.2c+w15c/0c
+#	-------------------------------------------------
+
+#	-----------------------------------------------------------------------------------------------------------
+#	Mapa de Ubicacion (INSET)
+#	Crear archivo con recuadro de zona de estudio
+	gmt basemap -A > tmp_area
+
+#	Extraer coordenadas del centro del mapa	(CM) y crear variables
+	gmt mapproject -WjCM 
+	Lon=$(gmt mapproject -WjCM -o0)
+	Lat=$(gmt mapproject -WjCM -o1)
+
+#	Dibujar mapa de ubicacion
+#	w: tamaño. M: Margen. D: ubicacion
+	gmt inset begin -DjTL+w3.0c+o-0.3c
+#	gmt inset begin -DjTL+w3.0c+o-0.3c
+#	gmt inset begin -DjTL+w3.0c+o-0.3c -F+gwhite
+#	gmt inset begin -DjTL+w3.0c+o-0.3c -F+gwhite -M1p
+#	gmt inset begin -DjTL+w2.0c+o-0.3c
+#	gmt inset begin -DjTR+w3.0c+o-0.3c
+		gmt coast -Rg -JG-68.025/-32.01/? -Gwhite -Slightblue3 -C- -Bg
+		#gmt coast -Rg -JG$Lon/$Lat/? -Gwhite -Slightblue3 -C- -Bg
+		#gmt coast -W1/faint -N1
+		#gmt plot tmp_area -Wthin,darkred
 	gmt inset end
 
 #   ----------------------------------------------------------------------------------
 #	Cerrar la sesion y mostrar archivo
 	gmt end
 
-	rm gmt.conf
+	rm gmt.conf tmp_*
 #	-----------------------------------------------------------------------------------------------------------
 #
 #	Ejercicios Sugeridos:
