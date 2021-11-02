@@ -8,12 +8,12 @@ clear
 	echo $title
 
 #	Region Geografica, Proyeccion y perpectiva
-	REGION=-72/-64/-35/-31
+	REGION=-72/-64/-35/-30
 	PROJ=M15c
 	p=160/30
 
 #	Resolucion
-	RES=02m
+	RES=01m
 
 	gmt set MAP_FRAME_AXES WesN
 	gmt set GMT_VERBOSE w
