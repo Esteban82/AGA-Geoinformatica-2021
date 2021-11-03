@@ -6,7 +6,7 @@
 
 #	Variables del Mapa
 #	-----------------------------------------------------------------------------------------------------------
-	title=Cartesiano_XY
+	title=18_Grafico_Cartesiano_XY
 	echo $title
 
 #	Dominio de datos (Xmin/Xmax/Ymin/Ymax)
