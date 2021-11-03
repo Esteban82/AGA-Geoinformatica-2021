@@ -7,7 +7,7 @@
 #	Definir variables del mapa
 #	-----------------------------------------------------------------------------------------------------------
 #	Titulo del mapa
-	title=16_Tectonico_Inset
+	title=16_Inset_Leyenda
 	echo $title
 
 #	Region Geografica
@@ -141,15 +141,13 @@ gmt begin $title png
 #	Dibujar mapa de ubicacion
 #	w: tamaño. M: Margen. D: ubicacion
 	gmt inset begin -DjTL+w3.0c+o-0.3c
-#	gmt inset begin -DjTL+w3.0c+o-0.3c
 #	gmt inset begin -DjTL+w3.0c+o-0.3c -F+gwhite
 #	gmt inset begin -DjTL+w3.0c+o-0.3c -F+gwhite -M1p
 #	gmt inset begin -DjTL+w2.0c+o-0.3c
 #	gmt inset begin -DjTR+w3.0c+o-0.3c
-		gmt coast -Rg -JG-68.025/-32.01/? -Gwhite -Slightblue3 -C- -Bg
-		#gmt coast -Rg -JG$Lon/$Lat/? -Gwhite -Slightblue3 -C- -Bg
-		#gmt coast -W1/faint -N1
-		#gmt plot tmp_area -Wthin,darkred
+		gmt coast -Rg -JG$Lon/$Lat/? -Gwhite -Slightblue3 -C- -Bg
+		gmt coast -W1/faint -N1
+		gmt plot tmp_area -Wthin,darkred
 	gmt inset end
 
 #   ----------------------------------------------------------------------------------
@@ -160,4 +158,11 @@ gmt begin $title png
 #	-----------------------------------------------------------------------------------------------------------
 #
 #	Ejercicios Sugeridos:
-#	1. E
+#	1. Agregar elementos a la leyenda (ver links de interes)
+#	2. Ver otras opciones del mapa de ubicación (lineas 144 a 147, dejar solo una linea sin comentar).
+#	3. Modificar la posición y tamaño del mapa de ubicación.
+
+
+#	Links de interes
+#	https://docs.generic-mapping-tools.org/6.2/gallery/ex22.html#example-22
+#	https://docs.generic-mapping-tools.org/6.2/legend.html#examples

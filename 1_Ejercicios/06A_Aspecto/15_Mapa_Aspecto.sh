@@ -3,6 +3,7 @@ clear
 
 #	Temas a ver
 #   1. Paleta circular
+#	2. Paleta con intervalos
 
 #	Definir variables del mapa
 #	-----------------------------------------------------------------------------------------------------------
@@ -22,9 +23,6 @@ clear
 # 	Archivos temporales
 	CUT=tmp_$title.nc
 	SHADOW=tmp_$title-shadow.nc
-	COLOR=tmp_$title.cpt
-
-	gmt set MAP_FRAME_AXES WesN
 
 #	Dibujar mapa
 #	-----------------------------------------------------------------------------------------------------------
@@ -44,11 +42,14 @@ clear
 #	---------------------------------------------
 
 #	Ver informacion de la grilla
-	gmt grdinfo $CUT
+#	gmt grdinfo $CUT
 
 #	Crear Paleta de Colores. Paleta Maestra (-C), Definir rango (-Tmin/max/intervalo), CPT continuo (-Z)
 	gmt makecpt -Ccyclic -T0/360
-	#gmt makecpt -Ccyclic -T0/360/25
+#	gmt makecpt -Ccyclic -T0/360/25
+#	gmt makecpt -Ccyclic  -T0/360/45
+#	gmt makecpt -Ccyclic  -T0/360/90
+#	gmt makecpt -CromaO  -T0/360
 
 #	Crear Grilla de Pendientes para Sombreado (Hill-shaded). Definir azimuth del sol (-A)
 	#gmt grdgradient $GRD -A135 -G$SHADOW -Nt1 -R$REGION
@@ -58,7 +59,7 @@ clear
 #	gmt grdimage $CUT -I$SHADOW
 
 #	Agregar escala vertical a partir de CPT (-C). Posición (x,y) +wlargo/ancho. Anotaciones (-Ba). Leyenda (+l). 
-	gmt colorbar -Dx0/-1.0+w15/0.618ch -C -Ba30f15+l"Orientaci\363n pendiente(\232)"
+	gmt colorbar -DJBC+o0/0.3c+w14/0.618c+h -C -Ba30f15+l"Orientaci\363n pendiente(\232)"
 
 #	-----------------------------------------------------------------------------------------------------------
 #	Dibujar frame
@@ -80,4 +81,5 @@ clear
 	rm tmp_* gmt.*
 
 #	Ejercicios sugeridos
-#	1. Cambiar el valor máximo de la escala de colores.
+#	1. Cambiar la CPT ciclica a usar.
+#	2. Cambiar el intervalo de las CPT

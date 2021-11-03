@@ -40,15 +40,15 @@ gmt begin $title png
 #	Pintar areas húmedas: Oceanos (-S) y Lagos (-Cl/)f
 	gmt coast -p -Sdodgerblue2
 
-#	Dibujar Linea de Costa (W1)
-	gmt coast -p -W1/faint
+#	Dibujar limite paises y provincias
+	gmt coast -p -N1/thinner -N2/thinnest,-
 	
 #	Dibujar frame
 	gmt basemap -p -Baf
 
 #	-----------------------------------------------------------------------------------------------------------
 #	Transicion entre mapas. Subir 2º mapa 7,5 cm.
-	gmt basemap -B+n -Y7.5c
+	gmt basemap -B+n -Y7.0c
 #	-----------------------------------------------------------------------------------------------------------
 
 #	Dibujar mapa 2
@@ -56,12 +56,9 @@ gmt begin $title png
 #	Ubicar Imagen satelital
 	gmt grdimage -p @earth_day_$RES
 
-#	Pintar areas húmedas: Oceanos (-S) y Lagos (-Cl/)f
-#	gmt coast -p -Sdodgerblue2
+#	Dibujar limite paises y provincias
+	gmt coast -p -N1/thinner -N2/thinnest,-
 
-#	Dibujar Linea de Costa (W1)
-#	gmt coast -p -W1/faint
-	
 #	Dibujar frame
 	gmt basemap -p -Baf
 
@@ -70,3 +67,7 @@ gmt begin $title png
 	gmt end
 
 	rm gmt.*
+
+#	Ejercicios Sugeridos:
+#	1. Cambiar el espacio entre ambas imagenes (-Y linea 51).
+#	2. Agregar distintos datos culturales (limites de paises, provincias, ciudades, rutas, etc) a ambos mapas.
