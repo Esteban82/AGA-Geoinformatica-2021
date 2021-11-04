@@ -5,7 +5,7 @@ clear
 #	-----------------------------------------------------------------------------------------------------------
 
 #	Titulo del mapa
-	title=Perfil_Topografico
+	title=21_Perfil_Topografico
 	echo $title
 	
 #	Dimensiones del Grafico: Longitud (L), Altura (H).

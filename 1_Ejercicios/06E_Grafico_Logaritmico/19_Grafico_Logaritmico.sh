@@ -51,10 +51,10 @@ gmt begin $title png
 	gmt plot "NbY_ZrTi.txt" -Wthin
 
 #	Graficar Datos
-	gmt plot "Litofacies2" -Sc0.25 -Gred   
-	gmt plot "Litofacies3" -St0.25 -Gblue  
-	gmt plot "Lacolito"    -Ss0.25 -Ggreen 
-#	gmt plot "Lacolito"    -Ss5 -Ggreen@50 -W1,red
+#	gmt plot "Litofacies2" -Sc0.25 -Gred   
+#	gmt plot "Litofacies3" -St0.25 -Gblue  
+#	gmt plot "Lacolito"    -Ss0.25 -Ggreen 
+	gmt plot "Lacolito"    -Ss5 -Ggreen@50 -W1,red
 #	gmt plot "Lacolito"    -Ss5 -Ggreen    -W1,red -t50
 
 #	-----------------------------------------------------------------------------------------------------------
@@ -66,5 +66,5 @@ gmt end
 #	Ejercicios Sugeridos:
 #	-----------------------------------------------------------------------------------------------------------
 #	1. Ver el efecto de la "l" que aparece en PROJ (línea 16). Borrarlos. 
-#	2. Modificar rango de datos (linea 13s) con escala logaritmica.
+#	2. Modificar rango de datos (linea 13) con escala logaritmica.
 #	3. Probar las otras combinaciones para dibujar los intervalos en el eje logarítmico Y: a1, a2 y a3 y agregando p y l (líneas 45 a 48).

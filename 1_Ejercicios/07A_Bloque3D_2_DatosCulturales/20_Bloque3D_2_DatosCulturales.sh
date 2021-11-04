@@ -67,18 +67,16 @@ gmt begin $title png
 	gmt coast -p$p/0 -Da -Sdodgerblue2 -A0/0/1
 	gmt coast -p$p/0 -Da -W1/0.3,black
 	
-
 #	Dibujar datos de coast en 3D
 	gmt coast -R$REGION -Df -M -N1/ | gmt grdtrack -G$CUT -sa | gmt plot3d -R$REGION3D -p$p -W0.5,black 
 	gmt coast -R$REGION -Df -M -N2/ | gmt grdtrack -G$CUT -sa | gmt plot3d -R$REGION3D -p$p -W0.2,black,-
 
 #	Dibujar datos IGN en 3D
-	gmt grdtrack -R$REGION IGN/RedVial_Autopista.gmt                       -G$CUT -sa | gmt plot3d -R$REGION3D -p$p -Wthinnest,black
-	gmt grdtrack -R$REGION IGN/RedVial_Ruta_Nacional.gmt                   -G$CUT -sa | gmt plot3d -R$REGION3D -p$p -Wthinnest,black
-	gmt grdtrack -R$REGION IGN/RedVial_Ruta_Provincial.gmt                 -G$CUT -sa | gmt plot3d -R$REGION3D -p$p -Wfaint,black
-	gmt grdtrack -R$REGION IGN/lineas_de_transporte_ferroviario_AN010.shp  -G$CUT -sa | gmt plot3d -R$REGION3D -p$p -Wthinnest,darkred
+#	gmt grdtrack -R$REGION IGN/RedVial_Autopista.gmt                       -G$CUT -sa | gmt plot3d -R$REGION3D -p$p -Wthinnest,black
+#	gmt grdtrack -R$REGION IGN/RedVial_Ruta_Nacional.gmt                   -G$CUT -sa | gmt plot3d -R$REGION3D -p$p -Wthinnest,black
+#	gmt grdtrack -R$REGION IGN/RedVial_Ruta_Provincial.gmt                 -G$CUT -sa | gmt plot3d -R$REGION3D -p$p -Wfaint,black
+#	gmt grdtrack -R$REGION IGN/lineas_de_transporte_ferroviario_AN010.shp  -G$CUT -sa | gmt plot3d -R$REGION3D -p$p -Wthinnest,darkred
 
-/home/federico/E:/Github/AGA-2021/AGA-Geoinformatica-2021/1_Ejercicios/02_FisicoPolitico_02
 # 	Red vial y ferroviaria
 #	gmt plot "IGN/RedVial_Autopista.gmt"        		   -Wthinnest,black
 #	gmt plot "IGN/RedVial_Ruta_Nacional.gmt"    		   -Wthinnest,black
