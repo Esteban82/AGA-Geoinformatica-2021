@@ -54,6 +54,8 @@ gmt begin $title png
 	gmt plot "Litofacies2" -Sc0.25 -Gred   
 	gmt plot "Litofacies3" -St0.25 -Gblue  
 	gmt plot "Lacolito"    -Ss0.25 -Ggreen 
+#	gmt plot "Lacolito"    -Ss5 -Ggreen@50 -W1,red
+#	gmt plot "Lacolito"    -Ss5 -Ggreen    -W1,red -t50
 
 #	-----------------------------------------------------------------------------------------------------------
 #	Cerrar la sesion y mostrar archivo
