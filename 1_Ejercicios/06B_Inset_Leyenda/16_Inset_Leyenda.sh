@@ -124,7 +124,6 @@ gmt begin $title png
 	N 3
 	S 0.25c - 0.5c - 1.0p,white 0.75c
 	END
-	#gmt legend tmp_leyenda -Dx7.5/-0.2+w15/0+jTC
 	gmt legend tmp_leyenda -DJBC+o0/0.2c+w15c/0c
 #	-------------------------------------------------
 
@@ -161,6 +160,7 @@ gmt end
 #	1. Agregar elementos a la leyenda (ver links de interes)
 #	2. Ver otras opciones del mapa de ubicación (lineas 144 a 147, dejar solo una linea sin comentar).
 #	3. Modificar la posición y tamaño del mapa de ubicación.
+#	4, Modificar el ancho de la leyenda (principal y auxiliar).
 
 
 #	Links de interes

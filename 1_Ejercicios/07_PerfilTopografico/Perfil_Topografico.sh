@@ -29,19 +29,20 @@ gmt begin $title png
 	END
 
 #	Interpolar: agrega datos en el perfil cada 0.2 km (-I).
-	gmt sample1d temp_line -I0.2k > tmp_sample1d -fg
+	gmt sample1d tmp_line -I0.2k > tmp_sample1d -fg
 
 #	Distancia: Agrega columna (3a) con distancia del perfil en km (-G+uk)
 	gmt mapproject tmp_sample1d -G+uk > tmp_track
 
 #	Agrega columna (4) con datos extraidos de la grilla -G (altura) sobre el perfil
-	gmt grdtrack tmp_track -G$dem > tmp_data -fg
+	#gmt grdtrack tmp_track -G$DEM > tmp_data -fg
 
 #	Informacion: Ver datos del Archivo para crear el grafico. 3a Columna datos en km. 4a Columna datos de Topografia.
-	echo Distancia del Perfil (km):
-	gmt info "temp_data" -C -o5
-	echo Altura (m) minima y maxima:
-	gmt info "temp_data" -C -o6,7
+	#echo Distancia del Perfil (km):
+	KM=$(gmt info tmp_data -C -o5)
+	#echo Altura (m) minima y maxima:
+	Min=$(gmt info "temp_data" -C -o6,7)
+	Max=
 #	pause
 
 #	Hacer Grafico (psbasemap) y dibujar variables (psxy)
@@ -68,50 +69,12 @@ gmt begin $title png
 	gmt basemap -LjCB+w1000+lm+o1.2/0.67+v -Vi
 	gmt basemap -LjCB+w200+lkm+o0/0.5
 
-#	*****************************************************************************************************************
-#	Calcular Escala (numerica) Vertical y Horizontal, y Exageracion Vertical
-#	--------------------------------------------------------------
-#	Factor escala para eje Horizontal(FH) y Vertical (FV) para convertir entre unidades del gr�fico (cm) y reales (m, km). 
-#	km-cm=100000, m-cm=100
-	FH=100000
-	FV=100
-
-# 	Guardar Variables para calculos
-	echo $Max > "temp_Max"
-	echo $Min > "temp_Min"
-	echo $H   > "temp_H"
-	echo $KM  > "temp_KM"
-	echo $L   > "temp_L"
-
-#	Mostrar en Terminal
-#	--------------------------------------------------------------
-	echo Escala Horizontal =
-	gmt math "temp_KM" "temp_L" DIV $FH MUL = 
-	gmt math "temp_KM" "temp_L" DIV $FH MUL = "temp_Esc_Hz"
-
-	echo Escala Vertical =  
-	gmt math "temp_Max" "temp_Min" SUB "temp_H" DIV $FV MUL =
-	gmt math "temp_Max" "temp_Min" SUB "temp_H" DIV $FV MUL = "temp_Esc_Ve"
-
-	echo Exageracion Vertical =
-	gmt math "temp_Esc_Hz" "temp_Esc_Ve" DIV =
-
-#	Agregar a figura
-#	-------------------------------------------------------------
-
-#	Datos terminal
-	echo Esc. Hz. = 1:37.797.333 | gmt pstext -R -J -O -K -F+cBL+f9p -Gwhite -W1 >> $OUT
-	echo Esc. Ve. = 1:460.000    | gmt pstext -R -J -O -K -F+cBC+f9p -Gwhite -W1 >> $OUT
-	echo Ex. Vert. = 82          | gmt pstext -R -J -O -K -F+cBR+f9p -Gwhite -W1 >> $OUT
-
-#	*****************************************************************************************************************
-
 #   ----------------------------------------------------------------------------------
 #	Cerrar la sesion y mostrar archivo
 gmt end
 
 #	Borrar archivos temporales
 #	-----------------------------------------------------------------------------------------------------------
-	rm temp_* gmt.*
+	rm tmp_* gmt.*
 
 #	
