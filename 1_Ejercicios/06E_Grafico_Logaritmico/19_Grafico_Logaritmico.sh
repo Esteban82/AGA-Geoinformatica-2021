@@ -6,7 +6,7 @@
 #	Variables del Mapa
 #	-----------------------------------------------------------------------------------------------------------
 #	Titulo del mapa
-	title=19_Logaritmico
+	title=19_Grafico_Logaritmico
 	echo $title
 
 #	Dominio de datos (Xmin/Xmax/Ymin/Ymax)
