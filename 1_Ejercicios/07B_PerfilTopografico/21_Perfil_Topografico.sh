@@ -3,7 +3,6 @@ clear
 
 #	Define map
 #	-----------------------------------------------------------------------------------------------------------
-
 #	Titulo del mapa
 	title=21_Perfil_Topografico
 	echo $title
@@ -12,8 +11,11 @@ clear
 	L=15
 	H=5
 
+#	Resolucion de la grilla (y del perfil)
+	RES=15s
+
 #	Base de datos de GRILLAS
-	DEM="@earth_relief_30s"
+	DEM=@earth_relief_$RES
 
 #	Dibujar mapa
 #	-----------------------------------------------------------------------------------------------------------
@@ -29,31 +31,50 @@ gmt begin $title png
 	END
 
 #	Interpolar: agrega datos en el perfil cada 0.2 km (-I).
-	gmt sample1d tmp_line -I0.2k > tmp_sample1d -fg
+	gmt sample1d tmp_line -I$RES > tmp_sample1d -fg
+
+#	Crear variable con region geografica del perfil
+	REGION=$(gmt info tmp_sample1d -I+e0.1)
+	echo $REGION
 
 #	Distancia: Agrega columna (3a) con distancia del perfil en km (-G+uk)
 	gmt mapproject tmp_sample1d -G+uk > tmp_track
 
 #	Agrega columna (4) con datos extraidos de la grilla -G (altura) sobre el perfil
-	#gmt grdtrack tmp_track -G$DEM > tmp_data -fg
+	gmt grdtrack tmp_track -G$DEM $REGION > tmp_data
 
-#	Informacion: Ver datos del Archivo para crear el grafico. 3a Columna datos en km. 4a Columna datos de Topografia.
-	#echo Distancia del Perfil (km):
-	KM=$(gmt info tmp_data -C -o5)
-	#echo Altura (m) minima y maxima:
-	Min=$(gmt info "temp_data" -C -o6,7)
-	Max=
-#	pause
+	#gmt sample1d tmp_line -I$RES | gmt mapproject -G+uk | gmt grdtrack -G$DEM $REGION > tmp_data2
 
-#	Hacer Grafico (psbasemap) y dibujar variables (psxy)
+
+#	Hacer Grafico y dibujar perfil
 #	-----------------------------------------------------------------------------------------------------------
-#	Datos del perfil segun gmtinfo
-	KM=2825.5
-	Min=-6200
-	Max=5300
+#	Informacion para crear el grafico. 3a Columna datos en km. 4a Columna datos de Topografia.
+	gmt info tmp_data
+
+#	Datos para el perfil:
+#	-------------------------------------------------
+#	Distancia del Perfil (km):
+#	KM=2825.5
+	KM=$(gmt info tmp_data -C -o5)
+
+#	Altura (m) minima y maxima:
+	#Min=-6200
+	#Max=5300
+	Min=$(gmt info "tmp_data" -C -o6)
+	Max=$(gmt info "tmp_data" -C -o7)
+
+#	Dominio datos del perfil
+	gmt info tmp_data -i2,3 -I+R0/0
+	gmt info tmp_data -i2,3 -I+R0/100
+	gmt info tmp_data -i2,3 -I+R0/500
+	gmt info tmp_data -i2,3 -I+r500
+	gmt info tmp_data -i2,3 -I+e500
+
+	DOMINIO=$(gmt info tmp_data -i2,3 -I+R0/500)
 
 #	Crear Grafico
-	gmt psxy -JX$L/$H -R0/$KM/$Min/$Max -T
+#	gmt basemap -JX$L/$H -R0/$KM/$Min/$Max -B+n
+	gmt basemap -JX$L/$H $DOMINIO -B+n
 
 #	Dibujar Eje X (Sn)
 	gmt basemap -Bxaf+l"Distancia (km)" -BSn
@@ -75,6 +96,8 @@ gmt end
 
 #	Borrar archivos temporales
 #	-----------------------------------------------------------------------------------------------------------
-	rm tmp_* gmt.*
+#	rm tmp_* gmt.*
 
-#	
+#	Ejercicios sugeridos
+#	1. Cambiar las coordenas del perfil.
+#	2. Agregar tercer par de coordenadas.
