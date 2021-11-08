@@ -4,7 +4,7 @@ clear
 #	Definir Variables del mapa
 #	-----------------------------------------------------------------------------------------------------------
 #	Titulo del mapa
-	title=EJ13.3_Bloque3D_Cubrir_Pendiente
+	title=21_Bloque3D_Cubrir_Pendiente
 	echo $title
 
 #	Region: Cuyo
@@ -16,17 +16,17 @@ clear
 #	Proyeccion Mercator (M)
 	PROJ=M14c
 	PROZ=4c
-	persp=160/30
+	p=160/30
 
 #	Grilla 
-	GRD=@earth_relief_01m
+#	GRD=@earth_relief_01m
 	GRD=@earth_relief_30s
 
 # 	Nombre archivo de salida y Variables Temporales
-	CUT=temp_$title.nc
-	CUT2=temp_$title-2.nc
-    COLOR=temp_$title.cpt
-	SHADOW=temp_$title-shadow.nc
+	CUT=tmp_$title.nc
+	CUT2=tmp_$title-2.nc
+    COLOR=tmp_$title.cpt
+	SHADOW=tmp_$title-shadow.nc
 
 #	Parametros Generales
 #	-----------------------------------------------------------------------------------------------------------
@@ -55,23 +55,18 @@ gmt begin $title png
 #	Recortar Grilla
 	gmt grdcut $GRD -G$CUT -R$REGION
 
-
-#	Crear Paleta de Color
-	#gmt makecpt -Cdem4 -T0/7000
-	gmt makecpt -Cdem4 -T0/$max
-
 #	Calcular Grilla con modulo del gradiente
-	gmt grdgradient $CUT -D -Stemp_mag.grd -fg
+	gmt grdgradient $CUT -D -Stmp_mag.grd -fg
 
 #	Convertir modulo del gradiente a inclinacion (pendiente) en radianes (ATAN), y luego a grados (R2D)
-	gmt grdmath temp_mag.grd ATAN R2D = $CUT2
+	gmt grdmath tmp_mag.grd ATAN R2D = $CUT2
 
 #	Crear variables con valores maximo
 	max=`gmt grdinfo $CUT2 -Cn -o5`
 
 #	Crear Paleta de Color
-    gmt makecpt -Cbatlow -T0/$max -I -Di
-    gmt grd2cpt $CUT2 -Crainbow -L0/20 -I -Di
+#	gmt makecpt -Cbatlow -T0/$max -I -Di
+	gmt makecpt -Crainbow -T0/30 -I -Di
 
 #	Crear Grilla de Pendientes para Sombreado (Hill-shaded). Definir azimuth del sol (-A)
 	gmt grdgradient $CUT -A160 -G$SHADOW -Nt0.8
@@ -79,35 +74,32 @@ gmt begin $title png
 #	Dibujar Figura
 #	--------------------------------------------------------------------------------------------------------
 #	Bloque 3D
-#	gmt grdview $CUT -R$REGION3D -J$PROJ -JZ$PROZ -p$persp -I$SHADOW -C -Qi300
-#	gmt grdview $CUT -R$REGION3D -J$PROJ -JZ$PROZ -p$persp -I$SHADOW -C -Qi300 -N$BASE+glightgray -Wf0.5
-	#gmt grdview $CUT -R$REGION3D -J$PROJ -JZ$PROZ -p$persp -I$SHADOW -C -Qi300 -N$BASE+glightgray -Wf0.5 \
-	#-BnSwEZ -Baf -Bzaf+l"Altura (m)"
-#	gmt grdview $CUT -R$REGION3D -J$PROJ -JZ$PROZ -p$persp -I$SHADOW -C -Qi300 -N$BASE+glightgray -Wf0.5 \
+#	gmt grdview $CUT -R$REGION3D -J$PROJ -JZ$PROZ -p$p -I$SHADOW -C -Qi300 -N$BASE+glightgray -Wf0.5 \
 #   -BnSwEZ+b -Baf -Bzaf+l"Altura (m)"
-    gmt grdview $CUT -R$REGION3D -J$PROJ -JZ$PROZ -p$persp -I$SHADOW -C -Qi300 -N$BASE+glightgray -Wf0.5 \
+    gmt grdview $CUT -R$REGION3D -J$PROJ -JZ$PROZ -p$p -I$SHADOW -C -Qi300 -N$BASE+glightgray -Wf0.5 \
     -BnSwEZ -Baf -Bzaf+l"Altura (m)" -G$CUT2
+
+
 
 #	Dibujar datos culturales en bloque 3D
 #	-----------------------------------------------------------------------------------------------------------
 #	Pintar Oceanos (-S) y Lineas de Costa en 2D
-	gmt coast -p$persp/0 -Df -Sdodgerblue2 -A0/0/1 
-	gmt coast -p$persp/0 -Df -W1/0.3,black 
+	gmt coast -p$p/0 -Da -Sdodgerblue2 -A0/0/1 
+	gmt coast -p$p/0 -Da -W1/0.3,black 
 	
 #	Dibujar datos de coast en 3D
-#	gmt psxy -R$REGION3D -J$PROJ -JZ$PROZ -p$p -T -K -P >> $OUT
-	gmt coast -R$REGION -Df -M -N1/ | gmt grdtrack -G$CUT -sa | gmt plot3d -R$REGION3D -p$persp -W0.5,black 
-	gmt coast -R$REGION -Df -M -N2/ | gmt grdtrack -G$CUT -sa | gmt plot3d -R$REGION3D -p$persp -W0.2,black,-
+	gmt coast -R$REGION -Df -M -N1/ | gmt grdtrack -G$CUT -sa | gmt plot3d -R$REGION3D -p$p -W0.5,black 
+	gmt coast -R$REGION -Df -M -N2/ | gmt grdtrack -G$CUT -sa | gmt plot3d -R$REGION3D -p$p -W0.2,black,-
 
 #	Dibujar datos IGN en 3D
-#	gmt grdtrack -R$REGION "E:\Facultad\Datos_Geofisicos\IGN\1_GMT\003_Red_Ferroviaria.gmt"  -G$CUT -sa | gmt plot3d -R$REGION3D -p$persp -Wthin,blue
-#	gmt grdtrack -R$REGION "E:\Facultad\Datos_Geofisicos\IGN\1_GMT\005_Centros_Poblados.gmt" -G$CUT -sa | gmt plot3d -R$REGION3D -p$persp -W0.2,black,- -Sc0.1 -Gred
-#	gmt grdtrack -R$REGION "E:\Facultad\Datos_Geofisicos\IGN\1_GMT\010_Ejidos_Urbanos.gmt"   -G$CUT -sa | gmt plot3d -R$REGION3D -p$persp -Wfaint -Ggreen
+	gmt grdtrack -R$REGION RedVial_Autopista.gmt                       -G$CUT -sa | gmt plot3d -R$REGION3D -p$p -Wthinnest,black
+	gmt grdtrack -R$REGION RedVial_Ruta_Nacional.gmt                   -G$CUT -sa | gmt plot3d -R$REGION3D -p$p -Wthinnest,black
+	gmt grdtrack -R$REGION RedVial_Ruta_Provincial.gmt                 -G$CUT -sa | gmt plot3d -R$REGION3D -p$p -Wfaint,black
+	gmt grdtrack -R$REGION lineas_de_transporte_ferroviario_AN010.shp  -G$CUT -sa | gmt plot3d -R$REGION3D -p$p -Wthinnest,darkred
 
 #	-----------------------------------------------------------------------------------------------------------
 #	Cerrar el archivo de salida (ps)
 gmt end
 	
 #	Borrar archivos temporales
-	#rm temp_* gmt*
-#	pause
+	rm tmp_* gmt*
