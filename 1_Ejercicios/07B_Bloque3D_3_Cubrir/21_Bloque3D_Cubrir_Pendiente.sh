@@ -79,8 +79,6 @@ gmt begin $title png
     gmt grdview $CUT -R$REGION3D -J$PROJ -JZ$PROZ -p$p -I$SHADOW -C -Qi300 -N$BASE+glightgray -Wf0.5 \
     -BnSwEZ -Baf -Bzaf+l"Altura (m)" -G$CUT2
 
-
-
 #	Dibujar datos culturales en bloque 3D
 #	-----------------------------------------------------------------------------------------------------------
 #	Pintar Oceanos (-S) y Lineas de Costa en 2D
