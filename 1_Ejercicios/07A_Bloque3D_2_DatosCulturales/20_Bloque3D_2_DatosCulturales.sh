@@ -3,6 +3,7 @@ clear
 
 #	Temas a ver:
 #	1. Dibujar datos culturales em bloque 3D.
+#	2. Ver carpeta session
 
 #	Definir Variables del mapa
 #	-----------------------------------------------------------------------------------------------------------
@@ -66,17 +67,13 @@ gmt begin $title png
 #	gmt grdview $CUT -R$REGION3D -J$PROJ -JZ$PROZ -p$p -I$SHADOW    -Qi300 -Wf0.5 					 -BnSwEZ -Baf -Bzaf+l"Altura (m)" -G@earth_day_30s #-N$BASE+glightgray
 #	gmt grdview $CUT -R$REGION3D -J$PROJ -JZ$PROZ -p$p -I$SHADOW    -Qi300 -Wf0.5 -N$BASE+glightgray -BnSwEZ -Baf -Bzaf+l"Altura (m)" -GSanJuan_Geo.tif
 
-
-#	Agregar escala de colores a partir de CPT (-C). Posición (x,y) +wlargo/ancho. Anotaciones (-Ba). Leyenda (+l). 
-	gmt colorbar -DJCB+o0/0.7c+w14/0.618c -C -Ba1+l"Elevaciones (km)" -I -W0.001 -p$p
-
 #	Pintar Oceanos (-S) y Lineas de Costa
 	gmt coast -p$p/0 -Da -Sdodgerblue2 -A0/0/1
 	gmt coast -p$p/0 -Da -W1/0.3,black
 	
 #	Dibujar datos de coast en 3D
 	gmt coast -R$REGION -Df -M -N1/ | gmt grdtrack -G$CUT -sa | gmt plot3d -R$REGION3D -p$p -W0.5,black
-#	gmt coast -R$REGION -Df -M -N2/ | gmt grdtrack -G$CUT -sa | gmt plot3d -R$REGION3D -p$p -W0.2,black,-
+	gmt coast -R$REGION -Df -M -N2/ | gmt grdtrack -G$CUT -sa | gmt plot3d -R$REGION3D -p$p -W0.2,black,-
 
 #	Dibujar datos IGN en 3D
 	gmt grdtrack -R$REGION RedVial_Autopista.gmt                       -G$CUT -sa | gmt plot3d -R$REGION3D -p$p -Wthinnest,black
@@ -84,11 +81,8 @@ gmt begin $title png
 	gmt grdtrack -R$REGION RedVial_Ruta_Provincial.gmt                 -G$CUT -sa | gmt plot3d -R$REGION3D -p$p -Wfaint,black
 	gmt grdtrack -R$REGION lineas_de_transporte_ferroviario_AN010.shp  -G$CUT -sa | gmt plot3d -R$REGION3D -p$p -Wthinnest,darkred
 
-# 	Red vial y ferroviaria
-#	gmt plot "IGN/RedVial_Autopista.gmt"        		   -Wthinnest,black
-#	gmt plot "IGN/RedVial_Ruta_Nacional.gmt"    		   -Wthinnest,black
-#	gmt plot "IGN/RedVial_Ruta_Provincial.gmt"  		   -Wfaint,black
-#	gmt plot "IGN/lineas_de_transporte_ferroviario_AN010.shp"  -Wthinnest,darkred
+#	Agregar escala de colores a partir de CPT (-C). Posición (x,y) +wlargo/ancho. Anotaciones (-Ba). Leyenda (+l). 
+	gmt colorbar -DJCB+o0/0.7c+w14/0.618c -C -Ba1+l"Elevaciones (km)" -I -W0.001 -p$p
 
 #	-----------------------------------------------------------------------------------------------------------
 #	Cerrar el archivo de salida (ps)
@@ -98,4 +92,4 @@ gmt end
 	rm tmp_* gmt*
 
 #	Ejercicios sugeridos
-#	1. Agregar mas datos culturales
+#	1. Agregar mas datos culturales.
