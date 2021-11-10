@@ -43,24 +43,24 @@ clear
 gmt begin $title png
 
 #	Extraer informacion
-	gmt histogram "U-PB_Ages.txt" -Io -Z$Z -T$T			# Muestra infomracion en la terminal
-	gmt histogram "U-PB_Ages.txt" -Io -Z$Z -T$T > tmp_info		# Guardar informacion en un archivo
-	gmt histogram "U-PB_Ages.txt" -I  -Z$Z -T$T			# Muestra minimos y maximos en la terminal 
+	gmt histogram "U-PB_Ages.txt" -Io -Z$Z -T$T				# Muestra infomracion en la terminal
+	gmt histogram "U-PB_Ages.txt" -Io -Z$Z -T$T > tmp_info	# Guardar informacion en un archivo
+	gmt histogram "U-PB_Ages.txt" -I  -Z$Z -T$T				# Muestra minimos y maximos en la terminal 
 	
 #	Dibujar histograma. Definir borde (-W), relleno (-G).
 #	gmt histogram U-PB_Ages.txt -J$PROJ -Z$Z -T$T -Byafg+l"Frecuencia (\045)" -Bx500f100 -Gorange
-#	gmt histogram U-PB_Ages.txt -J$PROJ -Z$Z -T$T -Byafg+l"Frecuencia (\045)" -Bx500f100 -Gorange -B+glightblue -Bsxc"Eones.txt"+l"Eones (Ma)"
+#	gmt histogram U-PB_Ages.txt -J$PROJ -Z$Z -T$T -Byafg+l"Frecuencia (\045)" -Bx500f100 -Gorange -B+glightblue -Bsxc"Eje/Eones.txt"+l"Eones (Ma)"
 	gmt histogram U-PB_Ages.txt -J$PROJ -Z$Z -T$T -Byafg+l"Frecuencia (\045)" -Bx500f100 -Gorange -B+glightblue -Bsxc"Eje/Eones.txt"+l"Eones (Ma)" -W
 
 #	Dibujar histrograma aculumativo (-Q) 
-#	gmt histogram U-PB_Ages.txt -J$PROJ -Z$Z -T$T -Byafg+l"Frecuencia (\045)" -Bx500f100 -Gorange -B+glightblue -Bsxc"Eones.txt"+l"Eones (Ma)" -W -Q
-#	gmt histogram U-PB_Ages.txt -J$PROJ -Z$Z -T$T -Byafg+l"Frecuencia (\045)" -Bx500f100 -Gorange -B+glightblue -Bsxc"Eones.txt"+l"Eones (Ma)" -W -Qr
-#	gmt histogram U-PB_Ages.txt -J$PROJ -Z$Z -T$T -Byafg+l"Frecuencia (\045)" -Bx500f100 -Gorange -B+glightblue -Bsxc"Eones.txt"+l"Eones (Ma)" -W -Qr
-#	gmt histogram U-PB_Ages.txt -J$PROJ -Z$Z -T1  -Byafg+l"Frecuencia (\045)" -Bx500f100 -Gorange -B+glightblue -Bsxc"Eones.txt"+l"Eones (Ma)" -W -Qr -S
+#	gmt histogram U-PB_Ages.txt -J$PROJ -Z$Z -T$T -Byafg+l"Frecuencia (\045)" -Bx500f100 -Gorange -B+glightblue -Bsxc"Eje/Eones.txt"+l"Eones (Ma)" -W -Q
+#	gmt histogram U-PB_Ages.txt -J$PROJ -Z$Z -T$T -Byafg+l"Frecuencia (\045)" -Bx500f100 -Gorange -B+glightblue -Bsxc"Eje/Eones.txt"+l"Eones (Ma)" -W -Qr
+#	gmt histogram U-PB_Ages.txt -J$PROJ -Z$Z -T$T -Byafg+l"Frecuencia (\045)" -Bx500f100 -Gorange -B+glightblue -Bsxc"Eje/Eones.txt"+l"Eones (Ma)" -W -Qr
+#	gmt histogram U-PB_Ages.txt -J$PROJ -Z$Z -T1  -Byafg+l"Frecuencia (\045)" -Bx500f100 -Gorange -B+glightblue -Bsxc"Eje/Eones.txt"+l"Eones (Ma)" -W -Qr -S
 
 #	Otros ejes secundarios
-#	gmt histogram U-PB_Ages.txt -J$PROJ -Z$Z -T$T -Byafg+l"Frecuencia (\045)" -Bx500f100 -Gorange -B+glightblue -Bsxc"Eras_Geologicas2.txt"+l"Eras (Ma)" -W
-#	gmt histogram U-PB_Ages.txt -J$PROJ -Z$Z -T$T -Byafg+l"Frecuencia (\045)" -Bx500f100 -Gorange -B+glightblue -Bsxc"Eras_Geologicas3.txt"+l"Eras (Ma)" -W
+#	gmt histogram U-PB_Ages.txt -J$PROJ -Z$Z -T$T -Byafg+l"Frecuencia (\045)" -Bx500f100 -Gorange -B+glightblue -Bsxc"Eje/Eras_Geologicas2.txt"+l"Eras (Ma)" -W
+#	gmt histogram U-PB_Ages.txt -J$PROJ -Z$Z -T$T -Byafg+l"Frecuencia (\045)" -Bx500f100 -Gorange -B+glightblue -Bsxc"Eje/Eras_Geologicas3.txt"+l"Eras (Ma)" -W
 	
 #	-----------------------------------------------------------------------------------------------------------
 #	Cerrar la sesion y mostrar archivo
