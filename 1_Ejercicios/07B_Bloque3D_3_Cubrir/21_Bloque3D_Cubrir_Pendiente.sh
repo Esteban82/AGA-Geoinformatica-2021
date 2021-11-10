@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 clear
 
+#	Temas a ver:
+#	1. Cubrir bloque 3D con otra grilla/imagen.
+#	2. Agregar escala al bloque. 
+
 #	Definir Variables del mapa
 #	-----------------------------------------------------------------------------------------------------------
 #	Titulo del mapa
@@ -53,14 +57,19 @@ clear
 gmt begin $title png
 
 #	Recortar Grilla
+#	gmt grdcut $GRD -G$CUT -R$REGION
+
+#	Calcular grilla de pendientes (en grados)
+#	---------------------------------------------
+#	Recortar Grilla
 	gmt grdcut $GRD -G$CUT -R$REGION
 
-#	Calcular Grilla con modulo del gradiente
-	gmt grdgradient $CUT -D -Stmp_mag.grd -fg
+#	Calcular Grilla con modulo del gradiente (-D) para grilla con datos geograficos (-fg)
+	gmt grdgradient $CUT -D -S$CUT2 -fg
 
 #	Convertir modulo del gradiente a inclinacion (pendiente) en radianes (ATAN), y luego a grados (R2D)
-	gmt grdmath tmp_mag.grd ATAN R2D = $CUT2
-
+	gmt grdmath $CUT2 ATAN R2D = $CUT2
+#	---------------------------------------------
 #	Crear variables con valores maximo
 	max=`gmt grdinfo $CUT2 -Cn -o5`
 
@@ -89,11 +98,8 @@ gmt begin $title png
 	gmt coast -R$REGION -Df -M -N1/ | gmt grdtrack -G$CUT -sa | gmt plot3d -R$REGION3D -p$p -W0.5,black 
 	gmt coast -R$REGION -Df -M -N2/ | gmt grdtrack -G$CUT -sa | gmt plot3d -R$REGION3D -p$p -W0.2,black,-
 
-#	Dibujar datos IGN en 3D
-	gmt grdtrack -R$REGION RedVial_Autopista.gmt                       -G$CUT -sa | gmt plot3d -R$REGION3D -p$p -Wthinnest,black
-	gmt grdtrack -R$REGION RedVial_Ruta_Nacional.gmt                   -G$CUT -sa | gmt plot3d -R$REGION3D -p$p -Wthinnest,black
-	gmt grdtrack -R$REGION RedVial_Ruta_Provincial.gmt                 -G$CUT -sa | gmt plot3d -R$REGION3D -p$p -Wfaint,black
-	gmt grdtrack -R$REGION lineas_de_transporte_ferroviario_AN010.shp  -G$CUT -sa | gmt plot3d -R$REGION3D -p$p -Wthinnest,darkred
+#	Dibujar Escala en el mapa centrado en -Lg Lon0/Lat0, calculado en meridiano (+c), 
+	gmt basemap -Ln0.88/0.075+c-32:00+w100k+f+l -p$p/0
 
 #	-----------------------------------------------------------------------------------------------------------
 #	Cerrar el archivo de salida (ps)

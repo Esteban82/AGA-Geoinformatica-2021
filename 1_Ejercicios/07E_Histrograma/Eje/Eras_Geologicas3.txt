@@ -1,0 +1,12 @@
+0	ig	Cz
+66	ig	Mz
+252.17	ig	Pz
+541	ig	Nprot
+1000	ig	Mprot
+1600	ig	Pprot
+2500	ig	Narq
+2800	ig	Marq
+3200	ig	Parq
+3600	ig	Earq
+4000	ig	Hadeano
+4600	ig	

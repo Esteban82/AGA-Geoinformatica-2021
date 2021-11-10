@@ -1,0 +1,17 @@
+#PERIODOS GEOLOGICOS ICC v2015/01.
+#EDAD EN MA DEL INICIO DEL PERIODO del FANEROZOICO
+0 ig Q	
+2.58 ig N
+23.03 ig P
+66 ig K
+145 ig J
+201.3 ig T
+252.17 ig P
+298.9 ig C
+358.9 ig D
+419.2 ig S
+443.8 ig O
+485.4 ig C
+541.0 ig PC
+
+#The proper[15] Unicode character is U+A792 latin capital letter c with bar

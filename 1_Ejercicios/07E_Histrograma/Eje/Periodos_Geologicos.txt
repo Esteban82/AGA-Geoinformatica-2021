@@ -1,0 +1,14 @@
+#PERIODOS GEOLOGICOS ICC v2015/01.
+#EDAD EN MA DEL INICIO DEL PERIODO del FANEROZOICO
+2.58 ig Quaternary
+23.03 ig Neogene
+66 ig Paleogene
+145 ig Creataceous
+201.3 ig Jurassic
+252.17 ig Triassic
+298.9 ig Permian
+3589.9 ig Carboniferous
+419.2 ig Devonian
+443.8 ig Silurian
+485.4 ig Ordovician
+541.0 ig Cambrian
