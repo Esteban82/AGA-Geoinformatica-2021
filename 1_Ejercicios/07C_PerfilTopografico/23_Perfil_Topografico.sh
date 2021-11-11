@@ -92,3 +92,4 @@ gmt end
 #	Ejercicios sugeridos
 #	1. Cambiar las coordenas del perfil.
 #	2. Agregar tercer par de coordenadas.
+#	3. Modificar el intervalo de interpolación (sample1d).
