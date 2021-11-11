@@ -63,18 +63,9 @@ gmt begin $title png
 	Min=$(gmt info "tmp_data" -C -o6)
 	Max=$(gmt info "tmp_data" -C -o7)
 
-#	Dominio datos del perfil
-	gmt info tmp_data -i2,3 -I+R0/0
-	gmt info tmp_data -i2,3 -I+R0/100
-	gmt info tmp_data -i2,3 -I+R0/500
-	gmt info tmp_data -i2,3 -I+r500
-	gmt info tmp_data -i2,3 -I+e500
-
-	DOMINIO=$(gmt info tmp_data -i2,3 -I+R0/500)
-
 #	Crear Grafico
-#	gmt basemap -JX$L/$H -R0/$KM/$Min/$Max -B+n
-	gmt basemap -JX$L/$H $DOMINIO -B+n
+	gmt basemap -JX$L/$H -R0/$KM/$Min/$Max -B+n
+
 
 #	Dibujar Eje X (Sn)
 	gmt basemap -Bxaf+l"Distancia (km)" -BSn
