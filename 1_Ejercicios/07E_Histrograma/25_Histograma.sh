@@ -73,3 +73,5 @@ gmt end
 #	1. Ver como agregar un eje primario y secundario (lineas 55 y 56).
 #	2. El negativo de la variable PROJ revierte la orientación del eje X. Ver los gráficos que resultan de agregar y quitar el "-" en los ejes.
 #	3. Probar las otras opciones para hacer ejes secundarios (lineas 65 y 66).
+#	4. Cambiar el tipo de histograma (Z=0, linea 19).
+#	5. Cambiar el ancho de clase (Lineas 24 y 25).

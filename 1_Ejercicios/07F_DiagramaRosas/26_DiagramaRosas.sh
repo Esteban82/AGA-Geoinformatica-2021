@@ -1,5 +1,5 @@
 #!/bin/bash
-clear
+#clear
 
 #	Temas a ver:
 #	1. Calcular azimuth y longitud de lineas.
@@ -11,11 +11,14 @@ clear
 	title=26_DiagramaRosas
 	echo $title
 
-#	Region: Argentina
+#	Dominio de datos y radio del diagrama
 	REGION=0/1/0/360
 
-#	Proyeccion (tamaño del grafico)
-	PROJ=X10
+#	Parametros diagrama de rosas
+#	-T: 180ª ambiguedad. -Zu: valor unitario para cada segmento. -D: Centrado en la clase.
+#	A: Ancho en grados del sector.
+	Param="-A5 -T -D"
+#	
 
 #	gmt set GMT_LANGUAGE ES
 	
@@ -26,42 +29,36 @@ gmt begin $title png
 
 #	Preparar Datos
 #	-----------------------------------------------------------------------------------------------------------
-#	Calcular Azimuth (-AF) y longitud en km (-G+k). -fg: Datos geográficos.
-	gmt mapproject -fg "Datos.txt" -G+k
+#	Calcular Azimuth (-AF) y longitud en km (-G+k). -fg: Datos geográficos. Mostrar informacion.
+#	gmt mapproject -fg "Datos.txt" -G+k
 #	gmt mapproject -fg "Datos.txt" -AF
 #	gmt mapproject -fg "Datos.txt" -AF -G+k
 #	gmt mapproject -fg "Datos.txt" -AF -G+k -o3,2
 #	gmt mapproject -fg "Datos.txt" -AF -G+k -o3,2 -s
+
+#	Calcular Azimuth (-AF) y longitud en km (-G+k). -fg: Datos geográficos. Grabar datos.
 	gmt mapproject -fg "Datos.txt" -AF -G+k -o3,2 -s > "tmp_rumbo" 
 
-
-#	Datos Estadisticos. Ver cantidadd de datos
+#	Extraer informacion
+#	--------------------------------------------------------------------------------------------------------
+#	Datos Estadisticos:
 	echo n, mean az, mean r, mean resultant length, max bin sum, scaled mean, linear length sum.
-	gmt rose "tmp_rumbo" -I -D -T
-#	pause
-
-#	Extraer info de N y Mean Az para el grafico
-	gmt rose "tmp_rumbo" -I -D -T > tmp_q
-	gmt info "tmp_q" -C -o0
-	gmt info "tmp_q" -C -o2 --FORMAT_FLOAT_OUT=%.0f
-#	gmt info "tmp_q" -C -o2 --FORMAT_FLOAT_OUT=%%.0f
+	gmt rose "tmp_rumbo" $Param -I 
+	gmt rose "tmp_rumbo" $Param -I -o0
+	gmt rose "tmp_rumbo" $Param -I -o1 --FORMAT_FLOAT_OUT=%.0f
+	#gmt rose "tmp_rumbo" $Param -I -o1 --FORMAT_FLOAT_OUT=%%.0f   # Usar para windows
 
 #	Extraer cantidad de datos y azimuth promedio
-	n=$(gmt info "tmp_q" -C -o0)
-	az=$(gmt info "tmp_q" -C -o2 --FORMAT_FLOAT_OUT=%.0f)
-#	az=$(gmt info "tmp_rumbo" -C -o2 --FORMAT_FLOAT_OUT=%%.0f)
+	n=$(gmt rose "tmp_rumbo" $Param -I -o0)
+	az=$(gmt rose "tmp_rumbo" $Param -I -o1 --FORMAT_FLOAT_OUT=%.0)
+#	az=$(gmt rose "tmp_rumbo" $Param -I -o1 --FORMAT_FLOAT_OUT=%%.0)  # Usar para windows
 
 #	Dibujar Figura
 #	--------------------------------------------------------------------------------------------------------
-#	Setear la region y proyeccion
-	gmt basemap -R$REGION -J$PROJ -B+n
+#	Dibujar rosa. -F: No muestra escala. 
+	gmt rose "tmp_rumbo" -R$REGION $Param -Gorange -W1p -Bx0.2g0.2 -By30g30 -B+glightblue -LW,E,S,N -F -S5cn 
 
-#	Grafico 
-#	-----------------------------------------------------------------------------------------------------------
-#	Dibujar rosa. -A: Ancho del sector en grados. -D: Centrado en la clase. -F: No muestra escala. -T: 180 ambiguedad. -Zu:
-	gmt rose "tmp_rumbo" -Gorange -W1p -Bx0.2g0.2 -By30g30 -B+glightblue -LW,E,S,N -F -A10 -S5cn -D -T
-
-#	Texto con info
+#	Texto con informacion
 	echo N = $n        | gmt text -R1/10/1/10 -JX10 -F+cTL -Ya0.375c
 	echo Mean Az = $az | gmt text -R1/10/1/10 -JX10 -F+cTL 
 
@@ -69,6 +66,9 @@ gmt begin $title png
 #	Cerrar la sesion y mostrar archivo
 gmt end
 
-
 #	Borrar archivos temporales
-#	rm temp_* gmt.*
+rm tmp_* gmt.*
+
+#	Ejercicios sugeridos
+#	1. Cambiar el ancho de clase (linea 18).
+#	2. Ver las otras opciones para dibujar diagrama de rosas (lineas 59 a 61).
