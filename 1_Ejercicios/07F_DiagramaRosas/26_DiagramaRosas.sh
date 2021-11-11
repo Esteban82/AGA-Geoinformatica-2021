@@ -1,5 +1,5 @@
 #!/bin/bash
-#clear
+clear
 
 #	Temas a ver:
 #	1. Calcular azimuth y longitud de lineas.
@@ -18,9 +18,9 @@
 #	-T: 180ª ambiguedad. -Zu: valor unitario para cada segmento. -D: Centrado en la clase.
 #	A: Ancho en grados del sector.
 	Param="-A5 -T -D"
-#	
-
-#	gmt set GMT_LANGUAGE ES
+#	Param="-A5    -D"
+#	Param="-A5 -D -Zu"
+#	Param="-A5 -T -D"
 	
 #	Grafico Cartesiano
 #	-----------------------------------------------------------------------------------------------------------
@@ -44,9 +44,9 @@ gmt begin $title png
 #	Datos Estadisticos:
 	echo n, mean az, mean r, mean resultant length, max bin sum, scaled mean, linear length sum.
 	gmt rose "tmp_rumbo" $Param -I 
-	gmt rose "tmp_rumbo" $Param -I -o0
-	gmt rose "tmp_rumbo" $Param -I -o1 --FORMAT_FLOAT_OUT=%.0f
-	#gmt rose "tmp_rumbo" $Param -I -o1 --FORMAT_FLOAT_OUT=%%.0f   # Usar para windows
+#	gmt rose "tmp_rumbo" $Param -I -o0
+#	gmt rose "tmp_rumbo" $Param -I -o1 --FORMAT_FLOAT_OUT=%.0f
+#	gmt rose "tmp_rumbo" $Param -I -o1 --FORMAT_FLOAT_OUT=%%.0f   # Usar para windows
 
 #	Extraer cantidad de datos y azimuth promedio
 	n=$(gmt rose "tmp_rumbo" $Param -I -o0)
@@ -70,5 +70,5 @@ gmt end
 rm tmp_* gmt.*
 
 #	Ejercicios sugeridos
-#	1. Cambiar el ancho de clase (linea 18).
-#	2. Ver las otras opciones para dibujar diagrama de rosas (lineas 59 a 61).
+#	1. Cambiar el ancho de clase (linea 20).
+#	2. Ver las otras opciones para dibujar diagrama de rosas (lineas 21 a 23).
