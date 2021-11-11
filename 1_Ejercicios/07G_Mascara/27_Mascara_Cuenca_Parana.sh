@@ -56,7 +56,8 @@ gmt begin $title png
 
 #	Crear/Definir poligono irregular
 	CLIP=Cuenca_Parana.txt
-#	gmt coast -M > $CLIP -EPY -Df
+#	gmt coast -M > $CLIP -EPY
+#	gmt coast -M > $CLIP -EAR.A,AR.Y
 #	gmt grdcontour $CUT1  -C+3000 -D$CLIP
 
 #	Crear Mascara con valores dentro del poligono (-Nfuera/borde/dentro)
