@@ -77,7 +77,7 @@ gmt begin $title png
 	gmt convert "CopaAmerica.csv" -o0,1,2 | gmt text -p -Gwhite@30 -D0/-0.8c -F+f20p,Helvetica-Bold,firebrick=thinner+jCM
 
 #	Dibujar escala vertical
-	gmt colorbar -p -C -DJRM+o0.3c/0+w13/0.618c -L0.1 #-B+l"Cantidad"
+	gmt colorbar -p -C -DJRM+o0.3c/0+w13/0.618c -L0.1 -S+x"Cantidad"
 
 #	-----------------------------------------------------------------------------------------------------------
 #	Cerrar el archivo de salida (ps)
