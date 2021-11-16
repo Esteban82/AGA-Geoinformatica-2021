@@ -39,7 +39,6 @@ clear
 	gmt info EIGEN-6C4.gdf -h37 
 
 #	Crear grilla a partir de tabla de formato gdf. Stepgrid (-I). Lineas de encabezado (-h).
-#	gmt xyz2grd -G$CUT EIGEN-6C4.gdf -h37 -I0.01666
 	gmt xyz2grd -R$REGION -G$CUT EIGEN-6C4.gdf -h37 -I30m -fg
 #	gmt grdinfo $CUT
 
