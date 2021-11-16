@@ -40,7 +40,7 @@ gmt begin $title png
 	gmt grdimage $GRD -I
     
 #	Agregar escala de colores a partir de CPT (-C). Posición (x,y) +wlargo/ancho. Anotaciones (-Ba). Leyenda (+l). 
-	gmt colorbar -DJRM -I -Baf -By+l"km" -W0.001 -F+gwhite+p+i+s -GNaN/0
+#	gmt colorbar -DJRM -I -Baf -By+l"km" -W0.001 -F+gwhite+p+i+s -GNaN/0
 
 #	Recorte (visual)
 #	*************************************************************
@@ -49,7 +49,7 @@ gmt begin $title png
 
 #	Graficar imagen satelital
 	gmt grdimage $SAT
-#    gmt grdimage $SAT -t50
+#   gmt grdimage $SAT -t50
 
 #	Finalizar recorte
 	#gmt coast -Q
