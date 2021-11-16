@@ -21,7 +21,7 @@ clear
 	GRD=@earth_relief_04m
 
 # 	Nombre archivo de salida
-	CUT=temp_$title.nc
+	CUT=tmp_$title.nc
 
 #	Parametros GMT
 #	-----------------------------------------------------------------------------------------------------------
@@ -61,20 +61,22 @@ gmt begin $title png
 #	Crear archivo con datos para heatmap
 
 #	Procesar Sismos
-	gmt blockmean -R$REGION Sismos/query.csv -Sn -C -h1 -i2,1 > "temp_Heatmap.xyz" -I$res
+	#gmt blockmean -R$REGION Sismos/query.csv -Sn -C -h1 -i2,1 -I$res > tmp_Heatmap.xyz
+	gmt blockmean -R$REGION Sismos/query.csv -Sn -h1 -i2,1 -I$res -G$CUT -A
 
 #	Crear grilla
-	gmt xyz2grd -G$CUT "temp_Heatmap.xyz" -I$res
+	#gmt xyz2grd -G$CUT tmp_Heatmap.xyz -I$res
 
 #	Analisis de datos
-	gmt histogram "temp_Heatmap.xyz" -T5 -Io -i2 -Z0
-#	gmt grdinfo $cut -T5
-#	gmt grdinfo $cut -T5+a1
-#	gmt grdinfo $cut -T5+a2.5
-#	gmt grdinfo $cut -T5+a5
+#	gmt histogram temp_Heatmap.xyz -T1 -i2 -Z0
+	gmt grdinfo $CUT -T5
+	gmt grdinfo $CUT -T5+a1
+	gmt grdinfo $CUT -T5+a2.5
+	gmt grdinfo $CUT -T5+a5
 
 #	Crear Paleta de Colores. Paleta Maestra (-C), Definir rango (-Tmin/max/intervalo), CPT continuo (-Z)
-	gmt grd2cpt $CUT -Z -Di -Chot -L1/14
+#	gmt grd2cpt $CUT -Z -Di -Chot -L1/14
+	gmt makecpt -Chot -Di -T1/14
 
 #	Crear Imagen a partir de grilla con sombreado y cpt
 	gmt grdimage $CUT -C -Q -t25
@@ -94,5 +96,5 @@ gmt begin $title png
 #	Cerrar el archivo de salida (ps)
 gmt end
 
-	rm temp_* gmt.*
+#	rm tmp_* gmt.*
 #	pause
