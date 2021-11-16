@@ -65,7 +65,7 @@ gmt begin $title png
 	gmt blockmean -R$REGION Sismos/query.csv -Sn -h1 -i2,1 -I$res -G$CUT -A
 
 #	Crear grilla
-	#gmt xyz2grd -G$CUT tmp_Heatmap.xyz -I$res
+	#orgmt xyz2grd -G$CUT tmp_Heatmap.xyz -I$res
 
 #	Analisis de datos
 #	gmt histogram temp_Heatmap.xyz -T1 -i2 -Z0
