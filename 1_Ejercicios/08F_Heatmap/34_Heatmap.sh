@@ -9,7 +9,7 @@ clear
 #	Definir variables del mapa
 #	-----------------------------------------------------------------------------------------------------------
 #	Titulo del mapa
-	title=33_Heatmap
+	title=34_Heatmap
 	echo $title
  
 #	Region Geografica y proyección
@@ -65,7 +65,7 @@ gmt begin $title png
 #	Combinar archivos con datos de sismicidad en un unico archivo.
 	cat Datos/query_* > tmp_sismos.txt
 
-#	Extraer datos de Longitud y Latitud
+#	Extraer datos de Longitud y Latitud. -s: no escribe datos con NaN
 	gmt convert tmp_sismos.txt -i2,1 -hi1 -s > tmp_LongLat.txt
 
 #	Crear tabla de datos con cantidad de sismos (-Sn) en cada bloque (de $res x $res; -I). -C: Ubicacion en centro del bloque.

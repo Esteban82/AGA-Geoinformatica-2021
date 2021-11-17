@@ -4,7 +4,7 @@ clear
 #	Definir variables del mapa
 #	-----------------------------------------------------------------------------------------------------------
 #	Titulo del mapa
-	title=Anim_Sismicidad
+	title=35_Anim_Sismicidad
 	echo $title
 
 #	Resolucion de la imagen/grilla del mapa base
