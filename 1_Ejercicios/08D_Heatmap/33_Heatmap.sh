@@ -1,23 +1,28 @@
 #!/bin/bash
 clear
 
+#	Temas a ver:
+#	1. Agrupar datos
+#	2. Crear heatmap a partir de datos de sismos.
+
+
 #	Definir variables del mapa
 #	-----------------------------------------------------------------------------------------------------------
 #	Titulo del mapa
-	title=Heatmap
+	title=33_Heatmap
 	echo $title
  
 #	Region Geografica y proyección
 	REGION=-79/-20/-63/-20
-#	REGION=-76/-60/-38/-26
+#	REGION=-74/-64/-36/-28
 	PROJ=M15c
-#	PROJ=X15cd
 
-#   Resolucion
-#	RES=01m
+#   Resolucion de la grilla de densidades (heatmap)
 	res=10k
+#	res=30m
+#	res=50k
 
-#	Grilla
+#	Grilla mapa base
 	GRD=@earth_relief_04m
 
 # 	Nombre archivo de salida
@@ -44,7 +49,7 @@ gmt begin $title png
 
 #	Dibujar Mapa Base
 #	-----------------------------------------------------------------------------------------------------------
-#	Crear CPT Mapa Fondo 
+#	Crear CPT Mapa Fondo
 	gmt makecpt -T-11000,0,9000 -Cdodgerblue2,white
 
 #	Crear Imagen a partir de grilla con sombreado
@@ -55,39 +60,41 @@ gmt begin $title png
 	gmt coast -N2/0.25,-.
 
 #	***********************************************************************
-
 #	Procesar Sismos
 #	-----------------------------------------------------------------------------------------------------------
-#	Crear archivo con datos para heatmap
+#	Combinar archivos con datos de sismicidad en un unico archivo.
+	cat Datos/query_* > tmp_sismos.txt
 
-#	Procesar Sismos
-	#gmt blockmean -R$REGION Sismos/query.csv -Sn -C -h1 -i2,1 -I$res > tmp_Heatmap.xyz
-	gmt blockmean -R$REGION Sismos/query.csv -Sn -h1 -i2,1 -I$res -G$CUT -A
+#	Extraer datos de Longitud y Latitud
+	gmt convert tmp_sismos.txt -i2,1 -hi1 -s > tmp_LongLat.txt
 
-#	Crear grilla
-	#orgmt xyz2grd -G$CUT tmp_Heatmap.xyz -I$res
+#	Crear tabla de datos con cantidad de sismos (-Sn) en cada bloque (de $res x $res; -I). -C: Ubicacion en centro del bloque.
+	gmt blockmean tmp_LongLat.txt -Sn -C -I$res > tmp_Heatmap.xyz
+
+#	Crear grilla a partir de tabla de datos
+#	gmt xyz2grd tmp_Heatmap.xyz -I$res -GAscii.grd=ei
+	gmt xyz2grd tmp_Heatmap.xyz -I$res -G$CUT
 
 #	Analisis de datos
-#	gmt histogram temp_Heatmap.xyz -T1 -i2 -Z0
-	gmt grdinfo $CUT -T5
-	gmt grdinfo $CUT -T5+a1
-	gmt grdinfo $CUT -T5+a2.5
-	gmt grdinfo $CUT -T5+a5
+	gmt grdinfo $CUT -T
+	gmt grdinfo $CUT -T+a1
+	gmt grdinfo $CUT -T+a2.5
+	gmt grdinfo $CUT -T+a5
 
-#	Crear Paleta de Colores. Paleta Maestra (-C), Definir rango (-Tmin/max/intervalo), CPT continuo (-Z)
-#	gmt grd2cpt $CUT -Z -Di -Chot -L1/14
-	gmt makecpt -Chot -Di -T1/14
+#	Crear Variable para CPT
+	T=$(gmt grdinfo $CUT -T+a5)
+
+#	Crear CPT. Paleta Maestra (-C).
+	gmt makecpt -Chot -Di $T
 
 #	Crear Imagen a partir de grilla con sombreado y cpt
-	gmt grdimage $CUT -C -Q -t25
+#	gmt grdimage $CUT -C
+#	gmt grdimage $CUT -C    -t50
+#	gmt grdimage $CUT -C -Q
+	gmt grdimage $CUT -C -Q -t50
 
 #	Agregar escala de colores a partir de CPT (-C). Posici�n (x,y) +wlargo/ancho. Anotaciones (-Ba). Leyenda (+l). 
 	gmt colorbar -C -DjRT+o1.7c/0.7+w9/0.618c+ef -Baf+l"Cantidad de Sismos cada 100 km@+2@+"  -F+gwhite+p+i+s
-
-#	Terminar de Dibujar Mapa Base
-#	-----------------------------------------------------------------------------------------------------------
-#	Dibujar Escala centrado en -Ln(%/%), unidad arriba de escala (+l), unidad con los valores (+u)
-	gmt basemap -Ln0.11/0.075+c-32:00+w800k+f+l -F+gwhite+p+i+s
 
 #	Dibujar frame (-B): Anotaciones (a), frame (f), grilla (g)
 	gmt basemap -Bxaf -Byaf
@@ -96,5 +103,8 @@ gmt begin $title png
 #	Cerrar el archivo de salida (ps)
 gmt end
 
-#	rm tmp_* gmt.*
-#	pause
+	rm tmp_* gmt.*
+
+#	Ejercicios sugeridos
+#	1. Cambiar la resolución de la grilla de densidades (lineas 21-23).
+#	2. Cambiar region geografica del mapa.
