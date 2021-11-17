@@ -1,22 +1,25 @@
 #!/bin/bash
 clear
 
+#	Temas a ver
+#	1. Dibujar perfil sobre el mapa (wiggle).
+
 #	Definir variables del mapa
 #	-----------------------------------------------------------------------------------------------------------
 
 #	Titulo del mapa
-	title=Mapa_Perfil
+	title=31_Mapa_Perfil
 	echo $title
 
-#	Region: Mar Argentino
+#	Region y Proyeeción
 	REGION=-78/-44/-37/-27
-
-#	Proyeccion Mercator (M)
 	PROJ=M15c
 
+#	Resolucion de la grilla (y del perfil)
+	RES=15s
+
 #	Base de datos de GRILLAS
-#	GRA="E:\Facultad\Datos_Geofisicos\Gravimetria\Sandwell-Smith\Datos\grav_29.1.img"
-	DEM=@earth_relief_02m
+	DEM=@earth_relief_$RES
 
 # 	Nombre archivo de salida
 	CUT=tmp_$title.nc
@@ -24,12 +27,6 @@ clear
 
 	gmt set MAP_FRAME_AXES WesN
 	gmt set FORMAT_GEO_MAP ddd:mm:ssF
-
-#	Resolucion de la grilla (y del perfil)
-	RES=15s
-
-#	Base de datos de GRILLAS
-	DEM=@earth_relief_$RES
 
 #	Dibujar mapa
 #	-----------------------------------------------------------------------------------------------------------
@@ -69,13 +66,17 @@ gmt begin $title png
 #	Dibujar Perfil
 #	gmt plot tmp_line -W0.5,black
 
-#	Dibujar Perfil en el mapa
-	gmt wiggle tmp_data -Gred+p -Gblue+n -Z3000 -DjRB+o0.1/0.1+w500+lm -t50 -T -W
-
+#	Dibujar Perfil en el mapa. Z: Escala (metros/cm).
+#	gmt wiggle tmp_data -Z3000c -W                    									# Dibujar solo linea
+#	gmt wiggle tmp_data -Z3000c -W -Gred			  									# Pintar areas positivas 
+#	gmt wiggle tmp_data -Z3000c -W -Gred+p    -Gblue+n     								# Pintar también negativas
+#	gmt wiggle tmp_data -Z3000c -W -Gred+p    -Gblue+n    -T  							# Agregar linea base 
+#	gmt wiggle tmp_data -Z3000c -W -Gred+p    -Gblue+n    -T -DjRB+o0.1/0.1+w500+lm 	# Agregar escala
+	gmt wiggle tmp_data -Z3000c -W -Gred@50+p -Gblue@50+n -T -DjRB+o0.1/0.1+w500+lm  	# Agregar transaparencia.
 #	********************************************************************
 
 #	-----------------------------------------------------------------------------------------------------------
 #	Cerrar el archivo de salida (ps)
 gmt end
 
-#	rm tmp_* gmt.*
+	rm tmp_* gmt.*

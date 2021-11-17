@@ -26,6 +26,8 @@ clear
 #	Fuente a utilizar
 	GRD=@earth_relief_$RES
 
+	gmt set GMT_VERBOSE i
+
 #	Dibujar mapa
 #	-----------------------------------------------------------------------------------------------------------
 #	Iniciar sesion y tipo de figura
@@ -65,6 +67,7 @@ clear
 #	Cerrar el archivo
 gmt end
 
+rm gmt.conf
 #	Ejercicios Sugeridos
 #	1. Modificar region del mapa y la resolucion del mapa
 #	2. Modificar azimuth de la fuente de iluminuacion (az en linea 43)

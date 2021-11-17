@@ -2,7 +2,7 @@
 clear
 
 #	Temas a ver
-#	1. Recorte irregular de una grilla
+#	1. Agregar imagen satelital o dem debajo del recorte.
 
 #	Definir variables del mapa
 #	-----------------------------------------------------------------------------------------------------------
@@ -11,8 +11,8 @@ clear
 	echo $title
 
 #	Region: Argentina
-#	REGION=-70/-42/-36/-12
-    REGION==SA
+	REGION=-70/-42/-36/-12
+#   REGION==SA
 
 #	Proyeccion Mercator (M)
 	PROJ=M15c
@@ -51,19 +51,20 @@ gmt begin $title png
 #	Setear la region y proyeccion (y no se dibuja nada)
 	gmt basemap -R$REGION -J$PROJ -B+n	
 
+#	Agregar imagan/grilla de fondo
+#	gmt grdimage $SAT
+	gmt grdimage $DEM -I -Cwhite
+
 #	Crear grilla
 #	-------------------------------------------------------------
 #	Recortar la grilla (rectangular)
 	gmt grdcut $DEM -G$CUT1 -R$REGION
 
-#	Idem y agrega efecto de sombreado. a= azimut. nt1=metodo de ilumninacion
-	gmt grdimage $SAT
-
 #	Crear/Definir poligono irregular
-#	CLIP=Cuenca_Parana.txt
+	CLIP=Cuenca_Parana.txt
 #	gmt coast -M > $CLIP -EPY
 #	gmt coast -M > $CLIP -EAR.A,AR.Y
-	gmt coast -M > $CLIP -EAR,CH
+#	gmt coast -M > $CLIP -EAR,CH
 #	gmt grdcontour $CUT1  -C+3000 -D$CLIP
 
 #	Crear Mascara con valores dentro del poligono (-Nfuera/borde/dentro)

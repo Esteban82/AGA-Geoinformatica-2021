@@ -2,9 +2,7 @@
 clear
 
 #	Temas a ver
-#	1. Hacer mapas a partir de DEM. 
-#	2. Agregar efecto de sombreado (-I)
-#	3. Dibujar y personalizar barra de color.
+#	1. Combinar imagenes satelitales y grillas aplicando recortes (clip) segun la linea de costa.
 
 #	Definir variables del mapa
 #	-----------------------------------------------------------------------------------------------------------

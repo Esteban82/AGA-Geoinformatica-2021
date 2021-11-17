@@ -2,14 +2,12 @@
 clear
 
 #	Temas a ver
-#	1. Hacer mapas a partir de DEM. 
-#	2. Agregar efecto de sombreado (-I)
-#	3. Dibujar y personalizar barra de color.
+#	1. Combinar imagenes satelitales y grillas aplicando recortes (clip) segun datos DCW.
 
 #	Definir variables del mapa
 #	-----------------------------------------------------------------------------------------------------------
 #	Titulo del mapa
-	title=30_Batimetria_Satelital_2
+	title=30_Batimetria_Satelital
 	echo $title
 
 #	Region: Argentina
@@ -52,7 +50,6 @@ gmt begin $title png
 #   gmt grdimage $SAT -t50
 
 #	Finalizar recorte
-	#gmt coast -Q
     gmt clip -C
 #	*************************************************************
 
@@ -66,5 +63,3 @@ gmt begin $title png
 #	-----------------------------------------------------------------------------------------------------------
 #	Cerrar el archivo
 gmt end
-
-
