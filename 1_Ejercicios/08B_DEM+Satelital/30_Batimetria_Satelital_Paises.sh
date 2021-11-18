@@ -7,7 +7,7 @@ clear
 #	Definir variables del mapa
 #	-----------------------------------------------------------------------------------------------------------
 #	Titulo del mapa
-	title=30_Batimetria_Satelital
+	title=30_Batimetria_Satelital_Paises
 	echo $title
 
 #	Region: Argentina
@@ -46,10 +46,11 @@ gmt begin $title png
 #   gmt coast -EAR+C   # Recorte fuera
 
 #	Crear archico para recorte
-	gmt coast -M > tmp_clip -EPY,BO,PE
+	gmt coast -M > tmp_clip -EAR
 
 #	Iniciar recorte a partir de tmp_clip
-    gmt clip tmp_clip
+#   gmt clip tmp_clip
+    gmt clip tmp_clip -N	# -N: Invertir mascara
 
 #	Graficar imagen satelital
 	gmt grdimage $SAT
@@ -69,3 +70,5 @@ gmt begin $title png
 #	-----------------------------------------------------------------------------------------------------------
 #	Cerrar el archivo
 gmt end
+
+rm tmp_*
