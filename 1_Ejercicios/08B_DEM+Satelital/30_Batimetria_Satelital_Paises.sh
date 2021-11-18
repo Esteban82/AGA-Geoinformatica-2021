@@ -42,8 +42,14 @@ gmt begin $title png
 
 #	Recorte (visual)
 #	*************************************************************
-    gmt coast -EAR+c   # Recorte dentro
+#   gmt coast -EAR+c   # Recorte dentro
 #   gmt coast -EAR+C   # Recorte fuera
+
+#	Crear archico para recorte
+	gmt coast -M > tmp_clip -EPY,BO,PE
+
+#	Iniciar recorte a partir de tmp_clip
+    gmt clip tmp_clip
 
 #	Graficar imagen satelital
 	gmt grdimage $SAT
