@@ -6,7 +6,6 @@ clear
 
 #	Definir variables del mapa
 #	-----------------------------------------------------------------------------------------------------------
-
 #	Titulo del mapa
 	title=31_Mapa_Perfil
 	echo $title
@@ -23,7 +22,6 @@ clear
 
 # 	Nombre archivo de salida
 	CUT=tmp_$title.nc
-	SHADOW=tmp_$title-shadow.nc
 
 	gmt set MAP_FRAME_AXES WesN
 	gmt set FORMAT_GEO_MAP ddd:mm:ssF
@@ -61,7 +59,9 @@ gmt begin $title png
 
 #	Crear datos de perfil (Interpolar, agregar distancia y alturas)
 #	gmt sample1d tmp_line -I$RES -fg | gmt mapproject -G+uk | gmt grdtrack -G$CUT > tmp_data
-	gmt sample1d tmp_line -I$RES -fg | gmt grdtrack -G$CUT > tmp_data
+	gmt sample1d tmp_line -I$RES -fg     | gmt grdtrack -G$CUT > tmp_data
+#	gmt sample1d tmp_line -I$RES -fg -Am | gmt grdtrack -G$CUT > tmp_data
+
 
 #	Dibujar Perfil
 #	gmt plot tmp_line -W0.5,black
