@@ -36,7 +36,7 @@ cat << EOF > pre.sh
 	
 gmt begin
 #	Crear lista de fechas para la animacion: Inicio/Fin/Intervalo. o: meses. y: años
-	gmt math -o0 -T1920-01-01T/2021-01-01T/1o T = times.txt
+	gmt math -o0 -T1920-01-01T/2021-11-01T/1o T = times.txt
 
 #   Setear variables mapa de fondo
 	gmt basemap -R$REGION -J$PROJ -B+n -Y$Y -X$X
@@ -107,7 +107,7 @@ EOF
 
 #	----------------------------------------------------------------------------------------------------------
 # 	3. Crear animacion. -C: Lienzo. -D: frames/sec. 
-	gmt movie main.sh -Sbpre.sh -C18cx22.5cx60 -Ttimes.txt -N$title -Ml,png -Zs -W -Fnone -D14 -Vi \
+	gmt movie main.sh -Sbpre.sh -C18cx22.5cx60 -Ttimes.txt -N$title -Ml,png -Zs -W -Fmp4 -D14 -Vi \
 	-Lc0+jTR+o0.4/0.4+gwhite+h+r --FONT_TAG=16p,Helvetica,black --FORMAT_CLOCK_MAP=- --FORMAT_DATE_MAP=o-yyyy --GMT_LANGUAGE=ES
 
     rm q.txt
