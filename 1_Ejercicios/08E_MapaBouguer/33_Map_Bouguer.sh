@@ -47,7 +47,7 @@ clear
 #	gmt grd2cpt $CUT -V -Z 				 			# Z: CPT continuo
 #	gmt grd2cpt $CUT -V -Z -L-200/300    			# L: Limitar valores 
 #	gmt grd2cpt $CUT -V -Z -L-200/300 -D    		# D: extender colores de los extremos
-	gmt grd2cpt $CUT -V -Z -L-200/300 -D -Cjet		# C: CPT maestra
+#	gmt grd2cpt $CUT -V -Z -L-200/300 -D -Cjet		# C: CPT maestra
 
 #	Crear Imagen a partir de grilla con sombreado y cpt
 	gmt grdimage $CUT

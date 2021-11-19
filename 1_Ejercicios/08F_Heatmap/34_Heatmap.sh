@@ -13,8 +13,8 @@ clear
 	echo $title
  
 #	Region Geografica y proyección
-	REGION=-79/-20/-63/-20
-#	REGION=-74/-64/-36/-28
+#	REGION=-79/-20/-63/-20
+	REGION=-74/-64/-36/-28
 	PROJ=M15c
 
 #   Resolucion de la grilla de densidades (heatmap)
@@ -23,7 +23,7 @@ clear
 #	res=50k
 
 #	Grilla mapa base
-	GRD=@earth_relief_04m
+	GRD=@earth_relief_01m
 
 # 	Nombre archivo de salida
 	CUT=tmp_$title.nc
@@ -76,6 +76,7 @@ gmt begin $title png
 	gmt xyz2grd tmp_Heatmap.xyz -I$res -G$CUT
 
 #	Analisis de datos
+	gmt grdinfo $CUT
 	gmt grdinfo $CUT -T
 	gmt grdinfo $CUT -T+a1
 	gmt grdinfo $CUT -T+a2.5
@@ -103,7 +104,7 @@ gmt begin $title png
 #	Cerrar el archivo de salida (ps)
 gmt end
 
-	rm tmp_* gmt.*
+#	rm tmp_* gmt.*
 
 #	Ejercicios sugeridos
 #	1. Cambiar la resolución de la grilla de densidades (lineas 21-23).
