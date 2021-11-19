@@ -107,13 +107,12 @@ EOF
 
 #	----------------------------------------------------------------------------------------------------------
 # 	3. Crear animacion. -C: Lienzo. -D: frames/sec. 
-	gmt movie main.sh -Sbpre.sh -C18cx22.5cx60 -Ttimes.txt -N$title -Ml,png -Zs -W -Fmp4 -D14 -Vi \
-	-Lc0+jTR+o0.4/0.4+gwhite+h+r --FONT_TAG=16p,Helvetica,black --FORMAT_CLOCK_MAP=- --FORMAT_DATE_MAP=o-yyyy --GMT_LANGUAGE=ES
+	gmt movie main.sh -Sbpre.sh -C18cx22.5cx60 -Ttimes.txt -N$title -Ml,png -Zs -W -Fnone -D14 -Vi \
+	-Lc0+jTR+o0.4/0.4+g+hwhite+r --FONT_TAG=16p,Helvetica,black --FORMAT_CLOCK_MAP=- --FORMAT_DATE_MAP=o-yyyy --GMT_LANGUAGE=ES
 
-    rm q.txt
+#    rm q.txt
 
 #   Suspender PC
 #	shutdown -h
 #   systemctl suspend
 #   rundll32.exe powrprof.dll,SetSuspendState 0,1,0
-
