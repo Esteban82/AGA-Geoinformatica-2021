@@ -29,7 +29,6 @@ clear
 #	PROJ=G-65/0/90/15c
 #	PROJ=G-65/-30/90/15c
 
-
 #	Region geografica
 	REGION=d
 
