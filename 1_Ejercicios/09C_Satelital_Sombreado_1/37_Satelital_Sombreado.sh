@@ -1,33 +1,39 @@
 #!/bin/bash
 clear
 
+#	Temas a ver
+#	1. Agregar efecto de sombreado a una imagen satelital.
+
 #	Definir variables del mapa
 #	-----------------------------------------------------------------------------------------------------------
 #	Resolucion de Blue/Black Marble: 01d, 30m, 20m, 15m, 10m, 06m, 05m, 04m, 03m, 02m, 01m, 30s
-	RES=05m
+	RES=10m
 	
 #	Mosaicos de la NASA: BlackMarble (night) o BlueMarble (day)
-	daytime=day
+#	daytime=day
 	daytime=night
 
 #	Titulo del mapa
-	title=Marble_Intes_${daytime}
+	title=37_Satelital_Sombreado_${daytime}
 	echo $title
 
-#	Proyeccion Geografica
+#	Mapamundis. Mollweide (M), Robinson (N), Eckert VI (Ks)
 #	PROJ=W-65/15c
-	PROJ=M15c
-#	PROJ=G-65/-30/90/15c
+	PROJ=N-65/15c
+#	PROJ=Ks-65/15c
+
+#	Proyecciones acimutales requieren 3 parametros + 1 opcional (lon0/lat0[/horizon]/width
+#	L(a)mbert Equal Area; (S)tereographic; Orto(g)rafica; (E)quidistante
+#	PROJ=S-65/0/90/15c
 #	PROJ=S-65/-30/90/15c
+#	PROJ=G-65/0/90/15c
+#	PROJ=G-65/-30/90/15c
+
 
 #	Region geografica
-#	REGION=d
-#	REGION=-100/30/-50/20
-	REGION=BR
-#	REGION=BR,AR
+	REGION=d
 
 #	Archivos Temporales
-	CUT=tmp_$title.nc
 	SHADOW=tmp_$title-shadow.nc
 
 #	Dibujar mapa
@@ -38,20 +44,28 @@ gmt begin $title png
 #	Setear la region y proyeccion
 	gmt basemap -R$REGION -J$PROJ -B+n
 
-#	Crear grilla para efecto de sombreado a partir del DEM
-	gmt grdgradient @earth_relief_$RES -Nt1 -A45 -G$SHADOW -R$REGION
-
+#	Sombreado a partir del DEM
+#	gmt grdgradient @earth_relief_$RES -A45 -G$SHADOW -R$REGION -Nt0.8
+#	gmt grdgradient @earth_relief_$RES -A45 -G$SHADOW -R$REGION -Nt1
+#	gmt grdgradient @earth_relief_$RES -A45 -G$SHADOW -R$REGION -Nt1.2
+	gmt grdgradient @earth_relief_$RES -A45 -G$SHADOW -R$REGION -Ne0.6
+ 
 #	Graficar Imagen Satelital
 	gmt grdimage @earth_${daytime}_$RES -I$SHADOW
 
 #	Dibujar Paises
 	gmt coast -N1/0.2,- 
 
-#	Dibujar marco del mapa 
-gmt basemap -Bxaf -Byaf
+#	Dibujar marco del mapa
+	gmt basemap -Bxaf -Byaf
 
 #	-----------------------------------------------------------------------------------------------------------
 #	Cerrar la sesion y mostrar archivo
 gmt end #show
 
-#	rm tmp_* gmt.*
+	rm tmp_*
+	
+#	Ejercicios sugeridos
+#	1. Probar las distintas proyecciones.
+#	2. Ver los distintos argumentos para crear el grilla de sombreado. 
+	
