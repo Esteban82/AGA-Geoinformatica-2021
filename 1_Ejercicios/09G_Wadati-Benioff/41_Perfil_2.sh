@@ -3,7 +3,7 @@
 #	Define map
 #	-----------------------------------------------------------------------------------------------------------
 #	Titulo del mapa
-	title=41_Perfil2
+	title=41_Perfil_2
 	echo $title
 	
 #	Resolucion de la imagen/grilla del mapa base
@@ -33,16 +33,7 @@
 #	-----------------------------------------------------------------------------------------------------------
 	gmt set FONT_ANNOT_PRIMARY 8,Helvetica,black
 	gmt set FONT_LABEL 8,Helvetica,black
-	gmt set FONT_TITLE 10,4,Black
-	gmt set FORMAT_GEO_MAP ddd:mm:ssF
 	gmt set GMT_VERBOSE w
-	gmt set MAP_FRAME_AXES WesN
-	gmt set MAP_FRAME_TYPE fancy+
-	gmt set MAP_FRAME_WIDTH 1c
-	gmt set MAP_GRID_CROSS_SIZE_PRIMARY 0
-	gmt set MAP_SCALE_HEIGHT 0.1618
-	gmt set MAP_TICK_LENGTH_PRIMARY 0.1
-	gmt set PROJ_LENGTH_UNIT cm
 
 #	*********************************************************************************************************
 #	GRAFICO INFERIOR
