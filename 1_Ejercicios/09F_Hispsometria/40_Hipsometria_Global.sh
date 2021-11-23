@@ -61,7 +61,7 @@ gmt begin $title png
 
 #	Frecuencia Altimetrica
 #	-----------------------------------------------------------------------------------------------------------
-#	Analizar datos
+#	Analizar datos y extraer info
 	gmt histogram "tmp_datos" -bi$BIN -I -Z$Z+w -T$T
 	MIN=$(gmt histogram "tmp_datos" -bi$BIN -Z$Z+w -T$T -I -o0)
 	MAX=$(gmt histogram "tmp_datos" -bi$BIN -Z$Z+w -T$T -I -o1)

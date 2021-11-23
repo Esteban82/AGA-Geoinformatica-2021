@@ -66,7 +66,6 @@ gmt begin $title png
 #	Crear Grafico
 	gmt basemap -JX$L/$H -R0/$KM/$Min/$Max -B+n
 
-
 #	Dibujar Eje X (Sn)
 	gmt basemap -Bxaf+l"Distancia (km)" -BSn
 

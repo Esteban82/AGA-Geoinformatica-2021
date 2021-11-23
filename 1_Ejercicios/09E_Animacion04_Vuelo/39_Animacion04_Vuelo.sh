@@ -5,17 +5,26 @@
 
 
 #	Titulo de la animación
-title=39_Animacion04_Vuelo
+title=39_Animacion04_Vuelo_2
 
 # 1. Crear archivos con las variables 
 cat << 'EOF' > include.sh
 # Ciudades (Longitud/Latitud)
 Inicio=-68.304444/-57.807222	# Ushuaia
 #Inicio=-58.5258/-34.8553		# Buenos Aires
+#Inicio=139.692222/35.689722	# Tokyo
+
 Fin=-65.6/-22.105556			# La Quiaca
 #Fin=-70.666667/-33.45			# Santiago de Chile
-Intervalo=5k
+#Fin=-0.1275/51.507222			# Londres
+
+# Intervalo en k del trayecto (de esto depende la cantidad de frames)
+#Intervalo=10
+Intervalo=5
+
 Altura=100
+Altura=160
+
 EOF
 
 # 2. Crear archivos para la animacion
@@ -33,3 +42,8 @@ gmt end
 EOF
 # 2. Crear la animacion
 gmt movie main.sh -Chd -N$title -Iinclude.sh -Tflight_path.txt -Sbpre.sh -H2 -Vi -Ml,png -Zs -Fmp4
+
+#	Ejercicios Sugeridos
+#	1. Cambiar los puntos de inicio y final.
+#	2. Cambiar la equidistancia (la cantidad de frames depende de esto).
+#	3. Cambiar al altura de vuelo.
