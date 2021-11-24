@@ -32,8 +32,6 @@ gmt begin $title png
 
 #	Convertir modulo del gradiente a inclinacion (pendiente) en radianes (ATAN), y luego a grados (R2D)
 	gmt grdmath $CUT ATAN R2D = $CUT
-	gmt grdinfo $CUT2
-	gmt grd2xyz $CUT2 -Vi
 
 #	Reclasificar grillas de pendiente en 4 clases 
 #	gmt grdclip $CUT -G$CUT -Sb3/10 -Si3/12/20 -Si12/22/30 -Sa22/40
