@@ -3,7 +3,7 @@
 #	Definir variables del mapa
 #	-----------------------------------------------------------------------------------------------------------
 #	Titulo del mapa
-	title=Pendiente_Aspecto
+	title=42_Pendiente_Aspecto
 	echo $title
 
 #	Proyeccion y Region
@@ -28,7 +28,7 @@ gmt begin $title png
 
 #	Calcular Grillas con modulo del pendiente y aspecto
 	gmt grdgradient $DEM -D  -S$CUT  -R$REGION -fg
-	gmt grdgradient $DEM -Da -G$CUT2 -R$REGION -fg -Vi
+	gmt grdgradient $DEM -Da -G$CUT2 -R$REGION -fg
 
 #	Convertir modulo del gradiente a inclinacion (pendiente) en radianes (ATAN), y luego a grados (R2D)
 	gmt grdmath $CUT ATAN R2D = $CUT
@@ -51,7 +51,12 @@ gmt begin $title png
 #	gmt grdimage $CUT -CBrewer_Aspect-Slope.cpt
 	gmt grdimage $CUT -CAspect-Slope_Esteban.cpt
 
-#	gmt colorbar -C
+#	gmt colorbar -C -DJRM+w100
+	#gmt colorbar -Dx8c/1c+w10c/0.5c+jTC -CAspect-Slope_Esteban.cpt #-Bxaf+l"topography" -By+lkm
+	gmt colorbar -DJRM+w11c+o0.5/0c -CAspect-Slope_Esteban.cpt -L0.1
+
+	gmt image -DjBRM+w3c+o0.5/0c Aspect-Slope_Esteban.png
+
 #	-----------------------------------------------------------------------------------------------------------
 #	Dibujar frame
 	gmt basemap -Bxaf -Byaf 
@@ -60,14 +65,14 @@ gmt begin $title png
 	gmt coast -Sdodgerblue2
 
 #	Dibujar Linea de Costa (W1)
-#	gmt coast -W1/faint
+	gmt coast -W1/faint
 	gmt coast -N1/faint
 	
 #	Dibujar Escala en el mapa.
-	gmt basemap -Ln0.88/0.075+c-32:00+w100k+f+l   
+#	gmt basemap -Ln0.88/0.075+c-32:00+w100k+f+l   
 
 #	-----------------------------------------------------------------------------------------------------------
 #	Cerrar el archivo de salida (ps)
 	gmt end
 
-#	rm tmp_* gmt.*
+	rm tmp_*
