@@ -7,7 +7,7 @@
 	echo $title
 	
 #	Resolucion de la imagen/grilla del mapa base
-	RES=02m
+	RES=01m
 	
 #	Dimensiones del Grafico (en cm): Ancho (L), Altura inferior (H1) y arriba (H2)
 	L=15
@@ -15,11 +15,15 @@
 	H2=2.5
 
 #	Coordendas iniciales (1) y finales del perfil (2)
-	Long1=-74
-	Lat1=-29
+#	Long1=-74
+#	Lat1=-29
+	Lat1=-33.5
+	Long1=-75.02
 
-	Long2=-64
-	Lat2=-33
+#	Long2=-64
+#	Lat2=-33
+	Long2=-63.5
+	Lat2=-31
 
 #	Distancia perpendicular al pefil (en km) y rango de profundidades del perfil (en km)
 	Dist_Perfil=100
@@ -103,7 +107,7 @@ gmt begin $title png
 	Max=$(gmt info tmp_data -C -i3+d1000 -o1)
 	
 #	Crear Grafico con desplazamiento en Y
-	gmt basemap -R0/$KM/$Min/$Max -JX$L/-$H2 -B+n -Y$H1
+	gmt basemap -R0/$KM/$Min/$Max -JX$L/$H2 -B+n -Y$H1
 
 #	Dibujar Ejes XY
 	gmt basemap -Bxf -Byaf+l"Elevaciones (km)" -BwESn

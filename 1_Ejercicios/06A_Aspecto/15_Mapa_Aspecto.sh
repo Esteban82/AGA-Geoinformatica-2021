@@ -42,7 +42,7 @@ clear
 #	---------------------------------------------
 
 #	Ver informacion de la grilla
-#	gmt grdinfo $CUT
+	gmt grdinfo $CUT
 
 #	Crear Paleta de Colores. Paleta Maestra (-C), Definir rango (-Tmin/max/intervalo), CPT continuo (-Z)
 	gmt makecpt -Ccyclic -T0/360
