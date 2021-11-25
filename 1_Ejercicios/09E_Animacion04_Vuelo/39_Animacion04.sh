@@ -3,9 +3,8 @@
 #	Temas a ver
 #	1. Crear animación simulando un vuelo entre dos ciudades.
 
-
 #	Titulo de la animación
-title=39_Animacion04_Vuelo_2
+title=39_Animacion04
 
 # 1. Crear archivos con las variables 
 cat << 'EOF' > include.sh
@@ -22,9 +21,8 @@ Fin=-65.6/-22.105556			# La Quiaca
 #Intervalo=10
 Intervalo=5
 
-Altura=100
+#Altura=100
 Altura=160
-
 EOF
 
 # 2. Crear archivos para la animacion

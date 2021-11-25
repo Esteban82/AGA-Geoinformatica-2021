@@ -16,7 +16,7 @@ clear
 #	REGION=-85/-54/9/26
 	REGION=BR
 #	REGION=-73/-65/-35/-30
-	REGION=AR.A
+#	REGION=AR.A
 
 #	Dibujar mapa
 #	-----------------------------------------------------------------------------------------------------------
@@ -26,13 +26,14 @@ gmt begin $title png
 #	Setear la region y proyeccion
 	gmt basemap -R$REGION -J$PROJ -B+n
 
-#	Recortar DEM
-	gmt grdcut @earth_relief -Gtmp_cut.nc -R$REGION -J$PROJ -Vi
+#	Descargar DEM para la region. Resolucion definida automaticamente.
+	gmt grdcut @earth_relief -Gtmp_cut.nc -R$REGION -J$PROJ  # Agrego -R y -J para que automaticamente elija la resolución ideal.
 
 #	Sombreado a partir del DEM
 	gmt grdgradient tmp_cut.nc -Nt0.8 -A45 -Gtmp_intes -R$REGION
 
 #	Graficar Imagen Satelital
+#	gmt grdimage @earth_day
 	gmt grdimage @earth_day -Itmp_intes
 
 #	Dibujar Paises (1 paises, 2 estados/provincias en America, 3 limite maritimo)

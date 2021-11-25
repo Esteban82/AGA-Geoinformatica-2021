@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+#	Temas a ver:
+#	1. Hacer perfil topografico.
+#	2. Proyectar datos (sismos) en el perfil.
+#	3. Graficar mecanismos focales en el perfil.
+
 #	Define map
 #	-----------------------------------------------------------------------------------------------------------
 #	Titulo del mapa
@@ -66,11 +71,8 @@ gmt begin $title png
 #	Plotear Sismos en perfil distancia vs profundidad
 	gmt plot "tmp_sismos_project" -C -Sc0.05c -i3,2,2
 
-#	Filtrar Mecanismos Focales
-#	gmt select "Mecanismos_Focales\CMT_*.txt" > "temp_CMT" -L"temp_perfil"+d%Dist_Perfil%k+p -fg 
-
 #	Plotear Mecanismos Focales
-	gmt coupe Mecanismos_Focales/CMT_* -Sd0.15/0 -Gred -M -Aa$Long1/$Lat1/$Long2/$Lat2/90/100/$DepthMin/$DepthMax+f -Q
+	gmt coupe Mecanismos_Focales/CMT_* -Sd0.15/0 -Gred -M -Aa$Long1/$Lat1/$Long2/$Lat2+w$Dist_Perfil+z$DepthMin/$DepthMax -Q
 
 #	*********************************************************************************************************
 #	GRAFICO SUPERIOR

@@ -4,7 +4,7 @@
 #	-----------------------------------------------------------------------------------------------------------
 #	Titulo del mapa
 #	Resoluciones disponibles: 01d, 30m, 20m, 15m, 10m, 06m, 05m, 04m, 03m, 02m, 01m, 30s, 15s
-	RES=10m
+	RES=20m
 
 #	Definir Tipo de Histograma: Contar (-Z0), Frecuencia (-Z1).
 #	Z=0

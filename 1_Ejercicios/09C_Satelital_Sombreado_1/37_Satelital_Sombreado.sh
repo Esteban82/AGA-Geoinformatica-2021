@@ -10,8 +10,8 @@ clear
 	RES=10m
 	
 #	Mosaicos de la NASA: BlackMarble (night) o BlueMarble (day)
-#	daytime=day
-	daytime=night
+	daytime=day
+#	daytime=night
 
 #	Titulo del mapa
 	title=37_Satelital_Sombreado_${daytime}
@@ -28,6 +28,7 @@ clear
 #	PROJ=S-65/-30/90/15c
 #	PROJ=G-65/0/90/15c
 #	PROJ=G-65/-30/90/15c
+#	PROJ=G-65/-90/90/15c
 
 #	Region geografica
 	REGION=d
