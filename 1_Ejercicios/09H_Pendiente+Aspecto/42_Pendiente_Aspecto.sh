@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+#	Temas a ver:
+#	1. Clasificar grillas.
+#	2. Combinar grillas.
+
 #	Definir variables del mapa
 #	-----------------------------------------------------------------------------------------------------------
 #	Titulo del mapa
@@ -47,15 +51,8 @@ gmt begin $title png
 	gmt grdmath $CUT $CUT2 ADD = $CUT
 
 #	Crear Imagen
-#	gmt grdimage $CUT -CBrewer_Aspect-Slope.cpt -nn+c
-#	gmt grdimage $CUT -CBrewer_Aspect-Slope.cpt
+#	gmt grdimage $CUT -CAspect-Slope_Brewer.cpt
 	gmt grdimage $CUT -CAspect-Slope_Esteban.cpt
-
-#	gmt colorbar -C -DJRM+w100
-	#gmt colorbar -Dx8c/1c+w10c/0.5c+jTC -CAspect-Slope_Esteban.cpt #-Bxaf+l"topography" -By+lkm
-	gmt colorbar -DJRM+w11c+o0.5/0c -CAspect-Slope_Esteban.cpt -L0.1
-
-	gmt image -DjBRM+w3c+o0.5/0c Aspect-Slope_Esteban.png
 
 #	-----------------------------------------------------------------------------------------------------------
 #	Dibujar frame
@@ -64,12 +61,13 @@ gmt begin $title png
 #	Pintar areas húmedas: Oceanos (-S) y Lagos (-Cl/)f
 	gmt coast -Sdodgerblue2
 
-#	Dibujar Linea de Costa (W1)
-	gmt coast -W1/faint
-	gmt coast -N1/faint
-	
-#	Dibujar Escala en el mapa.
-#	gmt basemap -Ln0.88/0.075+c-32:00+w100k+f+l   
+#	Dibujar Linea de Costa (W1), de paises (N1) y provincias/regiones (N2)
+	gmt coast -W1/thinner
+	gmt coast -N1/thin -N2/dashed
+
+#	Escala de colores
+#	gmt colorbar -DJRM+w11c+o0.5/0c -CAspect-Slope_Esteban.cpt -L0.1
+	gmt image CPT_Esteban.png -DjBRM+w3c+o0.2/0.2c -F+p+gwhite
 
 #	-----------------------------------------------------------------------------------------------------------
 #	Cerrar el archivo de salida (ps)
