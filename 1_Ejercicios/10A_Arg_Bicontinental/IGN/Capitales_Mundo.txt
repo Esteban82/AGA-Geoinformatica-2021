@@ -1,0 +1,240 @@
+#CapitalLongitude	CapitalLatitude	CapitalName	CountryName
+69.183333	34.51666667	Kabul	Afghanistan
+19.9	60.116667	Mariehamn	Aland Islands
+19.816667	41.31666667	Tirana	Albania
+3.05	36.75	Algiers	Algeria
+-170.7	-14.26666667	Pago Pago	American Samoa
+1.516667	42.5	Andorra la Vella	Andorra
+13.216667	-8.833333333	Luanda	Angola
+-63.05	18.21666667	The Valley	Anguilla
+-61.85	17.11666667	Saint John's	Antigua and Barbuda
+-58.666667	-34.58333333	Buenos Aires	Argentina
+44.5	40.16666667	Yerevan	Armenia
+-70.033333	12.51666667	Oranjestad	Aruba
+149.133333	-35.26666667	Canberra	Australia
+16.366667	48.2	Vienna	Austria
+49.866667	40.38333333	Baku	Azerbaijan
+-77.35	25.08333333	Nassau	Bahamas
+50.566667	26.23333333	Manama	Bahrain
+90.4	23.71666667	Dhaka	Bangladesh
+-59.616667	13.1	Bridgetown	Barbados
+27.566667	53.9	Minsk	Belarus
+4.333333	50.83333333	Brussels	Belgium
+-88.766667	17.25	Belmopan	Belize
+2.616667	6.483333333	Porto-Novo	Benin
+-64.783333	32.28333333	Hamilton	Bermuda
+89.633333	27.46666667	Thimphu	Bhutan
+-68.15	-16.5	La Paz	Bolivia
+18.416667	43.86666667	Sarajevo	Bosnia and Herzegovina
+25.9	-24.63333333	Gaborone	Botswana
+-47.916667	-15.78333333	Brasilia	Brazil
+72.4	-7.3	Diego Garcia	British Indian Ocean Territory
+-64.616667	18.41666667	Road Town	British Virgin Islands
+114.933333	4.883333333	Bandar Seri Begawan	Brunei Darussalam
+23.316667	42.68333333	Sofia	Bulgaria
+-1.516667	12.36666667	Ouagadougou	Burkina Faso
+29.35	-3.366666667	Bujumbura	Burundi
+104.916667	11.55	Phnom Penh	Cambodia
+11.516667	3.866666667	Yaounde	Cameroon
+-75.7	45.41666667	Ottawa	Canada
+-23.516667	14.91666667	Praia	Cape Verde
+-81.383333	19.3	George Town	Cayman Islands
+18.583333	4.366666667	Bangui	Central African Republic
+15.033333	12.1	N'Djamena	Chad
+-70.666667	-33.45	Santiago	Chile
+116.383333	39.91666667	Beijing	China
+105.716667	-10.41666667	The Settlement	Christmas Island
+96.833333	-12.16666667	West Island	Cocos Islands
+-74.083333	4.6	Bogota	Colombia
+43.233333	-11.7	Moroni	Comoros
+-159.766667	-21.2	Avarua	Cook Islands
+-84.083333	9.933333333	San Jose	Costa Rica
+-5.266667	6.816666667	Yamoussoukro	Cote d'Ivoire
+16	45.8	Zagreb	Croatia
+-82.35	23.11666667	Havana	Cuba
+-68.916667	12.1	Willemstad	Curaçao
+33.366667	35.16666667	Nicosia	Cyprus
+14.466667	50.08333333	Prague	Czech Republic
+15.3	-4.316666667	Kinshasa	Democratic Republic of the Congo
+12.583333	55.66666667	Copenhagen	Denmark
+43.15	11.58333333	Djibouti	Djibouti
+-61.4	15.3	Roseau	Dominica
+-69.9	18.46666667	Santo Domingo	Dominican Republic
+-78.5	-0.2166666667	Quito	Ecuador
+31.25	30.05	Cairo	Egypt
+-89.2	13.7	San Salvador	El Salvador
+8.783333	3.75	Malabo	Equatorial Guinea
+38.933333	15.33333333	Asmara	Eritrea
+24.716667	59.43333333	Tallinn	Estonia
+38.7	9.033333333	Addis Ababa	Ethiopia
+-6.766667	62	Torshavn	Faroe Islands
+158.15	6.916666667	Palikir	Federated States of Micronesia
+178.416667	-18.13333333	Suva	Fiji
+24.933333	60.16666667	Helsinki	Finland
+2.333333	48.86666667	Paris	France
+-149.566667	-17.53333333	Papeete	French Polynesia
+70.216667	-49.35	Port-aux-Français	French Southern and Antarctic Lands
+9.45	0.3833333333	Libreville	Gabon
+44.833333	41.68333333	Tbilisi	Georgia
+13.4	52.51666667	Berlin	Germany
+-0.216667	5.55	Accra	Ghana
+-5.35	36.13333333	Gibraltar	Gibraltar
+23.733333	37.98333333	Athens	Greece
+-51.75	64.18333333	Nuuk	Greenland
+-61.75	12.05	Saint George's	Grenada
+144.733333	13.46666667	Hagatna	Guam
+-90.516667	14.61666667	Guatemala City	Guatemala
+-2.533333	49.45	Saint Peter Port	Guernsey
+-13.7	9.5	Conakry	Guinea
+-15.583333	11.85	Bissau	Guinea-Bissau
+-58.15	6.8	Georgetown	Guyana
+-72.333333	18.53333333	Port-au-Prince	Haiti
+-87.216667	14.1	Tegucigalpa	Honduras
+19.083333	47.5	Budapest	Hungary
+-21.95	64.15	Reykjavik	Iceland
+77.2	28.6	New Delhi	India
+106.816667	-6.166666667	Jakarta	Indonesia
+51.416667	35.7	Tehran	Iran
+44.4	33.33333333	Baghdad	Iraq
+-6.233333	53.31666667	Dublin	Ireland
+-4.483333	54.15	Douglas	Isle of Man
+35.233333	31.76666667	Jerusalem	Israel
+12.483333	41.9	Rome	Italy
+-76.8	18	Kingston	Jamaica
+139.75	35.68333333	Tokyo	Japan
+-2.1	49.18333333	Saint Helier	Jersey
+35.933333	31.95	Amman	Jordan
+71.416667	51.16666667	Astana	Kazakhstan
+36.816667	-1.283333333	Nairobi	Kenya
+169.533333	-0.8833333333	Tarawa	Kiribati
+21.166667	42.66666667	Pristina	Kosovo
+47.966667	29.36666667	Kuwait City	Kuwait
+74.6	42.86666667	Bishkek	Kyrgyzstan
+102.6	17.96666667	Vientiane	Laos
+24.1	56.95	Riga	Latvia
+35.5	33.86666667	Beirut	Lebanon
+27.483333	-29.31666667	Maseru	Lesotho
+-10.8	6.3	Monrovia	Liberia
+13.166667	32.88333333	Tripoli	Libya
+9.516667	47.13333333	Vaduz	Liechtenstein
+25.316667	54.68333333	Vilnius	Lithuania
+6.116667	49.6	Luxembourg	Luxembourg
+21.433333	42	Skopje	Macedonia
+47.516667	-18.91666667	Antananarivo	Madagascar
+33.783333	-13.96666667	Lilongwe	Malawi
+101.7	3.166666667	Kuala Lumpur	Malaysia
+73.5	4.166666667	Male	Maldives
+-8	12.65	Bamako	Mali
+14.5	35.88333333	Valletta	Malta
+171.383333	7.1	Majuro	Marshall Islands
+-15.966667	18.06666667	Nouakchott	Mauritania
+57.483333	-20.15	Port Louis	Mauritius
+-99.133333	19.43333333	Mexico City	Mexico
+28.85	47	Chisinau	Moldova
+7.416667	43.73333333	Monaco	Monaco
+106.916667	47.91666667	Ulaanbaatar	Mongolia
+19.266667	42.43333333	Podgorica	Montenegro
+-62.216667	16.7	Plymouth	Montserrat
+-6.816667	34.01666667	Rabat	Morocco
+32.583333	-25.95	Maputo	Mozambique
+96.15	16.8	Rangoon	Myanmar
+17.083333	-22.56666667	Windhoek	Namibia
+166.920867	-0.5477	Yaren	Nauru
+85.316667	27.71666667	Kathmandu	Nepal
+4.916667	52.35	Amsterdam	Netherlands
+166.45	-22.26666667	Noumea	New Caledonia
+174.783333	-41.3	Wellington	New Zealand
+-86.25	12.13333333	Managua	Nicaragua
+2.116667	13.51666667	Niamey	Niger
+7.533333	9.083333333	Abuja	Nigeria
+-169.916667	-19.01666667	Alofi	Niue
+167.966667	-29.05	Kingston	Norfolk Island
+125.75	39.01666667	Pyongyang	North Korea
+33.366667	35.183333	North Nicosia	Northern Cyprus
+145.75	15.2	Saipan	Northern Mariana Islands
+10.75	59.91666667	Oslo	Norway
+58.583333	23.61666667	Muscat	Oman
+73.05	33.68333333	Islamabad	Pakistan
+134.633333	7.483333333	Melekeok	Palau
+35.233333	31.76666667	Jerusalem	Palestine
+-79.533333	8.966666667	Panama City	Panama
+147.183333	-9.45	Port Moresby	Papua New Guinea
+-57.666667	-25.26666667	Asuncion	Paraguay
+-77.05	-12.05	Lima	Peru
+120.966667	14.6	Manila	Philippines
+-130.083333	-25.06666667	Adamstown	Pitcairn Islands
+21	52.25	Warsaw	Poland
+-9.133333	38.71666667	Lisbon	Portugal
+-66.116667	18.46666667	San Juan	Puerto Rico
+51.533333	25.28333333	Doha	Qatar
+15.283333	-4.25	Brazzaville	Republic of Congo
+26.1	44.43333333	Bucharest	Romania
+37.6	55.75	Moscow	Russia
+30.05	-1.95	Kigali	Rwanda
+-62.85	17.88333333	Gustavia	Saint Barthelemy
+-5.716667	-15.93333333	Jamestown	Saint Helena
+-62.716667	17.3	Basseterre	Saint Kitts and Nevis
+-61	14	Castries	Saint Lucia
+-63.0822	18.0731	Marigot	Saint Martin
+-56.183333	46.76666667	Saint-Pierre	Saint Pierre and Miquelon
+-61.216667	13.13333333	Kingstown	Saint Vincent and the Grenadines
+-171.766667	-13.81666667	Apia	Samoa
+12.416667	43.93333333	San Marino	San Marino
+6.733333	0.3333333333	Sao Tome	Sao Tome and Principe
+46.7	24.65	Riyadh	Saudi Arabia
+-17.633333	14.73333333	Dakar	Senegal
+20.5	44.83333333	Belgrade	Serbia
+55.45	-4.616666667	Victoria	Seychelles
+-13.233333	8.483333333	Freetown	Sierra Leone
+103.85	1.283333333	Singapore	Singapore
+-63.033333	18.01666667	Philipsburg	Sint Maarten
+17.116667	48.15	Bratislava	Slovakia
+14.516667	46.05	Ljubljana	Slovenia
+159.95	-9.433333333	Honiara	Solomon Islands
+45.333333	2.066666667	Mogadishu	Somalia
+44.05	9.55	Hargeisa	Somaliland
+28.216667	-25.7	Pretoria	South Africa
+126.983333	37.55	Seoul	South Korea
+31.616667	4.85	Juba	South Sudan
+-3.683333	40.4	Madrid	Spain
+79.833333	6.916666667	Colombo	Sri Lanka
+32.533333	15.6	Khartoum	Sudan
+-55.166667	5.833333333	Paramaribo	Suriname
+15.633333	78.21666667	Longyearbyen	Svalbard
+31.133333	-26.31666667	Mbabane	Swaziland
+18.05	59.33333333	Stockholm	Sweden
+7.466667	46.91666667	Bern	Switzerland
+36.3	33.5	Damascus	Syria
+121.516667	25.03333333	Taipei	Taiwan
+68.766667	38.55	Dushanbe	Tajikistan
+39.283333	-6.8	Dar es Salaam	Tanzania
+100.516667	13.75	Bangkok	Thailand
+-16.566667	13.45	Banjul	The Gambia
+125.6	-8.583333333	Dili	Timor-Leste
+1.216667	6.116666667	Lome	Togo
+-171.833333	-9.166667	Atafu	Tokelau
+-175.2	-21.13333333	Nuku'alofa	Tonga
+-61.516667	10.65	Port of Spain	Trinidad and Tobago
+10.183333	36.8	Tunis	Tunisia
+32.866667	39.93333333	Ankara	Turkey
+58.383333	37.95	Ashgabat	Turkmenistan
+-71.133333	21.46666667	Grand Turk	Turks and Caicos Islands
+179.216667	-8.516666667	Funafuti	Tuvalu
+32.55	0.3166666667	Kampala	Uganda
+30.516667	50.43333333	Kyiv	Ukraine
+54.366667	24.46666667	Abu Dhabi	United Arab Emirates
+-0.083333	51.5	London	United Kingdom
+-77	38.883333	Washington D.C.	United States
+-56.166667	-34.85	Montevideo	Uruguay
+-77	38.883333	Washington D.C.	US Minor Outlying Islands
+-64.933333	18.35	Charlotte Amalie	US Virgin Islands
+69.25	41.31666667	Tashkent	Uzbekistan
+168.316667	-17.73333333	Port-Vila	Vanuatu
+12.45	41.9	Vatican City	Vatican City
+-66.866667	10.48333333	Caracas	Venezuela
+105.85	21.03333333	Hanoi	Vietnam
+-171.933333	-13.95	Mata-Utu	Wallis and Futuna
+-13.203333	27.153611	El-Aaiún	Western Sahara
+44.2	15.35	Sanaa	Yemen
+28.283333	-15.41666667	Lusaka	Zambia
+31.033333	-17.81666667	Harare	Zimbabwe
