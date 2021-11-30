@@ -7,7 +7,7 @@ gmt begin
     gmt coast -EAR+L  > $Title
 gmt end
 EOF
-# 2. Crear cada pdf
+# 2. Crear cada imagen
 cat << EOF > main.sh
 gmt begin \${BATCH_NAME} pdf #,png
     gmt coast -R\${BATCH_WORD0}+e0.5 -JM10c -Glightgray -Slightblue -B -B+t"\${BATCH_WORD1}" -E\${BATCH_WORD0}+gred+p0.5p
