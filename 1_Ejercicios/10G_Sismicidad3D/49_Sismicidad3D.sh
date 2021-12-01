@@ -3,7 +3,7 @@ clear
 
 #	Temas a ver:
 #	1. Dibujar columnas en 3D
-#	2. Extrar informacion y graficar texto
+#	2. Definir colorbar con %.
 
 #	Definir Variables del mapaS
 #	-----------------------------------------------------------------------------------------------------------
