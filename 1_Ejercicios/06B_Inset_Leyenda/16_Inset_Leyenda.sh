@@ -101,7 +101,8 @@ gmt begin $title png
 	S 0.25c f+l+t 0.5c green 1.0p,green     0.75c Subucci\363n
 	S 0.25c f+l+s 0.5c -     1p,black       0.75c L\355mite Transforme
 	G 0.075c
-	S 0.25c c 0.25c red   0.40p     0.5c Sismos someros (0-100 km)
+#	S 0.25c c 0.25c red   0.40p     0.5c Sismos someros (0-100 km)
+	S 0.25c kmeca 0.25c red   0.40p     0.5c Sismos someros (0-100 km)
 	S 0.25c c 0.25c green 0.40p     0.5c Sismos intermedios (100-300 km)
 	S 0.25c c 0.25c blue  0.40p     0.5c Sismos profundos (300-700 km)
 	G 0.075c
