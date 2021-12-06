@@ -24,7 +24,9 @@ clear
 #	-----------------------------------------------------------------------------------------------------------
 #	Sub-seccion FUENTE
 	gmt set FONT_ANNOT_PRIMARY 8,Helvetica,black
+	gmt set FONT_ANNOT_PRIMARY 8,Helvetica,green
 	gmt set FONT_LABEL 8,Helvetica,black
+
 
 #	Sub-seccion FORMATO
 	gmt set FORMAT_GEO_MAP ddd:mm:ssF
@@ -78,7 +80,7 @@ gmt begin $title png
 
 #	Escribir Numero
 	gmt convert "CopaAmerica.csv" -o0,1,2 | gmt text -p -Gwhite@30 -D0/-0.8c -F+f20p,Helvetica-Bold,firebrick=thinner+jCM
-	#gmt convert "CopaAmerica.csv" -o0,1,2 | gmt text -p -Gyellow@50 -D0/-0.5c -F+f12p,Helvetica-Bold,firebrick=thinner+jCM
+#	gmt convert "CopaAmerica.csv" -o0,1,2 | gmt text -p -Gwhite@30 -D0/-0.8c -F+f20p,Helvetica-Bold,firebrick=thinner,green+jCM
 
 #	Dibujar escala vertical
 	gmt colorbar -p -C -DJRM+o0.3c/0+w13/0.618c -L0.2 -S+x"Cantidad"
