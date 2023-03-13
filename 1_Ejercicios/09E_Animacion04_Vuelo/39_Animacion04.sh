@@ -17,7 +17,7 @@ Fin=-65.6/-22.105556			# La Quiaca
 #Fin=-70.666667/-33.45			# Santiago de Chile
 #Fin=-0.1275/51.507222			# Londres
 
-# Intervalo en k del trayecto (de esto depende la cantidad de frames)
+# Intervalo en km del trayecto (de esto depende la cantidad de frames)
 #Intervalo=10
 Intervalo=5
 
